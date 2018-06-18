@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3JQ-F2-NNx">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Login View Controller-->
+        <scene sceneID="eXH-Qh-3DI">
+            <objects>
+                <viewController id="3JQ-F2-NNx" customClass="LoginViewController" customModule="KaoSouou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WsV-Mw-Sws">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kaosouou" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JE7-yb-1vG">
+                                <rect key="frame" x="122" y="218.5" width="130" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="face is life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ohR-P3-5j2">
+                                <rect key="frame" x="159.5" y="273" width="56.5" height="14.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-VT-S0P">
+                                <rect key="frame" x="133" y="519" width="108" height="68"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFc-iM-j9b">
+                                        <rect key="frame" x="0.0" y="0.0" width="108" height="30"/>
+                                        <state key="normal" title="Facebook Login"/>
+                                        <connections>
+                                            <action selector="tapFBLoginButton:" destination="3JQ-F2-NNx" eventType="touchUpInside" id="XC2-Bo-7T1"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="duz-21-84X">
+                                        <rect key="frame" x="0.0" y="38" width="108" height="30"/>
+                                        <state key="normal" title="Twitter Login"/>
+                                        <connections>
+                                            <action selector="tapTWLoginButton:" destination="3JQ-F2-NNx" eventType="touchUpInside" id="rjp-v3-vsS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="JE7-yb-1vG" firstAttribute="centerY" secondItem="WsV-Mw-Sws" secondAttribute="centerY" constant="-96" id="EXN-kw-REl"/>
+                            <constraint firstItem="rJL-Ps-dO3" firstAttribute="bottom" secondItem="zZc-VT-S0P" secondAttribute="bottom" constant="80" id="REG-s3-FCz"/>
+                            <constraint firstItem="ohR-P3-5j2" firstAttribute="top" secondItem="JE7-yb-1vG" secondAttribute="bottom" constant="16" id="SK6-Nx-zuy"/>
+                            <constraint firstItem="ohR-P3-5j2" firstAttribute="centerX" secondItem="WsV-Mw-Sws" secondAttribute="centerX" id="Swg-1b-c8s"/>
+                            <constraint firstItem="zZc-VT-S0P" firstAttribute="centerX" secondItem="WsV-Mw-Sws" secondAttribute="centerX" id="yMI-Mo-Yvx"/>
+                            <constraint firstItem="JE7-yb-1vG" firstAttribute="centerX" secondItem="WsV-Mw-Sws" secondAttribute="centerX" id="zpP-my-2DB"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="rJL-Ps-dO3"/>
+                    </view>
+                    <connections>
+                        <outlet property="fbLoginButton" destination="DFc-iM-j9b" id="nPp-NV-ZLS"/>
+                        <outlet property="twLoginButton" destination="duz-21-84X" id="MFA-rg-3Yf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3MU-Nn-Ilc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-230" y="121"/>
+        </scene>
+    </scenes>
+</document>

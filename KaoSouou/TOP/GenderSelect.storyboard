@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="10a-6T-6TU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Gender Select View Controller-->
+        <scene sceneID="elR-3Y-tAP">
+            <objects>
+                <viewController storyboardIdentifier="GenderSelect" id="10a-6T-6TU" customClass="GenderSelectViewController" customModule="KaoSouou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5Wy-Tq-EL1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="pcP-Ji-l0l">
+                                <rect key="frame" x="61.5" y="273.5" width="252" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jre-bq-Kuh">
+                                        <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="hHb-ho-u1A"/>
+                                            <constraint firstAttribute="height" constant="120" id="uol-0z-kmD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <state key="normal" title="🙋‍♂️"/>
+                                        <connections>
+                                            <action selector="tapBoyButton:" destination="10a-6T-6TU" eventType="touchUpInside" id="Dui-sQ-LxC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRz-NI-7zm">
+                                        <rect key="frame" x="132" y="0.0" width="120" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="9Dv-yE-9nZ"/>
+                                            <constraint firstAttribute="height" constant="120" id="jqy-tR-x5s"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                        <state key="normal" title="🙋‍♀️"/>
+                                        <connections>
+                                            <action selector="tapGirlButton:" destination="10a-6T-6TU" eventType="touchUpInside" id="B6x-EO-g2j"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="120" id="yEc-5h-i4j"/>
+                                </constraints>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="性別を選択してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYs-1f-vWF">
+                                <rect key="frame" x="92" y="120" width="191" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xz7-Bc-Y0j">
+                                <rect key="frame" x="139" y="555" width="97" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="     Next ＞     ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapNextButton:" destination="10a-6T-6TU" eventType="touchUpInside" id="410-r7-T1a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="PYs-1f-vWF" firstAttribute="top" secondItem="5Wy-Tq-EL1" secondAttribute="top" constant="120" id="6E7-Ir-DzS"/>
+                            <constraint firstItem="3ak-2Y-6EG" firstAttribute="bottom" secondItem="xz7-Bc-Y0j" secondAttribute="bottom" constant="80" id="NbN-ka-D0F"/>
+                            <constraint firstItem="PYs-1f-vWF" firstAttribute="centerX" secondItem="5Wy-Tq-EL1" secondAttribute="centerX" id="P80-Cc-rSI"/>
+                            <constraint firstItem="3ak-2Y-6EG" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="pcP-Ji-l0l" secondAttribute="trailing" constant="32" id="SIh-9X-9pS"/>
+                            <constraint firstItem="xz7-Bc-Y0j" firstAttribute="centerX" secondItem="5Wy-Tq-EL1" secondAttribute="centerX" id="So0-6e-MVU"/>
+                            <constraint firstItem="pcP-Ji-l0l" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3ak-2Y-6EG" secondAttribute="leading" constant="32" id="a3Q-fk-ZL1"/>
+                            <constraint firstItem="pcP-Ji-l0l" firstAttribute="centerX" secondItem="5Wy-Tq-EL1" secondAttribute="centerX" id="eIN-Pe-hGN"/>
+                            <constraint firstItem="pcP-Ji-l0l" firstAttribute="centerY" secondItem="5Wy-Tq-EL1" secondAttribute="centerY" id="yXr-rR-vdo"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3ak-2Y-6EG"/>
+                    </view>
+                    <connections>
+                        <outlet property="boyButton" destination="jre-bq-Kuh" id="9eT-2t-Tu3"/>
+                        <outlet property="girlButton" destination="qRz-NI-7zm" id="ERi-xi-00j"/>
+                        <outlet property="nextButton" destination="xz7-Bc-Y0j" id="ocM-mm-p53"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ACw-JY-5bJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="624.79999999999995" y="120.98950524737631"/>
+        </scene>
+    </scenes>
+</document>

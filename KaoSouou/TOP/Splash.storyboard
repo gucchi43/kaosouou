@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q1x-Wp-ZZY">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="xNK-66-R6a">
+            <objects>
+                <viewController id="q1x-Wp-ZZY" customClass="SplashViewController" customModule="KaoSouou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hLb-eJ-BCI">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kaosouou" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-Wu-fUX">
+                                <rect key="frame" x="122" y="218" width="130" height="39"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="face is life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x91-hb-ZJi">
+                                <rect key="frame" x="159" y="273" width="56.5" height="15"/>
+                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="x91-hb-ZJi" firstAttribute="top" secondItem="wsF-Wu-fUX" secondAttribute="bottom" constant="16" id="GFo-d9-D48"/>
+                            <constraint firstItem="wsF-Wu-fUX" firstAttribute="centerX" secondItem="hLb-eJ-BCI" secondAttribute="centerX" id="JNM-94-vex"/>
+                            <constraint firstItem="x91-hb-ZJi" firstAttribute="centerX" secondItem="hLb-eJ-BCI" secondAttribute="centerX" id="euD-PJ-EFo"/>
+                            <constraint firstItem="wsF-Wu-fUX" firstAttribute="centerY" secondItem="hLb-eJ-BCI" secondAttribute="centerY" constant="-96" id="yKz-lh-yTt"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="v6N-wv-mkm"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Nh-YZ-yHY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1583" y="-1961"/>
+        </scene>
+    </scenes>
+</document>

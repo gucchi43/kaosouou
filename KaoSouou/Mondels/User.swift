@@ -1,0 +1,24 @@
+//
+//  User.swift
+//  KaoSouou
+//
+//  Created by Hiroki Taniguchi on 2018/03/15.
+//  Copyright © 2018年 Hiroki Taniguchi. All rights reserved.
+//
+
+import Foundation
+import Firebase
+import Pring
+
+@objcMembers
+class User : Object{
+    dynamic var originId: String = ""
+    dynamic var displayName: String = ""
+    dynamic var email: String = ""
+    dynamic var photoFile: File?
+    dynamic var hensachi: Int = 0
+    dynamic var gender: Int = 0
+    dynamic var kaisu: Int = 0
+    dynamic var loveUsers: ReferenceCollection<User> = []
+}
+

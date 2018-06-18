@@ -1,0 +1,238 @@
+//
+//  ViewController.swift
+//  KaoSouou
+//
+//  Created by Hiroki Taniguchi on 2018/02/19.
+//  Copyright © 2018年 Hiroki Taniguchi. All rights reserved.
+//
+
+import UIKit
+import Kingfisher
+import Pring
+import Firebase
+import SVProgressHUD
+
+class ViewController: UIViewController {
+
+    @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var mypageButton: UIButton!
+    @IBOutlet weak var resetButton: UIButton!
+    
+    var humanArray = [UIImage]()
+    var girlsArray =  [#imageLiteral(resourceName: "g2"),#imageLiteral(resourceName: "g3"),#imageLiteral(resourceName: "g8"),#imageLiteral(resourceName: "g0"),#imageLiteral(resourceName: "g5"),#imageLiteral(resourceName: "g4"),#imageLiteral(resourceName: "g6"),#imageLiteral(resourceName: "g7"),#imageLiteral(resourceName: "g1")]
+    var mensArray = [#imageLiteral(resourceName: "m3"),#imageLiteral(resourceName: "m0"),#imageLiteral(resourceName: "m4"),#imageLiteral(resourceName: "m6"),#imageLiteral(resourceName: "m2"),#imageLiteral(resourceName: "m1"),#imageLiteral(resourceName: "m5"),#imageLiteral(resourceName: "m7"),#imageLiteral(resourceName: "m8")]
+    var kaoUserArray = [User]()
+    var numArray = [0,0,0,0,0,0,0,0,0] //9人の順位が入っていく 例) [9,1,2,3,6,4,7,5,8]
+    var selectNum = 0
+    var firstUser: User?
+    var firstFace: UIImage?
+    
+    var disEnabledCellArray = [humanCell]()
+    var selectCell: humanCell?
+    var oldSelectCell: humanCell?
+    
+    var userDataSourse: DataSource<User>?
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        setButton()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let currentUser = AccountManager.shared.currentUser!
+        if currentUser.gender == 2 {
+            getUserArray(with: 1)
+            humanArray = mensArray
+        } else {
+            getUserArray(with: 2)
+            humanArray = girlsArray
+        }
+    }
+    
+    func getUserArray(with genderNum: Int) {
+        kaoUserArray.removeAll()
+        userDataSourse = User
+            .order(by: \User.createdAt)
+            .where(\User.gender, isEqualTo: genderNum)
+            .limit(to: 9)
+            .dataSource()
+            .onCompleted({ (snapshot, userArray) in
+                if userArray.count >= 9 {
+                    self.kaoUserArray = userArray
+                    self.collectionView.reloadData()
+                } else {
+                    self.kaoUserArray = userArray
+                    self.collectionView.reloadData()
+                }
+            })
+        .listen()
+    }
+    
+    func setButton() {
+        mypageButton.layer.cornerRadius = mypageButton.bounds.height / 2
+        mypageButton.layer.borderWidth = 1
+        mypageButton.layer.borderColor = UIColor.white.cgColor
+        mypageButton.clipsToBounds = true
+        
+        resetButton.layer.cornerRadius = resetButton.bounds.height / 2
+        resetButton.layer.borderWidth = 1
+        resetButton.layer.borderColor = UIColor.white.cgColor
+        resetButton.clipsToBounds = true
+    }
+    
+    func getHensachi(with num: Int) -> Int {
+        let juni = numArray[num]
+        let tensu = Double(8 - juni) * 12.5
+        let heikin = Double(45)
+        let hensachi = Int(50 + (tensu - heikin) / 2)
+        
+        print("num : ", num)
+        print("juni : ", juni)
+        
+        return hensachi
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "presentPrintFacePower" {
+            // リセット
+            selectNum = 0
+            numArray = [0,0,0,0,0,0,0,0,0]
+            let vc = segue.destination as! PrintFacePowerViewController
+            vc.faceImage = firstFace
+        }
+    }
+    
+    @IBAction func tapResetButton(_ sender: Any) {
+        selectNum = 0
+        firstUser = nil
+        firstFace = nil
+        numArray = [0,0,0,0,0,0,0,0,0]
+        collectionView.reloadData()
+    }
+}
+
+extension ViewController: UICollectionViewDelegateFlowLayout {
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let space = 1
+        let wlength = (Int(UIScreen.main.bounds.width) - space) / 3
+        let hlength = (Int(UIScreen.main.bounds.height) - space) / 3
+        
+        return CGSize(width: wlength, height: hlength)
+    }
+}
+
+
+extension ViewController: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        
+        return 9
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(with: humanCell.self, for: indexPath)
+        if let user = kaoUserArray[safe: indexPath.row] {
+            cell.configure(with: user, num: self.numArray[indexPath.row])
+        } else {
+            cell.configure(with: humanArray[indexPath.row], num: numArray[indexPath.row])
+        }
+        return cell
+    }
+}
+
+
+extension ViewController: UICollectionViewDelegate {
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        collectionView.deselectItem(at: indexPath, animated: true)
+        
+        print("indexPath.row : ", indexPath.row)
+        
+        let cell = collectionView.cellForItem(at: indexPath) as! humanCell        
+        let currentNum = selectNum
+        if numArray[indexPath.row] == 0 {
+            //選択されてない
+            cell.check(with: currentNum + 1)
+            numArray[indexPath.row] = currentNum + 1
+            selectNum = currentNum + 1
+        } else {
+            // 選択されてる
+            cell.uncheck()
+            numArray[indexPath.row] = 0
+            selectNum = currentNum - 1
+        }
+        if selectNum == 1 {
+            if let user = kaoUserArray[safe: indexPath.row] {
+                self.firstUser = user
+            }
+            self.firstFace = cell.imageView.image
+        }
+        print("selectNum", selectNum)
+        print("numArray", numArray)
+        
+        collectionView.reloadData()
+        if selectNum == 9 {
+            print("numArray : ", numArray)
+            SVProgressHUD.show(withStatus: "マイリスト更新中")
+            addDateLoveUsers(success: {
+                SVProgressHUD.show(withStatus: "facepower更新中")
+                self.updateUserHensachi()
+                SVProgressHUD.dismiss()
+                self.performSegue(withIdentifier: "presentPrintFacePower", sender: nil)
+                print("採点！")
+            }) { (error) in
+                SVProgressHUD.showError(withStatus: "データ送信に失敗しました")
+                print(error)
+            }
+        }
+    }
+}
+
+// POST部分
+extension ViewController {
+    func addDateLoveUsers(success: @escaping() -> Void, failure: @escaping(Error) -> Void) {
+        guard let user = AccountManager.shared.currentUser else { return }
+        if let firstUser = firstUser {
+            user.loveUsers.insert(firstUser)
+            user.update { (error) in
+                if let error = error {
+                    failure(error)
+                } else {
+                    success()
+                }
+            }
+        } else {
+            success()
+        }
+    }
+    
+    func updateUserHensachi() {
+        for (index, user) in kaoUserArray.enumerated() {
+            print("index : ", index)
+            print("user : ", user)
+            let oldHensachi = user.hensachi
+            let updateHensachi = getHensachi(with: index)
+            let newHensachi = (oldHensachi + updateHensachi) / 2
+            user.hensachi = newHensachi
+            let oldKaisu = user.kaisu
+            let newKaisu = oldKaisu + 1
+            user.kaisu = newKaisu
+            user.update { (error) in
+                if let error = error {
+                    print("hensachi update error! : ",error)
+                } else {
+                    print("oldHensachi : ", oldHensachi)
+                    print("updateHensachi : ", updateHensachi)
+                    print("newHensachi : ", newHensachi)
+                    print("更新後 currentUser.hensachi : ", user.hensachi)
+                    
+                }
+            }
+        }
+    }
+}
