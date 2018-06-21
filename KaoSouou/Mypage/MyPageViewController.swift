@@ -20,6 +20,8 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var kaisuLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
+    @IBOutlet weak var bellButton: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,9 @@ class MyPageViewController: UIViewController {
         settingButton.setTitleColor(UIColor.white, for: .normal)
         settingButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 24)
         settingButton.setTitle(String.fontAwesomeIcon(name: .gear), for: .normal)
+        bellButton.setTitleColor(UIColor.white, for: .normal)
+        bellButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 24)
+        bellButton.setTitle(String.fontAwesomeIcon(name: .bellO), for: .normal)
         if let currentUser = AccountManager.shared.currentUser{
             User.get(currentUser.id) { (user, error) in
                 if let error = error {
@@ -104,4 +109,13 @@ class MyPageViewController: UIViewController {
             print("Mypage Close")
         }
     }
+    
+    @IBAction func tapBellButton(_ sender: Any) {
+        let notificationSB = UIStoryboard(name: "NotificationList", bundle: nil)
+        let notificationVC = notificationSB.instantiateInitialViewController()
+        present(notificationVC!, animated: true) {
+            print("go to notification")
+        }
+    }
+    
 }

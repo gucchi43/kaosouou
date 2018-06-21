@@ -10,6 +10,18 @@
 		030179C820A09A65002800F8 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030179C720A09A65002800F8 /* MyPageViewController.swift */; };
 		030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030A56AA20B30D8D0021A693 /* GenderSelect.storyboard */; };
 		030A56AD20B30D990021A693 /* GenderSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A56AC20B30D990021A693 /* GenderSelectViewController.swift */; };
+		030F88FB20DA5A9B009A0657 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F88FA20DA5A9B009A0657 /* NotificationItem.swift */; };
+		030F88FD20DA6207009A0657 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F88FC20DA6207009A0657 /* Result.swift */; };
+		030F88FF20DA7BC5009A0657 /* NotificationList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030F88FE20DA7BC5009A0657 /* NotificationList.storyboard */; };
+		030F890120DA7BD3009A0657 /* NotificationListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890020DA7BD3009A0657 /* NotificationListViewController.swift */; };
+		030F890420DA80F6009A0657 /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890220DA80F6009A0657 /* NotificationTableViewCell.swift */; };
+		030F890520DA80F6009A0657 /* NotificationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030F890320DA80F6009A0657 /* NotificationTableViewCell.xib */; };
+		030F890720DA8160009A0657 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890620DA8160009A0657 /* UITableView+Extension.swift */; };
+		030F890920DAC676009A0657 /* Date+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890820DAC676009A0657 /* Date+Extension.swift */; };
+		030F890B20DB814D009A0657 /* ResultList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030F890A20DB814D009A0657 /* ResultList.storyboard */; };
+		030F890D20DB816C009A0657 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890C20DB816C009A0657 /* ResultListViewController.swift */; };
+		030F891020DB8192009A0657 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890E20DB8192009A0657 /* ResultTableViewCell.swift */; };
+		030F891120DB8192009A0657 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030F890F20DB8192009A0657 /* ResultTableViewCell.xib */; };
 		031A956120D1562B008F88D5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956020D1562B008F88D5 /* RootViewController.swift */; };
 		031A956320D16519008F88D5 /* SetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956220D16519008F88D5 /* SetProfileViewController.swift */; };
 		031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031A956420D16537008F88D5 /* SetProfile.storyboard */; };
@@ -60,6 +72,18 @@
 		030179C720A09A65002800F8 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		030A56AA20B30D8D0021A693 /* GenderSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenderSelect.storyboard; sourceTree = "<group>"; };
 		030A56AC20B30D990021A693 /* GenderSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectViewController.swift; sourceTree = "<group>"; };
+		030F88FA20DA5A9B009A0657 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
+		030F88FC20DA6207009A0657 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		030F88FE20DA7BC5009A0657 /* NotificationList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NotificationList.storyboard; sourceTree = "<group>"; };
+		030F890020DA7BD3009A0657 /* NotificationListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListViewController.swift; sourceTree = "<group>"; };
+		030F890220DA80F6009A0657 /* NotificationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationTableViewCell.swift; sourceTree = "<group>"; };
+		030F890320DA80F6009A0657 /* NotificationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NotificationTableViewCell.xib; sourceTree = "<group>"; };
+		030F890620DA8160009A0657 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
+		030F890820DAC676009A0657 /* Date+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extension.swift"; sourceTree = "<group>"; };
+		030F890A20DB814D009A0657 /* ResultList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ResultList.storyboard; sourceTree = "<group>"; };
+		030F890C20DB816C009A0657 /* ResultListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultListViewController.swift; sourceTree = "<group>"; };
+		030F890E20DB8192009A0657 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
+		030F890F20DB8192009A0657 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		031A956020D1562B008F88D5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		031A956220D16519008F88D5 /* SetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileViewController.swift; sourceTree = "<group>"; };
 		031A956420D16537008F88D5 /* SetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfile.storyboard; sourceTree = "<group>"; };
@@ -149,6 +173,14 @@
 			isa = PBXGroup;
 			children = (
 				030179C720A09A65002800F8 /* MyPageViewController.swift */,
+				030F88FE20DA7BC5009A0657 /* NotificationList.storyboard */,
+				030F890020DA7BD3009A0657 /* NotificationListViewController.swift */,
+				030F890320DA80F6009A0657 /* NotificationTableViewCell.xib */,
+				030F890220DA80F6009A0657 /* NotificationTableViewCell.swift */,
+				030F890A20DB814D009A0657 /* ResultList.storyboard */,
+				030F890C20DB816C009A0657 /* ResultListViewController.swift */,
+				030F890E20DB8192009A0657 /* ResultTableViewCell.swift */,
+				030F890F20DB8192009A0657 /* ResultTableViewCell.xib */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -157,6 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				03F62AB72039DAF9004DBFB6 /* UICollectionView+Extension.swift */,
+				030F890620DA8160009A0657 /* UITableView+Extension.swift */,
+				030F890820DAC676009A0657 /* Date+Extension.swift */,
 				031A956820D538E5008F88D5 /* UIImageView+Extension.swift */,
 				03F62AB92039DB34004DBFB6 /* NSObjectProtocol+Extension.swift */,
 				038BCBD720AD4E2700F5BFD6 /* Array+Extention.swift */,
@@ -178,6 +212,8 @@
 			isa = PBXGroup;
 			children = (
 				03F475AC205979D400EB31FA /* User.swift */,
+				030F88FA20DA5A9B009A0657 /* NotificationItem.swift */,
+				030F88FC20DA6207009A0657 /* Result.swift */,
 				03F475AE20597BC700EB31FA /* AccountManager.swift */,
 			);
 			path = Mondels;
@@ -377,9 +413,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030F890520DA80F6009A0657 /* NotificationTableViewCell.xib in Resources */,
 				03F62A922039D79F004DBFB6 /* LaunchScreen.storyboard in Resources */,
+				030F891120DB8192009A0657 /* ResultTableViewCell.xib in Resources */,
 				03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */,
 				03F475A92059718800EB31FA /* Login.storyboard in Resources */,
+				030F88FF20DA7BC5009A0657 /* NotificationList.storyboard in Resources */,
+				030F890B20DB814D009A0657 /* ResultList.storyboard in Resources */,
 				031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */,
 				030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */,
 				03F62A8D2039D79F004DBFB6 /* Main.storyboard in Resources */,
@@ -470,6 +510,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-KaoSouou/Pods-KaoSouou-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKCoreKit/FBSDKCoreKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKLoginKit/FBSDKLoginKit.framework",
 				"${BUILT_PRODUCTS_DIR}/FBSDKShareKit/FBSDKShareKit.framework",
@@ -482,6 +523,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
 				"${PODS_ROOT}/TwitterCore/iOS/TwitterCore.framework",
 				"${PODS_ROOT}/TwitterKit/iOS/TwitterKit.framework",
@@ -496,6 +538,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKCoreKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKLoginKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FBSDKShareKit.framework",
@@ -508,6 +551,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterCore.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TwitterKit.framework",
@@ -548,14 +592,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				030F890420DA80F6009A0657 /* NotificationTableViewCell.swift in Sources */,
 				030A56AD20B30D990021A693 /* GenderSelectViewController.swift in Sources */,
 				031A956320D16519008F88D5 /* SetProfileViewController.swift in Sources */,
+				030F890D20DB816C009A0657 /* ResultListViewController.swift in Sources */,
+				030F88FD20DA6207009A0657 /* Result.swift in Sources */,
 				03F475AB205971EE00EB31FA /* LoginViewController.swift in Sources */,
 				03F62AB82039DAF9004DBFB6 /* UICollectionView+Extension.swift in Sources */,
+				030F890920DAC676009A0657 /* Date+Extension.swift in Sources */,
+				030F890120DA7BD3009A0657 /* NotificationListViewController.swift in Sources */,
 				03F62ABC203A046A004DBFB6 /* PrintFacePowerViewController.swift in Sources */,
 				03782C5420B1A80A006D68EB /* SplashViewController.swift in Sources */,
 				03F62A8A2039D79F004DBFB6 /* ViewController.swift in Sources */,
 				03F475AD205979D400EB31FA /* User.swift in Sources */,
+				030F890720DA8160009A0657 /* UITableView+Extension.swift in Sources */,
 				031A956720D16CD8008F88D5 /* Extention.swift in Sources */,
 				038BCBD820AD4E2700F5BFD6 /* Array+Extention.swift in Sources */,
 				030179C820A09A65002800F8 /* MyPageViewController.swift in Sources */,
@@ -565,6 +615,8 @@
 				03F62A882039D79F004DBFB6 /* AppDelegate.swift in Sources */,
 				031A956920D538E5008F88D5 /* UIImageView+Extension.swift in Sources */,
 				03F62AB62039DAC5004DBFB6 /* humanCell.swift in Sources */,
+				030F891020DB8192009A0657 /* ResultTableViewCell.swift in Sources */,
+				030F88FB20DA5A9B009A0657 /* NotificationItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

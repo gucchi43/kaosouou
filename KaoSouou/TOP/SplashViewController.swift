@@ -47,46 +47,4 @@ class SplashViewController: UIViewController {
             }
         }
     }
-    
-    
-//    func makeServiceCall() {
-//        indicator.startAnimating()
-//        if let authUser = Auth.auth().currentUser {
-//            Firebase.User.get(authUser.uid, block: { (user, error) in
-//                self.indicator.stopAnimating()
-//                if let user = user {
-//                    Firebase.User.current = user
-//                    DispatchQueue.main.async {
-//                        AppDelegate.shared.rootViewController.switchToMainScreen()
-//                    }
-//                } else {
-//                    // ユーザーがなかったらログアウトしてトップへ。
-//                    try? Auth.auth().signOut()
-//                    DispatchQueue.main.async {
-//                        AppDelegate.shared.rootViewController.showLoginScreen()
-//                    }
-//                }
-//            })
-//        } else {
-//            self.indicator.stopAnimating()
-//            DispatchQueue.main.async {
-//                AppDelegate.shared.rootViewController.showLoginScreen()
-//            }
-//        }
-//    }
-    
-    
-    
-//    func goMain() {
-//        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-//        let viewController = storyboard.instantiateInitialViewController() as! ViewController
-//        present(viewController, animated: true, completion: nil)
-//    }
-//    
-//    func goTop() {
-//        let storyboard = UIStoryboard(name: "Login", bundle: nil)
-//        let viewController = storyboard.instantiateInitialViewController() as! LoginViewController
-//        present(viewController, animated: true, completion: nil)
-//    }
-    
 }

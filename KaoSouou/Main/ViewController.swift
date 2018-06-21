@@ -41,6 +41,11 @@ class ViewController: UIViewController {
         setButton()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let currentUser = AccountManager.shared.currentUser!
@@ -60,7 +65,11 @@ class ViewController: UIViewController {
             .where(\User.gender, isEqualTo: genderNum)
             .limit(to: 9)
             .dataSource()
+            
             .onCompleted({ (snapshot, userArray) in
+                
+                print("userArray : ",  userArray)
+                
                 if userArray.count >= 9 {
                     self.kaoUserArray = userArray
                     self.collectionView.reloadData()
@@ -212,6 +221,7 @@ extension ViewController {
     }
     
     func updateUserHensachi() {
+        let result = Result()
         for (index, user) in kaoUserArray.enumerated() {
             print("index : ", index)
             print("user : ", user)
@@ -231,6 +241,45 @@ extension ViewController {
                     print("newHensachi : ", newHensachi)
                     print("更新後 currentUser.hensachi : ", user.hensachi)
                     
+                }
+            }
+            let num = numArray[index]
+            switch num{
+            case 1:
+                result.first.set(user)
+            case 2:
+                result.second.set(user)
+            case 3:
+                result.third.set(user)
+            case 4:
+                result.fource.set(user)
+            case 5:
+                result.fifth.set(user)
+            case 6:
+                result.sixth.set(user)
+            case 7:
+                result.seventh.set(user)
+            case 8:
+                result.seventh.set(user)
+            case 9:
+                result.seventh.set(user)
+            default:
+                result.seventh.set(user)
+            }
+            for (index, user) in kaoUserArray.enumerated() {
+                let notificationItem = NotificationItem()
+                notificationItem.from.set(AccountManager.shared.currentUser!)
+                notificationItem.to.set(user)
+                notificationItem.num = numArray[index]
+                notificationItem.result.set(result)
+                user.results.insert(result)
+                user.notificationItems.insert(notificationItem)
+                user.update { (error) in
+                    if let error = error {
+                        print(error)
+                    } else {
+                        print("user update succses")
+                    }
                 }
             }
         }

@@ -18,6 +18,8 @@ target 'KaoSouou' do
   pod 'SwiftyJSON'
   pod 'SVProgressHUD'
   pod 'FontAwesome.swift'
+  pod 'DZNEmptyDataSet'
+  pod 'SwiftDate'
 
   pod 'TwitterKit'
   pod 'Fabric'
