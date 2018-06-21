@@ -30,7 +30,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         self.window = UIWindow(frame: UIScreen.main.bounds)
         self.window?.rootViewController = RootViewController()
         self.window?.makeKeyAndVisible()
-        
+        //ナビゲーションアイテムの色を変更
+        UINavigationBar.appearance().tintColor = UIColor.white
+        //ナビゲーションバーの背景を変更
+        UINavigationBar.appearance().barTintColor = UIColor.black
+        //ナビゲーションのタイトル文字列の色を変更
+        let attrs = [
+            NSAttributedStringKey.foregroundColor: UIColor.white
+        ]
+        UINavigationBar.appearance().titleTextAttributes = attrs
         return true
     }
     

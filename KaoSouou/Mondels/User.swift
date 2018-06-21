@@ -20,5 +20,7 @@ class User : Object{
     dynamic var gender: Int = 0
     dynamic var kaisu: Int = 0
     dynamic var loveUsers: ReferenceCollection<User> = []
+    dynamic var notificationItems: ReferenceCollection<NotificationItem> = []
+    dynamic var results: ReferenceCollection<Result> = []
 }
 

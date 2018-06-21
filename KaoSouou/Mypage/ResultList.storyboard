@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="68j-Yn-ls6">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Result List View Controller-->
+        <scene sceneID="pdC-F0-eY8">
+            <objects>
+                <viewController id="w9o-Re-Adb" customClass="ResultListViewController" customModule="KaoSouou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eD1-E3-cNl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0eJ-Ae-sNf">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0eJ-Ae-sNf" firstAttribute="top" secondItem="XIk-IR-54J" secondAttribute="top" id="4Pq-Iy-VT5"/>
+                            <constraint firstItem="XIk-IR-54J" firstAttribute="bottom" secondItem="0eJ-Ae-sNf" secondAttribute="bottom" id="5Kn-oM-cdC"/>
+                            <constraint firstItem="XIk-IR-54J" firstAttribute="trailing" secondItem="0eJ-Ae-sNf" secondAttribute="trailing" id="cck-S4-RkW"/>
+                            <constraint firstItem="0eJ-Ae-sNf" firstAttribute="leading" secondItem="XIk-IR-54J" secondAttribute="leading" id="ktW-6u-48n"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="XIk-IR-54J"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ghQ-Kn-gca">
+                        <barButtonItem key="leftBarButtonItem" title="閉じる" id="x02-c5-K4k">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="tapCloseButton:" destination="w9o-Re-Adb" id="FbH-8s-Ak9"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="closeButton" destination="x02-c5-K4k" id="ecc-YX-dip"/>
+                        <outlet property="tableView" destination="0eJ-Ae-sNf" id="3pi-TC-6pu"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="2Ob-ex-QLg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1317.5999999999999" y="-139.880059970015"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mK1-Hw-DyI">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="68j-Yn-ls6" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HzJ-JL-fJl">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="w9o-Re-Adb" kind="relationship" relationship="rootViewController" id="iK9-b8-lxN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DtH-Jc-hnS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="376.80000000000001" y="-140.77961019490255"/>
+        </scene>
+    </scenes>
+</document>

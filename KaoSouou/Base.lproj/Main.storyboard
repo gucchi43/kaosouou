@@ -305,28 +305,41 @@
                                     <action selector="tapCloseButton:" destination="5mr-bZ-5sX" eventType="touchUpInside" id="hXg-R3-jUB"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpL-3O-Ez6">
-                                <rect key="frame" x="321" y="32" width="30" height="30"/>
-                                <state key="normal" title="・"/>
-                                <connections>
-                                    <action selector="tapSettingButton:" destination="5mr-bZ-5sX" eventType="touchUpInside" id="31y-Ui-wj6"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="KAs-bj-9b3">
+                                <rect key="frame" x="267" y="28" width="68" height="30"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I2Z-X9-UAg">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="・"/>
+                                        <connections>
+                                            <action selector="tapBellButton:" destination="5mr-bZ-5sX" eventType="touchUpInside" id="7Kk-jg-JhF"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WpL-3O-Ez6">
+                                        <rect key="frame" x="38" y="0.0" width="30" height="30"/>
+                                        <state key="normal" title="・"/>
+                                        <connections>
+                                            <action selector="tapSettingButton:" destination="5mr-bZ-5sX" eventType="touchUpInside" id="31y-Ui-wj6"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="BSC-Wr-wQx" firstAttribute="bottom" secondItem="kuW-dk-W02" secondAttribute="bottom" constant="24" id="19H-Dv-DaG"/>
                             <constraint firstItem="OUy-rO-QCe" firstAttribute="centerX" secondItem="xeq-s7-xgp" secondAttribute="centerX" id="JAW-LO-W17"/>
-                            <constraint firstItem="BSC-Wr-wQx" firstAttribute="trailing" secondItem="WpL-3O-Ez6" secondAttribute="trailing" constant="24" id="SIH-Hi-FFJ"/>
                             <constraint firstItem="OUy-rO-QCe" firstAttribute="top" secondItem="BSC-Wr-wQx" secondAttribute="top" constant="60" id="US6-Ea-s1k"/>
-                            <constraint firstItem="WpL-3O-Ez6" firstAttribute="top" secondItem="xeq-s7-xgp" secondAttribute="top" constant="32" id="pmv-la-nbf"/>
+                            <constraint firstItem="BSC-Wr-wQx" firstAttribute="trailing" secondItem="KAs-bj-9b3" secondAttribute="trailing" constant="40" id="b4H-Ps-P3b"/>
                             <constraint firstItem="BSC-Wr-wQx" firstAttribute="trailing" secondItem="OUy-rO-QCe" secondAttribute="trailing" constant="32" id="pxh-dU-oO1"/>
                             <constraint firstItem="OUy-rO-QCe" firstAttribute="leading" secondItem="BSC-Wr-wQx" secondAttribute="leading" constant="32" id="rV5-7r-VzC"/>
+                            <constraint firstItem="KAs-bj-9b3" firstAttribute="top" secondItem="BSC-Wr-wQx" secondAttribute="top" constant="8" id="tLn-bE-7kC"/>
                             <constraint firstItem="kuW-dk-W02" firstAttribute="centerX" secondItem="xeq-s7-xgp" secondAttribute="centerX" id="wW5-mV-0Z2"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BSC-Wr-wQx"/>
                     </view>
                     <connections>
+                        <outlet property="bellButton" destination="I2Z-X9-UAg" id="2M9-uO-saS"/>
                         <outlet property="closeButton" destination="kuW-dk-W02" id="Umd-jA-t4x"/>
                         <outlet property="faceImageView" destination="2Ox-NZ-Faf" id="sa3-xP-HX2"/>
                         <outlet property="hensachiLabel" destination="tr5-2z-MWa" id="7Ye-db-8Yg"/>
