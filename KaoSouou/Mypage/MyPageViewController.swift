@@ -35,12 +35,6 @@ class MyPageViewController: UIViewController {
     }
     
     func configure() {
-        settingButton.setTitleColor(UIColor.white, for: .normal)
-        settingButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 24)
-        settingButton.setTitle(String.fontAwesomeIcon(name: .gear), for: .normal)
-        bellButton.setTitleColor(UIColor.white, for: .normal)
-        bellButton.titleLabel?.font = UIFont.fontAwesome(ofSize: 24)
-        bellButton.setTitle(String.fontAwesomeIcon(name: .bellO), for: .normal)
         if let currentUser = AccountManager.shared.currentUser{
             User.get(currentUser.id) { (user, error) in
                 if let error = error {
@@ -80,9 +74,13 @@ class MyPageViewController: UIViewController {
                 }
             }
         }
+        let profileEdit = UIAlertAction(title: "プロフィール編集", style: .default) { (action) in
+            print("プロフィール編集")
+        }
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (actiona) in
             print("キャンセル")
         }
+        alert.addAction(profileEdit)
         alert.addAction(logOut)
         alert.addAction(cancel)
         
