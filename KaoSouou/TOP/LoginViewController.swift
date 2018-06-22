@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import UserNotifications
 import FacebookLogin
 import FacebookCore
 import Firebase
@@ -60,11 +61,20 @@ class LoginViewController: UIViewController {
                     User.get(authUser.uid, block: { (user, error) in
                         if let user = user {
                             // すでにユーザーがある場合はそのままログイン
+                            user.fcmToken = Messaging.messaging().fcmToken!
                             AccountManager.shared.currentUser = user
-                            SVProgressHUD.dismiss()
-                            DispatchQueue.main.async {
-                                AppDelegate.shared.rootViewController.switchToMainScreen()
-                            }
+                            AccountManager.shared.currentUser!.update({ (error) in
+                                if let error = error {
+                                    print(error.localizedDescription)
+                                    SVProgressHUD.dismiss()
+                                    return
+                                } else {
+                                    SVProgressHUD.dismiss()
+                                    DispatchQueue.main.async {
+                                        AppDelegate.shared.rootViewController.switchToMainScreen()
+                                    }
+                                }
+                            })
                         } else {
                             // ない場合はユーザーを作る
                             self.twSignUpNewUser(newUserId: authUser.uid, session: session, success: { photoUrl in
@@ -97,6 +107,7 @@ class LoginViewController: UIViewController {
                 newUser.originId = user.userID
                 newUser.displayName = user.screenName
                 newUser.hensachi = 50
+                newUser.fcmToken = Messaging.messaging().fcmToken!
                 newUser.save { (reference, error) in
                     if let error = error {
                         print(error)
@@ -104,7 +115,18 @@ class LoginViewController: UIViewController {
                     } else {
                         print(reference)
                         AccountManager.shared.currentUser = newUser
-                        success(URL(string: user.profileImageLargeURL))
+                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in
+                            if let error = error {
+                                print(error.localizedDescription)
+                            }
+                            if granted {
+                                print("プッシュ通知ダイアログ 許可")
+                                UIApplication.shared.registerForRemoteNotifications()
+                            } else {
+                                print("プッシュ通知ダイアログ 拒否")
+                            }
+                            success(URL(string: user.profileImageLargeURL))
+                        })
                     }
                 }
             }
@@ -134,18 +156,27 @@ class LoginViewController: UIViewController {
                         User.get(authUser.uid, block: { (user, error) in
                             if let user = user {
                                 print("ログイン済み user info: ", user)
+                                user.fcmToken = Messaging.messaging().fcmToken!
                                 AccountManager.shared.currentUser = user
-                                SVProgressHUD.dismiss()
-                                DispatchQueue.main.async {
-                                    AppDelegate.shared.rootViewController.switchToMainScreen()
-                                }
+                                
+                                AccountManager.shared.currentUser!.update({ (error) in
+                                    if let error = error {
+                                        print(error.localizedDescription)
+                                        SVProgressHUD.dismiss()
+                                        return
+                                    } else {
+                                        SVProgressHUD.dismiss()
+                                        DispatchQueue.main.async {
+                                            AppDelegate.shared.rootViewController.switchToMainScreen()
+                                        }
+                                    }
+                                })
                             } else {
                                 self.fbSignUpNewUser(newUserId: authUser.uid, success: { photoUrl in
                                     // 新規登録成功
                                     SVProgressHUD.dismiss()
                                     DispatchQueue.main.async {
                                         AppDelegate.shared.rootViewController.switchToSetProfile(with: photoUrl)
-//                                        self.goToSetProfile(with: photoUrl)
                                     }
                                 }, failure: {
                                     // 新規登録失敗
@@ -200,6 +231,7 @@ class LoginViewController: UIViewController {
                         newUser.email = email
                     }
                     newUser.hensachi = 50
+                    newUser.fcmToken = Messaging.messaging().fcmToken!
                     newUser.save { (reference, error) in
                         if let error = error {
                             print(error)
@@ -207,11 +239,23 @@ class LoginViewController: UIViewController {
                         } else {
                             print(reference)
                             AccountManager.shared.currentUser = newUser
-                            if let pictureUrl = json["picture"]["data"]["url"].url{
-                                success(pictureUrl)
-                            } else {
-                                success(nil)
-                            }
+                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in
+                                if let error = error {
+                                    print(error.localizedDescription)
+                                }
+                                if granted {
+                                    print("プッシュ通知ダイアログ 許可")
+                                    UIApplication.shared.registerForRemoteNotifications()
+                                } else {
+                                    print("プッシュ通知ダイアログ 拒否")
+                                }
+                                if let pictureUrl = json["picture"]["data"]["url"].url{
+                                    success(pictureUrl)
+                                } else {
+                                    success(nil)
+                                }
+                            })
+                            
                         }
                     }
                 } else {

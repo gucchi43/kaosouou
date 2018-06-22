@@ -8,6 +8,7 @@ target 'KaoSouou' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
   pod 'Pring'
 
   pod 'FacebookCore'
