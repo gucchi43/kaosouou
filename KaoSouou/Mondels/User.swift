@@ -22,5 +22,6 @@ class User : Object{
     dynamic var loveUsers: ReferenceCollection<User> = []
     dynamic var notificationItems: ReferenceCollection<NotificationItem> = []
     dynamic var results: ReferenceCollection<Result> = []
+    dynamic var fcmToken: String = ""
 }
 
