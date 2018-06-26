@@ -23,7 +23,7 @@ class NotificationTableViewCell: UITableViewCell, Nibable {
     }
     
     func configure(with notificationItem: NotificationItem) {
-        messageLabel.text = String(notificationItem.num) + "位に選ばれました"
+        messageLabel.text = notificationItem.num + "位に選ばれました"
         agoLabel.text = notificationItem.createdAt.convertAgoText()
         notificationItem.from.get { (fromUser, error) in
             if let fromUser = fromUser {
