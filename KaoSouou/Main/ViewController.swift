@@ -65,7 +65,6 @@ class ViewController: UIViewController {
             .where(\User.gender, isEqualTo: genderNum)
             .limit(to: 9)
             .dataSource()
-            
             .onCompleted({ (snapshot, userArray) in
                 
                 print("userArray : ",  userArray)
@@ -270,7 +269,7 @@ extension ViewController {
                 let notificationItem = NotificationItem()
                 notificationItem.from.set(AccountManager.shared.currentUser!)
                 notificationItem.to.set(user)
-                notificationItem.num = numArray[index]
+                notificationItem.num = String(numArray[index])
                 notificationItem.result.set(result)
                 user.results.insert(result)
                 user.notificationItems.insert(notificationItem)
