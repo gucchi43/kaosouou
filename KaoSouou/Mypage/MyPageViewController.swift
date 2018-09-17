@@ -10,17 +10,18 @@ import UIKit
 import Pring
 import Firebase
 import Kingfisher
+import MIBadgeButton_Swift
 import FontAwesome_swift
 
 class MyPageViewController: UIViewController {
-
+    
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var faceImageView: UIImageView!
     @IBOutlet weak var hensachiLabel: UILabel!
     @IBOutlet weak var kaisuLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
-    @IBOutlet weak var bellButton: UIButton!
+    @IBOutlet weak var bellButton: MIBadgeButton!
     
     
     override func viewDidLoad() {
@@ -31,6 +32,7 @@ class MyPageViewController: UIViewController {
         super.viewWillAppear(animated)
         
         setButton()
+        loadBadge()
         configure()
     }
     
@@ -58,6 +60,14 @@ class MyPageViewController: UIViewController {
         closeButton.layer.borderWidth = 1
         closeButton.layer.borderColor = UIColor.white.cgColor
         closeButton.clipsToBounds = true
+    }
+    
+    func loadBadge() {
+        guard let currentUser = AccountManager.shared.currentUser else { return }
+        print("badgeの生存確認 : ",currentUser.badgeNum)
+        if currentUser.badgeNum > 0{
+            bellButton.badgeString = String(currentUser.badgeNum)
+        }
     }
     
     @IBAction func tapSettingButton(_ sender: Any) {
@@ -96,7 +106,7 @@ class MyPageViewController: UIViewController {
                 return
             } else {
                 try? Auth.auth().signOut()
-//                AccountManager.shared.currentUser = nil
+                //                AccountManager.shared.currentUser = nil
                 completion()
             }
         })

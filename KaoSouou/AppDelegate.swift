@@ -43,6 +43,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             NSAttributedStringKey.foregroundColor: UIColor.white
         ]
         UINavigationBar.appearance().titleTextAttributes = attrs
+        
+        UIApplication.shared.applicationIconBadgeNumber = 0
         return true
     }
     
@@ -84,9 +86,12 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         
+        let content = notification.request.content
         // Push Notifications のmessageを取得
+        let badge = content.badge
         let body = notification.request.content.body
-        print("\(body)")
+        print("userNotificationCenterのwillPresentから: \(body), \(badge)")
+        print("content : ", content)
         
         //　iphone7 haptic feedback
         let feedbackGenerator = UINotificationFeedbackGenerator()
@@ -96,11 +101,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate), nil)
         
         completionHandler([])
-        //        // ViewController上にAlertを表示させる
-        //        let appDel = UIApplication.shared.delegate as! AppDelegate
-        //        if let vc:ViewController = appDel.window?.rootViewController as? ViewController {
-        //            vc.alertPushNotifications(bodyMessage: message)
-        //        }
+                // ViewController上にAlertを表示させる
+//                let appDel = UIApplication.shared.delegate as! AppDelegate
+//                if let vc:ViewController = appDel.window?.rootViewController as? ViewController {
+//                    vc.alertPushNotifications(bodyMessage: body)
+//                }
     }
     
     // background で受信してアプリを起動
@@ -108,9 +113,11 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
                                 didReceive response: UNNotificationResponse,
                                 withCompletionHandler completionHandler: @escaping () -> Void) {
         // Push Notifications のmessageを取得
+        let content = response.notification.request.content
+        let badge = content.badge
         let body = response.notification.request.content.body
-        print("\(body)")
-        
+        print("userNotificationCenterのdidReceiveから: \(body), \(badge)")
+        print("content : ", content)
         completionHandler()
         //        // ViewController上にAlertを表示させる
         //        let appDel = UIApplication.shared.delegate as! AppDelegate

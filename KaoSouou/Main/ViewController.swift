@@ -18,10 +18,13 @@ class ViewController: UIViewController {
     @IBOutlet weak var mypageButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    // TEST データがない時用の仮データ
     var humanArray = [UIImage]()
     var girlsArray =  [#imageLiteral(resourceName: "g2"),#imageLiteral(resourceName: "g3"),#imageLiteral(resourceName: "g8"),#imageLiteral(resourceName: "g0"),#imageLiteral(resourceName: "g5"),#imageLiteral(resourceName: "g4"),#imageLiteral(resourceName: "g6"),#imageLiteral(resourceName: "g7"),#imageLiteral(resourceName: "g1")]
     var mensArray = [#imageLiteral(resourceName: "m3"),#imageLiteral(resourceName: "m0"),#imageLiteral(resourceName: "m4"),#imageLiteral(resourceName: "m6"),#imageLiteral(resourceName: "m2"),#imageLiteral(resourceName: "m1"),#imageLiteral(resourceName: "m5"),#imageLiteral(resourceName: "m7"),#imageLiteral(resourceName: "m8")]
+    
     var kaoUserArray = [User]()
+    var currentKaoUserArray = [User]()
     var numArray = [0,0,0,0,0,0,0,0,0] //9人の順位が入っていく 例) [9,1,2,3,6,4,7,5,8]
     var selectNum = 0
     var firstUser: User?
@@ -32,54 +35,15 @@ class ViewController: UIViewController {
     var oldSelectCell: humanCell?
     
     var userDataSourse: DataSource<User>?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setButton()
+        
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        setButton()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        let currentUser = AccountManager.shared.currentUser!
-        if currentUser.gender == 2 {
-            getUserArray(with: 1)
-            humanArray = mensArray
-        } else {
-            getUserArray(with: 2)
-            humanArray = girlsArray
-        }
-    }
-    
-    func getUserArray(with genderNum: Int) {
-        kaoUserArray.removeAll()
-        userDataSourse = User
-            .order(by: \User.createdAt)
-            .where(\User.gender, isEqualTo: genderNum)
-            .limit(to: 9)
-            .dataSource()
-            .onCompleted({ (snapshot, userArray) in
-                
-                print("userArray : ",  userArray)
-                
-                if userArray.count >= 9 {
-                    self.kaoUserArray = userArray
-                    self.collectionView.reloadData()
-                } else {
-                    self.kaoUserArray = userArray
-                    self.collectionView.reloadData()
-                }
-            })
-        .listen()
-    }
-    
     func setButton() {
         mypageButton.layer.cornerRadius = mypageButton.bounds.height / 2
         mypageButton.layer.borderWidth = 1
@@ -90,6 +54,71 @@ class ViewController: UIViewController {
         resetButton.layer.borderWidth = 1
         resetButton.layer.borderColor = UIColor.white.cgColor
         resetButton.clipsToBounds = true
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // ローカルのUserのArray(kaoUserArray)がまだ9あればそのまま使う。なければまた取ってくる。
+        // 本番は一日あたりに選択できる回数を制限する場合はここに何かしらの追記が必要
+        guard let currentUser = AccountManager.shared.currentUser else { return } // TODO: elseの時のアラート出す
+        if kaoUserArray.count >= 9 {
+            createCurrentKaoUserArray()
+            collectionView.reloadData()
+        } else {
+            if currentUser.gender == 2 {
+                humanArray = mensArray
+                getUserArray(with: 1)
+            } else {
+                humanArray = girlsArray
+                getUserArray(with: 2)
+            }
+        }
+    }
+    
+    // 全Userを性別でwhereかけて取ってくる
+    // 取ってきた後、arrayをshuffleしてcollectionViewをリロード
+    func getUserArray(with genderNum: Int) {
+        kaoUserArray.removeAll()
+        userDataSourse = User
+            .where(\User.gender, isEqualTo: genderNum)
+            .order(by: \User.createdAt)
+            .dataSource()
+            .onCompleted({ (snapshot, userArray) in
+                print("userArray : ",  userArray)
+                if userArray.count >= 9 {
+                    self.kaoUserArray = userArray
+                    self.shuffleArray()
+                    self.createCurrentKaoUserArray()
+                    self.collectionView.reloadData()
+                } else {
+                    self.kaoUserArray = userArray
+                    self.shuffleArray()
+                    self.createCurrentKaoUserArray()
+                    self.collectionView.reloadData()
+                }
+            })
+        .listen()
+    }
+    
+    func shuffleArray() {
+        for i in 0 ..< kaoUserArray.count{
+            let r = Int(arc4random_uniform(UInt32(kaoUserArray.count - i))) + i
+            kaoUserArray.swapAt(i, r)
+        }
+    }
+    
+    func createCurrentKaoUserArray() {
+        currentKaoUserArray = Array(kaoUserArray.prefix(9))
+        kaoUserArray = Array(kaoUserArray.suffix(kaoUserArray.count - currentKaoUserArray.count))
+        
+        print("currentKaoUserArray :", currentKaoUserArray)
+        print("kaoUserArray :", kaoUserArray)
+        
     }
     
     func getHensachi(with num: Int) -> Int {
@@ -143,8 +172,18 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+//        let cell = collectionView.dequeueReusableCell(with: humanCell.self, for: indexPath)
+//        if let user = kaoUserArray[safe: indexPath.row] {
+//            cell.configure(with: user, num: self.numArray[indexPath.row])
+//        } else {
+//            cell.configure(with: humanArray[indexPath.row], num: numArray[indexPath.row])
+//        }
+//        return cell
+        
+        // kaoUserArrayをローカルで使い回すパターン
+        // currentKaoUserArrayに分けてそれを使う
         let cell = collectionView.dequeueReusableCell(with: humanCell.self, for: indexPath)
-        if let user = kaoUserArray[safe: indexPath.row] {
+        if let user = currentKaoUserArray[safe: indexPath.row] {
             cell.configure(with: user, num: self.numArray[indexPath.row])
         } else {
             cell.configure(with: humanArray[indexPath.row], num: numArray[indexPath.row])
@@ -175,7 +214,7 @@ extension ViewController: UICollectionViewDelegate {
             selectNum = currentNum - 1
         }
         if selectNum == 1 {
-            if let user = kaoUserArray[safe: indexPath.row] {
+            if let user = currentKaoUserArray[safe: indexPath.row] {
                 self.firstUser = user
             }
             self.firstFace = cell.imageView.image
@@ -221,7 +260,7 @@ extension ViewController {
     
     func updateUserHensachi() {
         let result = Result()
-        for (index, user) in kaoUserArray.enumerated() {
+        for (index, user) in currentKaoUserArray.enumerated() {
             print("index : ", index)
             print("user : ", user)
             let oldHensachi = user.hensachi
@@ -265,7 +304,8 @@ extension ViewController {
             default:
                 result.seventh.set(user)
             }
-            for (index, user) in kaoUserArray.enumerated() {
+            // 通知データ発行
+            for (index, user) in currentKaoUserArray.enumerated() {
                 let notificationItem = NotificationItem()
                 notificationItem.from.set(AccountManager.shared.currentUser!)
                 notificationItem.to.set(user)

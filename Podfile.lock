@@ -110,6 +110,7 @@ PODS:
   - GTMSessionFetcher/Core (1.1.15)
   - Kingfisher (4.8.0)
   - leveldb-library (1.20)
+  - MIBadgeButton-Swift (0.5)
   - nanopb (0.3.8):
     - nanopb/decode (= 0.3.8)
     - nanopb/encode (= 0.3.8)
@@ -140,6 +141,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - FontAwesome.swift
   - Kingfisher (~> 4.0)
+  - MIBadgeButton-Swift (from `https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git`, branch `master`)
   - Pring
   - SVProgressHUD
   - SwiftDate
@@ -185,6 +187,16 @@ SPEC REPOS:
     - TwitterCore
     - TwitterKit
 
+EXTERNAL SOURCES:
+  MIBadgeButton-Swift:
+    :branch: master
+    :git: https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git
+
+CHECKOUT OPTIONS:
+  MIBadgeButton-Swift:
+    :commit: 3c2638d2e6e46ec2e6dd978d8ada8863df3df5e6
+    :git: https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git
+
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: c46efb47593135382bc0934196f16d2f726f5f36
@@ -214,6 +226,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
   Kingfisher: 976d828df2b24834c6a3f2fc4d82cdbd26552be1
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  MIBadgeButton-Swift: 9e57309b00b168d75ca8fecb45bc75124a8ffddf
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Pring: f19fea218069951baf45858effee0acfffe229f9
   Protobuf: 0fc0ad8bec688b2a3017a139953e01374fedbd5f
@@ -223,6 +236,6 @@ SPEC CHECKSUMS:
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: ffbca995bc91bdcd6bbddc0c5bc560f637474613
+PODFILE CHECKSUM: 24742b7e37d4621e65a3da8c69dcba537797f49e
 
 COCOAPODS: 1.5.2

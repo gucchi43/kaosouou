@@ -23,5 +23,6 @@ class User : Object{
     dynamic var notificationItems: ReferenceCollection<NotificationItem> = []
     dynamic var results: ReferenceCollection<Result> = []
     dynamic var fcmToken: String = ""
+    dynamic var badgeNum: Int = 0
 }
 

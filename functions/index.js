@@ -14,6 +14,8 @@ exports.sendFollowerNotification = functions.firestore.document('version/1/user/
         let notificationItem;
         let toUser;
         let toGender;
+        let toBadgeNum;
+        let currentBadgeNum;
         let fromUser;
         let num;
         let token;
@@ -25,6 +27,8 @@ exports.sendFollowerNotification = functions.firestore.document('version/1/user/
                 num = notificationItem.data().num;
                 toUser = results[1];
                 toGender = toUser.data().gender;
+                currentBadgeNum = toUser.data().badgeNum;
+                console.log("currentBadgeNum :", currentBadgeNum);
                 token = toUser.data().fcmToken;
                 const getFromUserPromise = notificationItem.data().from.get();
                 return Promise.all([getFromUserPromise])
@@ -35,24 +39,51 @@ exports.sendFollowerNotification = functions.firestore.document('version/1/user/
                             payload = {
                                 notification: {
                                     title: fromUserName,
-                                    body: 'あなたは' + num + '番目にイケメンだわ！'
+                                    body: 'あなたは' + num + '番目にイケメンだわ！',
+                                    badge: String(currentBadgeNum + 1),
+                                    sound: 'scrach.m4a'
                                 }
+                                // data: {
+                                //     badge: '1',
+                                //     notificationId: notificationItemId
+                                // }
                             };
                         } else {
                             payload = {
                                 notification: {
                                     title: fromUserName,
-                                    body: '君は' + num + '番目にカワイイよ！'
+                                    body: '君は' + num + '番目にカワイイよ！',
+                                    badge: String(currentBadgeNum + 1),
+                                    sound: 'scrach.m4a'
                                 }
+                                // data: {
+                                //     badge: '1',
+                                //     notificationId: notificationItemId
+                                // }
                             };
                         }
-                        return admin.messaging().sendToDevice(token, payload)
+
+                        
+                        // return toUser.set({
+                        //     badgeNum: currentBadgeNum + 1
+                        // })
+                        return admin.firestore().collection('version/1/user').doc(toUser.data().id).update
+                            badgeNum: currentBadgeNum + 1
+                            // console.log("badgeNum udpate!!!", currentBadgeNum + 1);
+                        })
                             .then(pushResponse => {
-                                return console.log("Successfully sent message:", pushResponse);
-                            })
-                            .catch(error => {
-                                console.log("Error sending message:", error);
-                            });
+                                console.log("Successfully update toUser:", pushResponse);
+                                return admin.messaging.sendToDevice(token, payload)
+                                .then(pushResponse => {
+                                    return console.log("Successfully sent message:", pushResponse);
+                                })
+                                .catch(error => {
+                                    console.log("Error sending message:", error);
+                                });
+                        })
+                        .catch(error => {
+                            console.log("Error update toUser:", error);
+                        });
                     })
             })
     });

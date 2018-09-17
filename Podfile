@@ -21,6 +21,8 @@ target 'KaoSouou' do
   pod 'FontAwesome.swift'
   pod 'DZNEmptyDataSet'
   pod 'SwiftDate'
+  pod "MIBadgeButton-Swift", :git => 'https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git', :branch => 'master'
+
 
   pod 'TwitterKit'
   pod 'Fabric'

@@ -27,6 +27,7 @@
 		031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031A956420D16537008F88D5 /* SetProfile.storyboard */; };
 		031A956720D16CD8008F88D5 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956620D16CD8008F88D5 /* Extention.swift */; };
 		031A956920D538E5008F88D5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956820D538E5008F88D5 /* UIImageView+Extension.swift */; };
+		0346873020E2B21500F1B896 /* scrach.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0346872F20E2B21500F1B896 /* scrach.m4a */; };
 		03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03782C4F20B0D641006D68EB /* GoogleService-Info.plist */; };
 		03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03782C5120B1A7D1006D68EB /* Splash.storyboard */; };
 		03782C5420B1A80A006D68EB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03782C5320B1A809006D68EB /* SplashViewController.swift */; };
@@ -90,6 +91,7 @@
 		031A956420D16537008F88D5 /* SetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfile.storyboard; sourceTree = "<group>"; };
 		031A956620D16CD8008F88D5 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 		031A956820D538E5008F88D5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
+		0346872F20E2B21500F1B896 /* scrach.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = scrach.m4a; path = ../../../../Downloads/scrach.m4a; sourceTree = "<group>"; };
 		03782C4F20B0D641006D68EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03782C5120B1A7D1006D68EB /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		03782C5320B1A809006D68EB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
@@ -247,6 +249,7 @@
 			children = (
 				030F891220DD127F009A0657 /* KaoSouou.entitlements */,
 				03BBDCD520D7FFC3008A3E8C /* Assets.xcassets */,
+				0346872F20E2B21500F1B896 /* scrach.m4a */,
 				03F62A872039D79F004DBFB6 /* AppDelegate.swift */,
 				03F62A8B2039D79F004DBFB6 /* Main.storyboard */,
 				031A956620D16CD8008F88D5 /* Extention.swift */,
@@ -428,6 +431,7 @@
 				030F88FF20DA7BC5009A0657 /* NotificationList.storyboard in Resources */,
 				030F890B20DB814D009A0657 /* ResultList.storyboard in Resources */,
 				031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */,
+				0346873020E2B21500F1B896 /* scrach.m4a in Resources */,
 				030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */,
 				03F62A8D2039D79F004DBFB6 /* Main.storyboard in Resources */,
 				03BBDCD620D7FFC3008A3E8C /* Assets.xcassets in Resources */,
@@ -528,6 +532,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
@@ -556,6 +561,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
