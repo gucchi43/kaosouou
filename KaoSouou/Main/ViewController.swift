@@ -150,6 +150,13 @@ class ViewController: UIViewController {
         numArray = [0,0,0,0,0,0,0,0,0]
         collectionView.reloadData()
     }
+    
+    @IBAction func tapMypageButton(_ sender: Any) {
+        let sb = UIStoryboard(name: "MyPage", bundle: nil)
+        let vc = sb.instantiateInitialViewController() as! MyPageViewController
+        self.show(vc, sender: nil)
+    }
+    
 }
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
@@ -230,7 +237,15 @@ extension ViewController: UICollectionViewDelegate {
                 SVProgressHUD.show(withStatus: "facepower更新中")
                 self.updateUserHensachi()
                 SVProgressHUD.dismiss()
-                self.performSegue(withIdentifier: "presentPrintFacePower", sender: nil)
+                let sb = UIStoryboard(name: "PrintFacePower", bundle: nil)
+                let vc = sb.instantiateInitialViewController() as! PrintFacePowerViewController
+                // リセット
+                self.selectNum = 0
+                self.numArray = [0,0,0,0,0,0,0,0,0]
+                vc.faceImage = self.firstFace
+                
+                self.show(vc, sender: nil)
+                
                 print("採点！")
             }) { (error) in
                 SVProgressHUD.showError(withStatus: "データ送信に失敗しました")

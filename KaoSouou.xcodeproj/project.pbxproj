@@ -32,6 +32,8 @@
 		03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03782C5120B1A7D1006D68EB /* Splash.storyboard */; };
 		03782C5420B1A80A006D68EB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03782C5320B1A809006D68EB /* SplashViewController.swift */; };
 		038BCBD820AD4E2700F5BFD6 /* Array+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038BCBD720AD4E2700F5BFD6 /* Array+Extention.swift */; };
+		03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */; };
+		03B47102214FCD8300F9B5CA /* PrintFacePower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B47101214FCD8300F9B5CA /* PrintFacePower.storyboard */; };
 		03BBDCD620D7FFC3008A3E8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03BBDCD520D7FFC3008A3E8C /* Assets.xcassets */; };
 		03F475A92059718800EB31FA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F475A82059718800EB31FA /* Login.storyboard */; };
 		03F475AB205971EE00EB31FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F475AA205971EE00EB31FA /* LoginViewController.swift */; };
@@ -97,6 +99,8 @@
 		03782C5320B1A809006D68EB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		038AD143E5C7FEAB52D8BC19 /* Pods-KaoSououTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoSououTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaoSououTests/Pods-KaoSououTests.debug.xcconfig"; sourceTree = "<group>"; };
 		038BCBD720AD4E2700F5BFD6 /* Array+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extention.swift"; sourceTree = "<group>"; };
+		03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
+		03B47101214FCD8300F9B5CA /* PrintFacePower.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrintFacePower.storyboard; sourceTree = "<group>"; };
 		03BBDCD520D7FFC3008A3E8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03F475A82059718800EB31FA /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = KaoSouou/TOP/Login.storyboard; sourceTree = SOURCE_ROOT; };
 		03F475AA205971EE00EB31FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -176,6 +180,7 @@
 			isa = PBXGroup;
 			children = (
 				030179C720A09A65002800F8 /* MyPageViewController.swift */,
+				03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */,
 				030F88FE20DA7BC5009A0657 /* NotificationList.storyboard */,
 				030F890020DA7BD3009A0657 /* NotificationListViewController.swift */,
 				030F890320DA80F6009A0657 /* NotificationTableViewCell.xib */,
@@ -207,6 +212,7 @@
 				03F62A892039D79F004DBFB6 /* ViewController.swift */,
 				03F62AB52039DAC5004DBFB6 /* humanCell.swift */,
 				03F62ABB203A046A004DBFB6 /* PrintFacePowerViewController.swift */,
+				03B47101214FCD8300F9B5CA /* PrintFacePower.storyboard */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -428,12 +434,14 @@
 				030F891120DB8192009A0657 /* ResultTableViewCell.xib in Resources */,
 				03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */,
 				03F475A92059718800EB31FA /* Login.storyboard in Resources */,
+				03B47102214FCD8300F9B5CA /* PrintFacePower.storyboard in Resources */,
 				030F88FF20DA7BC5009A0657 /* NotificationList.storyboard in Resources */,
 				030F890B20DB814D009A0657 /* ResultList.storyboard in Resources */,
 				031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */,
 				0346873020E2B21500F1B896 /* scrach.m4a in Resources */,
 				030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */,
 				03F62A8D2039D79F004DBFB6 /* Main.storyboard in Resources */,
+				03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */,
 				03BBDCD620D7FFC3008A3E8C /* Assets.xcassets in Resources */,
 				03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */,
 			);
