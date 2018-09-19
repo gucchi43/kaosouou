@@ -34,6 +34,7 @@
 		038BCBD820AD4E2700F5BFD6 /* Array+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038BCBD720AD4E2700F5BFD6 /* Array+Extention.swift */; };
 		03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */; };
 		03B47102214FCD8300F9B5CA /* PrintFacePower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B47101214FCD8300F9B5CA /* PrintFacePower.storyboard */; };
+		03B47104214FD25D00F9B5CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B47103214FD25C00F9B5CA /* Main.storyboard */; };
 		03BBDCD620D7FFC3008A3E8C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03BBDCD520D7FFC3008A3E8C /* Assets.xcassets */; };
 		03F475A92059718800EB31FA /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F475A82059718800EB31FA /* Login.storyboard */; };
 		03F475AB205971EE00EB31FA /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F475AA205971EE00EB31FA /* LoginViewController.swift */; };
@@ -41,7 +42,6 @@
 		03F475AF20597BC700EB31FA /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F475AE20597BC700EB31FA /* AccountManager.swift */; };
 		03F62A882039D79F004DBFB6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F62A872039D79F004DBFB6 /* AppDelegate.swift */; };
 		03F62A8A2039D79F004DBFB6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F62A892039D79F004DBFB6 /* ViewController.swift */; };
-		03F62A8D2039D79F004DBFB6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F62A8B2039D79F004DBFB6 /* Main.storyboard */; };
 		03F62A922039D79F004DBFB6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F62A902039D79F004DBFB6 /* LaunchScreen.storyboard */; };
 		03F62A9D2039D7A0004DBFB6 /* KaoSououTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F62A9C2039D7A0004DBFB6 /* KaoSououTests.swift */; };
 		03F62AA82039D7A0004DBFB6 /* KaoSououUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F62AA72039D7A0004DBFB6 /* KaoSououUITests.swift */; };
@@ -101,6 +101,7 @@
 		038BCBD720AD4E2700F5BFD6 /* Array+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extention.swift"; sourceTree = "<group>"; };
 		03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
 		03B47101214FCD8300F9B5CA /* PrintFacePower.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = PrintFacePower.storyboard; sourceTree = "<group>"; };
+		03B47103214FD25C00F9B5CA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		03BBDCD520D7FFC3008A3E8C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		03F475A82059718800EB31FA /* Login.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Login.storyboard; path = KaoSouou/TOP/Login.storyboard; sourceTree = SOURCE_ROOT; };
 		03F475AA205971EE00EB31FA /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -109,7 +110,6 @@
 		03F62A842039D79F004DBFB6 /* KaoSouou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KaoSouou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03F62A872039D79F004DBFB6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		03F62A892039D79F004DBFB6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		03F62A8C2039D79F004DBFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		03F62A912039D79F004DBFB6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		03F62A932039D79F004DBFB6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03F62A982039D7A0004DBFB6 /* KaoSououTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KaoSououTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +196,7 @@
 		038BCBD420AD486900F5BFD6 /* Extention */ = {
 			isa = PBXGroup;
 			children = (
+				031A956620D16CD8008F88D5 /* Extention.swift */,
 				03F62AB72039DAF9004DBFB6 /* UICollectionView+Extension.swift */,
 				030F890620DA8160009A0657 /* UITableView+Extension.swift */,
 				030F890820DAC676009A0657 /* Date+Extension.swift */,
@@ -209,6 +210,7 @@
 		038BCBD520AD488600F5BFD6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				03B47103214FD25C00F9B5CA /* Main.storyboard */,
 				03F62A892039D79F004DBFB6 /* ViewController.swift */,
 				03F62AB52039DAC5004DBFB6 /* humanCell.swift */,
 				03F62ABB203A046A004DBFB6 /* PrintFacePowerViewController.swift */,
@@ -257,8 +259,6 @@
 				03BBDCD520D7FFC3008A3E8C /* Assets.xcassets */,
 				0346872F20E2B21500F1B896 /* scrach.m4a */,
 				03F62A872039D79F004DBFB6 /* AppDelegate.swift */,
-				03F62A8B2039D79F004DBFB6 /* Main.storyboard */,
-				031A956620D16CD8008F88D5 /* Extention.swift */,
 				038BCBD620AD48A400F5BFD6 /* Mondels */,
 				038BCBD420AD486900F5BFD6 /* Extention */,
 				038BCBD520AD488600F5BFD6 /* Main */,
@@ -440,7 +440,7 @@
 				031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */,
 				0346873020E2B21500F1B896 /* scrach.m4a in Resources */,
 				030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */,
-				03F62A8D2039D79F004DBFB6 /* Main.storyboard in Resources */,
+				03B47104214FD25D00F9B5CA /* Main.storyboard in Resources */,
 				03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */,
 				03BBDCD620D7FFC3008A3E8C /* Assets.xcassets in Resources */,
 				03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */,
@@ -542,6 +542,7 @@
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftDate/SwiftDate.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
@@ -571,6 +572,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftDate.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
@@ -673,14 +675,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		03F62A8B2039D79F004DBFB6 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				03F62A8C2039D79F004DBFB6 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		03F62A902039D79F004DBFB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

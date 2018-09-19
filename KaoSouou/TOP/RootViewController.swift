@@ -71,6 +71,7 @@ final class RootViewController: UIViewController {
     func switchToSetProfile(with photoUrl: URL?) {
         let storyboard = UIStoryboard(name: "SetProfile", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! SetProfileViewController
+        viewController.currentType = .initial
         if let photoUrl = photoUrl {
             viewController.photoUrl = photoUrl
         }

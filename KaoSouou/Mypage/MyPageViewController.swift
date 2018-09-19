@@ -23,36 +23,19 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var bellButton: MIBadgeButton!
     
+    var userDataSourse: DataSource<User>?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getUserDataSource()
     }
     
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         setButton()
         loadBadge()
-        configure()
-    }
-    
-    func configure() {
-        if let currentUser = AccountManager.shared.currentUser{
-            User.get(currentUser.id) { (user, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                } else {
-                    if currentUser.gender == 2 {
-                        self.userNameLabel.text = "💁‍♀️ \(user!.displayName)"
-                    } else {
-                        self.userNameLabel.text = "💁‍♂️ \(user!.displayName)"
-                    }
-                    self.faceImageView.loadUserImageView(with: user!)
-                    self.hensachiLabel.text = String(user!.hensachi)
-                    self.kaisuLabel.text = String(user!.kaisu)
-                }
-            }
-        }
     }
     
     func setButton() {
@@ -61,6 +44,27 @@ class MyPageViewController: UIViewController {
         closeButton.layer.borderColor = UIColor.white.cgColor
         closeButton.clipsToBounds = true
     }
+    
+    func getUserDataSource() {
+        guard let currentUser = AccountManager.shared.currentUser else { return }
+        userDataSourse = User.where(\User.originId, isEqualTo: currentUser.originId).dataSource().on({ (snapShot, change) in
+            self.loadData()
+        }).listen()
+    }
+    
+    func loadData() {
+        guard let userDataSourse = userDataSourse else { return }
+        let currentUser = userDataSourse.first!
+        if currentUser.gender == 2 {
+            self.self.userNameLabel.text = "💁‍♀️ \(currentUser.displayName)"
+        } else {
+            self.self.userNameLabel.text = "💁‍♂️ \(currentUser.displayName)"
+        }
+        self.faceImageView.loadUserImageView(with: currentUser)
+        self.hensachiLabel.text = String(currentUser.hensachi)
+        self.kaisuLabel.text = String(currentUser.kaisu)
+    }
+    
     
     func loadBadge() {
         guard let currentUser = AccountManager.shared.currentUser else { return }
@@ -86,6 +90,10 @@ class MyPageViewController: UIViewController {
         }
         let profileEdit = UIAlertAction(title: "プロフィール編集", style: .default) { (action) in
             print("プロフィール編集")
+            let sb = UIStoryboard(name: "SetProfile", bundle: nil)
+            let vc = sb.instantiateInitialViewController() as! SetProfileViewController
+            vc.currentType = .edit
+            self.show(vc, sender: nil)
         }
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (actiona) in
             print("キャンセル")
