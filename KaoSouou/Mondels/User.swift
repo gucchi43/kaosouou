@@ -16,7 +16,7 @@ class User : Object{
     dynamic var displayName: String = ""
     dynamic var email: String = ""
     dynamic var photoFile: File?
-    dynamic var hensachi: Int = 0
+    dynamic var hensachi: Double = 0
     dynamic var gender: Int = 0
     dynamic var kaisu: Int = 0
     dynamic var loveUsers: ReferenceCollection<User> = []

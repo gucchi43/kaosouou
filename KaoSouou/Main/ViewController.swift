@@ -121,11 +121,11 @@ class ViewController: UIViewController {
         
     }
     
-    func getHensachi(with num: Int) -> Int {
+    func getHensachi(with num: Int) -> Double {
         let juni = numArray[num]
         let tensu = Double(8 - juni) * 12.5
         let heikin = Double(45)
-        let hensachi = Int(50 + (tensu - heikin) / 2)
+        let hensachi = 50 + (tensu - heikin) / 2
         
         print("num : ", num)
         print("juni : ", juni)
