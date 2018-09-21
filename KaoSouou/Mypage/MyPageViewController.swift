@@ -23,6 +23,11 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var bellButton: MIBadgeButton!
     
+    @IBOutlet weak var firstNumImageView: UIImageView!
+    @IBOutlet weak var secondNumImageView: UIImageView!
+    @IBOutlet weak var thirdNumImageView: UIImageView!
+    @IBOutlet weak var dotImageView: UIImageView!
+    
     var userDataSourse: DataSource<User>?
     
     override func viewDidLoad() {
@@ -63,6 +68,7 @@ class MyPageViewController: UIViewController {
         self.faceImageView.loadUserImageView(with: currentUser)
         self.hensachiLabel.text = String(currentUser.hensachi.shisyagonyu())
         self.kaisuLabel.text = String(currentUser.kaisu)
+        setNeon(hensachi: currentUser.hensachi.shisyagonyu())
     }
     
     
@@ -139,6 +145,26 @@ class MyPageViewController: UIViewController {
                 completion()
             }
         })
+    }
+    
+    func setNeon(hensachi: Double) {
+        guard let user = AccountManager.shared.currentUser else { return }
+        let firstNum = hensachi / 10
+        let secondNum = hensachi.truncatingRemainder(dividingBy: 10) / 1
+        let thirdNum = hensachi.truncatingRemainder(dividingBy: 1)
+        var key = "j"
+        if user.gender == 2 {
+            //女子
+            key = "j"
+//            key = "d"
+        } else {
+            //男子
+            key = "d"
+        }
+        firstNumImageView.image = UIImage(named: key + String(firstNum))
+        secondNumImageView.image = UIImage(named: key + String(secondNum))
+        thirdNumImageView.image = UIImage(named: key + String(thirdNum))
+        dotImageView.image = UIImage(named: key + "dot")
     }
     
     @IBAction func tapCloseButton(_ sender: Any) {
