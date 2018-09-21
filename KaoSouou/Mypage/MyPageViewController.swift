@@ -61,7 +61,7 @@ class MyPageViewController: UIViewController {
             self.self.userNameLabel.text = "💁‍♂️ \(currentUser.displayName)"
         }
         self.faceImageView.loadUserImageView(with: currentUser)
-        self.hensachiLabel.text = String(currentUser.hensachi)
+        self.hensachiLabel.text = String(currentUser.hensachi.shisyagonyu())
         self.kaisuLabel.text = String(currentUser.kaisu)
     }
     
@@ -88,6 +88,7 @@ class MyPageViewController: UIViewController {
                 }
             }
         }
+        
         let profileEdit = UIAlertAction(title: "プロフィール編集", style: .default) { (action) in
             print("プロフィール編集")
             let sb = UIStoryboard(name: "SetProfile", bundle: nil)
@@ -95,10 +96,30 @@ class MyPageViewController: UIViewController {
             vc.currentType = .edit
             self.show(vc, sender: nil)
         }
+        
+        let tutorial = UIAlertAction(title: "使い方", style: .default) { (action) in
+            print("使い方")
+//            let sb = UIStoryboard(name: "SetProfile", bundle: nil)
+//            let vc = sb.instantiateInitialViewController() as! SetProfileViewController
+//            vc.currentType = .edit
+//            self.show(vc, sender: nil)
+        }
+        
+        let otherMenu = UIAlertAction(title: "その他", style: .default) { (action) in
+            print("その他")
+//            let sb = UIStoryboard(name: "SetProfile", bundle: nil)
+//            let vc = sb.instantiateInitialViewController() as! SetProfileViewController
+//            vc.currentType = .edit
+//            self.show(vc, sender: nil)
+        }
+        
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (actiona) in
             print("キャンセル")
         }
+        
         alert.addAction(profileEdit)
+        alert.addAction(tutorial)
+        alert.addAction(otherMenu)
         alert.addAction(logOut)
         alert.addAction(cancel)
         
@@ -124,6 +145,16 @@ class MyPageViewController: UIViewController {
         self.dismiss(animated: true) {
             print("Mypage Close")
         }
+    }
+    
+    @IBAction func tapLovesButton(_ sender: Any) {
+        print("プロフィール編集")
+        let sb = UIStoryboard(name: "LoveUserList", bundle: nil)
+        let nc = sb.instantiateInitialViewController() as! UINavigationController
+        self.present(nc, animated: true) {
+            print("go to loveUserList")
+        }
+        
     }
     
     @IBAction func tapBellButton(_ sender: Any) {

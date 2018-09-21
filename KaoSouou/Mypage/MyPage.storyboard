@@ -60,19 +60,22 @@
                                     <constraint firstAttribute="height" relation="lessThanOrEqual" constant="60" id="eqT-tv-nau"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5C-NJ-oDR">
-                                <rect key="frame" x="141.5" y="242.5" width="92.5" height="95.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="50.0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5C-NJ-oDR">
+                                <rect key="frame" x="111" y="242.5" width="153.5" height="95.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="80"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wr0-yC-xNV">
-                                <rect key="frame" x="80" y="358" width="215" height="79"/>
+                                <rect key="frame" x="80" y="357.5" width="215" height="79"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i1z-ko-9ST">
                                         <rect key="frame" x="0.0" y="0.0" width="61" height="79"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="56"/>
                                         <state key="normal" title="💘"/>
+                                        <connections>
+                                            <action selector="tapLovesButton:" destination="jE8-Ur-uAr" eventType="touchUpInside" id="8Mr-hB-8cy"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLe-Pz-QwP">
                                         <rect key="frame" x="77" y="0.0" width="61" height="79"/>

@@ -28,7 +28,7 @@ class ResultTableViewCell: UITableViewCell, Nibable {
         if let user = user {
             profileImageView.loadUserImageView(with: user)
             nameLabel.text = user.displayName
-            hensachiLabel.text = String(user.hensachi)
+            hensachiLabel.text = String(user.hensachi.shisyagonyu())
         } else {
             profileImageView.setEmptyUserImage()
             nameLabel.text = "?????"

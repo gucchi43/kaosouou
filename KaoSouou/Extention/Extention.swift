@@ -17,3 +17,12 @@ extension UITextField {
         self.layer.addSublayer(border)
     }
 }
+
+extension Double {
+    mutating func shisyagonyu() -> Double{
+        print("変更前 : ", self)
+        let output = Darwin.round(self * 10) / 10
+        print("変更後 : ", output)
+        return output
+    }
+}

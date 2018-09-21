@@ -28,9 +28,13 @@
 		031A956720D16CD8008F88D5 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956620D16CD8008F88D5 /* Extention.swift */; };
 		031A956920D538E5008F88D5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956820D538E5008F88D5 /* UIImageView+Extension.swift */; };
 		0346873020E2B21500F1B896 /* scrach.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0346872F20E2B21500F1B896 /* scrach.m4a */; };
+		0366D9542152EF0900441C5F /* LoveUserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0366D9532152EF0900441C5F /* LoveUserList.storyboard */; };
+		0366D9562152EF2800441C5F /* LoveUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366D9552152EF2800441C5F /* LoveUserListViewController.swift */; };
 		03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03782C4F20B0D641006D68EB /* GoogleService-Info.plist */; };
 		03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03782C5120B1A7D1006D68EB /* Splash.storyboard */; };
 		03782C5420B1A80A006D68EB /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03782C5320B1A809006D68EB /* SplashViewController.swift */; };
+		037999C421542926007FA359 /* LovedUserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 037999C221542926007FA359 /* LovedUserCell.swift */; };
+		037999C521542926007FA359 /* LovedUserCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 037999C321542926007FA359 /* LovedUserCell.xib */; };
 		038BCBD820AD4E2700F5BFD6 /* Array+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038BCBD720AD4E2700F5BFD6 /* Array+Extention.swift */; };
 		03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */; };
 		03B47102214FCD8300F9B5CA /* PrintFacePower.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03B47101214FCD8300F9B5CA /* PrintFacePower.storyboard */; };
@@ -94,9 +98,13 @@
 		031A956620D16CD8008F88D5 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 		031A956820D538E5008F88D5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		0346872F20E2B21500F1B896 /* scrach.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = scrach.m4a; path = ../../../../Downloads/scrach.m4a; sourceTree = "<group>"; };
+		0366D9532152EF0900441C5F /* LoveUserList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoveUserList.storyboard; sourceTree = "<group>"; };
+		0366D9552152EF2800441C5F /* LoveUserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveUserListViewController.swift; sourceTree = "<group>"; };
 		03782C4F20B0D641006D68EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		03782C5120B1A7D1006D68EB /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
 		03782C5320B1A809006D68EB /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		037999C221542926007FA359 /* LovedUserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LovedUserCell.swift; sourceTree = "<group>"; };
+		037999C321542926007FA359 /* LovedUserCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LovedUserCell.xib; sourceTree = "<group>"; };
 		038AD143E5C7FEAB52D8BC19 /* Pods-KaoSououTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoSououTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-KaoSououTests/Pods-KaoSououTests.debug.xcconfig"; sourceTree = "<group>"; };
 		038BCBD720AD4E2700F5BFD6 /* Array+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extention.swift"; sourceTree = "<group>"; };
 		03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MyPage.storyboard; sourceTree = "<group>"; };
@@ -189,6 +197,10 @@
 				030F890C20DB816C009A0657 /* ResultListViewController.swift */,
 				030F890E20DB8192009A0657 /* ResultTableViewCell.swift */,
 				030F890F20DB8192009A0657 /* ResultTableViewCell.xib */,
+				0366D9552152EF2800441C5F /* LoveUserListViewController.swift */,
+				0366D9532152EF0900441C5F /* LoveUserList.storyboard */,
+				037999C221542926007FA359 /* LovedUserCell.swift */,
+				037999C321542926007FA359 /* LovedUserCell.xib */,
 			);
 			path = Mypage;
 			sourceTree = "<group>";
@@ -439,11 +451,13 @@
 				030F890B20DB814D009A0657 /* ResultList.storyboard in Resources */,
 				031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */,
 				0346873020E2B21500F1B896 /* scrach.m4a in Resources */,
+				037999C521542926007FA359 /* LovedUserCell.xib in Resources */,
 				030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */,
 				03B47104214FD25D00F9B5CA /* Main.storyboard in Resources */,
 				03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */,
 				03BBDCD620D7FFC3008A3E8C /* Assets.xcassets in Resources */,
 				03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */,
+				0366D9542152EF0900441C5F /* LoveUserList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -633,9 +647,11 @@
 				038BCBD820AD4E2700F5BFD6 /* Array+Extention.swift in Sources */,
 				030179C820A09A65002800F8 /* MyPageViewController.swift in Sources */,
 				03F475AF20597BC700EB31FA /* AccountManager.swift in Sources */,
+				0366D9562152EF2800441C5F /* LoveUserListViewController.swift in Sources */,
 				031A956120D1562B008F88D5 /* RootViewController.swift in Sources */,
 				03F62ABA2039DB34004DBFB6 /* NSObjectProtocol+Extension.swift in Sources */,
 				03F62A882039D79F004DBFB6 /* AppDelegate.swift in Sources */,
+				037999C421542926007FA359 /* LovedUserCell.swift in Sources */,
 				031A956920D538E5008F88D5 /* UIImageView+Extension.swift in Sources */,
 				03F62AB62039DAC5004DBFB6 /* humanCell.swift in Sources */,
 				030F891020DB8192009A0657 /* ResultTableViewCell.swift in Sources */,
