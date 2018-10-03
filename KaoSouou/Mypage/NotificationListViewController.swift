@@ -27,7 +27,14 @@ class NotificationListViewController: UIViewController, Storyboardable {
     
     func fetchNotifications() {
         guard let currentUser = AccountManager.shared.currentUser else { return }
-        dataSource = currentUser.notificationItems.order(by: \NotificationItem.createdAt, descending: true).dataSource()
+        
+        let sortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: false)
+        let options: Options = Options()
+        options.sortDescirptors = [sortDescriptor]
+        
+        dataSource = currentUser.notificationItems
+            .order(by: "updatedAt")
+            .dataSource(options: options)
             .on({ [weak self] (snapshot, changes) in
                 guard let tableView = self?.tableView else { return }
                 switch changes {
@@ -61,8 +68,6 @@ class NotificationListViewController: UIViewController, Storyboardable {
     @IBAction func tapCloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
-    
-    
 }
 
 extension NotificationListViewController: UITableViewDataSource {
@@ -81,24 +86,11 @@ extension NotificationListViewController: UITableViewDataSource {
 extension NotificationListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let cell = tableView.cellForRow(at: indexPath) as! NotificationTableViewCell
         let notificationItem = dataSource![indexPath.row]
-//        let viewController = ResultListViewController.instantiate()
-        
         let resultSB = UIStoryboard(name: "ResultList", bundle: nil)
         let resultNC = resultSB.instantiateInitialViewController() as! UINavigationController
         let resultVC = resultNC.topViewController as! ResultListViewController
-        notificationItem.result.get { (result, error) in
-            if let result = result {
-                print("ゲット リザルト！！！", result)
-                resultVC.currentResult = result
-                self.present(resultNC, animated: true, completion: nil)
-            } else {
-                self.present(resultNC, animated: true, completion: nil)
-            }
-        }
-//        let viewController = OtherUserProfileViewController.instantiate()
-//        viewController.user = cell.user
-//        present(viewController, animated: true, completion: nil)
+        resultVC.notificationItem = notificationItem
+        self.present(resultNC, animated: true, completion: nil)
     }
 }

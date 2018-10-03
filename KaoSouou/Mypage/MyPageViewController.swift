@@ -52,8 +52,15 @@ class MyPageViewController: UIViewController {
     
     func getUserDataSource() {
         guard let currentUser = AccountManager.shared.currentUser else { return }
-        userDataSourse = User.where(\User.originId, isEqualTo: currentUser.originId).dataSource().on({ (snapShot, change) in
-            self.loadData()
+        userDataSourse = User.where(\User.originId, isEqualTo: currentUser.originId).limit(to: 1).dataSource().on({ (snapShot, changes) in
+            switch changes {
+            case .initial:
+                self.loadData()
+            case .update(let deletions, let insertions, let modifications):
+                self.loadData()
+            case .error(let error):
+                print(error)
+            }
         }).listen()
     }
     

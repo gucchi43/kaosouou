@@ -233,20 +233,20 @@ extension ViewController: UICollectionViewDelegate {
         if selectNum == 9 {
             print("numArray : ", numArray)
             SVProgressHUD.show(withStatus: "マイリスト更新中")
-            addDateLoveUsers(success: {
+            addLoveList(success: {
                 SVProgressHUD.show(withStatus: "facepower更新中")
-                self.updateUserHensachi()
+                self.createResult()
                 SVProgressHUD.dismiss()
                 let sb = UIStoryboard(name: "PrintFacePower", bundle: nil)
                 let vc = sb.instantiateInitialViewController() as! PrintFacePowerViewController
+                vc.modalTransitionStyle = .crossDissolve
                 // リセット
                 self.selectNum = 0
                 self.numArray = [0,0,0,0,0,0,0,0,0]
                 vc.faceImage = self.firstFace
                 
-                self.show(vc, sender: nil)
-                
                 print("採点！")
+                self.present(vc, animated: true, completion: nil)
             }) { (error) in
                 SVProgressHUD.showError(withStatus: "データ送信に失敗しました")
                 print(error)
@@ -257,7 +257,7 @@ extension ViewController: UICollectionViewDelegate {
 
 // POST部分
 extension ViewController {
-    func addDateLoveUsers(success: @escaping() -> Void, failure: @escaping(Error) -> Void) {
+    func addLoveList(success: @escaping() -> Void, failure: @escaping(Error) -> Void) {
         guard let user = AccountManager.shared.currentUser else { return }
         if let firstUser = firstUser {
             user.loveUsers.insert(firstUser)
@@ -273,29 +273,13 @@ extension ViewController {
         }
     }
     
-    func updateUserHensachi() {
+    func createResult() {
         let result = Result()
+        result.voter.set(AccountManager.shared.currentUser!)
         for (index, user) in currentKaoUserArray.enumerated() {
             print("index : ", index)
             print("user : ", user)
-            let oldHensachi = user.hensachi
-            let updateHensachi = getHensachi(with: index)
-            let newHensachi = (oldHensachi + updateHensachi) / 2
-            user.hensachi = newHensachi
-            let oldKaisu = user.kaisu
-            let newKaisu = oldKaisu + 1
-            user.kaisu = newKaisu
-            user.update { (error) in
-                if let error = error {
-                    print("hensachi update error! : ",error)
-                } else {
-                    print("oldHensachi : ", oldHensachi)
-                    print("updateHensachi : ", updateHensachi)
-                    print("newHensachi : ", newHensachi)
-                    print("更新後 currentUser.hensachi : ", user.hensachi)
-                    
-                }
-            }
+            updateUserHensachi(user: user, index: index)
             let num = numArray[index]
             switch num{
             case 1:
@@ -319,21 +303,47 @@ extension ViewController {
             default:
                 result.seventh.set(user)
             }
-            // 通知データ発行
-            for (index, user) in currentKaoUserArray.enumerated() {
-                let notificationItem = NotificationItem()
-                notificationItem.from.set(AccountManager.shared.currentUser!)
-                notificationItem.to.set(user)
-                notificationItem.num = String(numArray[index])
-                notificationItem.result.set(result)
-                user.results.insert(result)
-                user.notificationItems.insert(notificationItem)
-                user.update { (error) in
-                    if let error = error {
-                        print(error)
-                    } else {
-                        print("user update succses")
-                    }
+        }
+        createNotification(result: result)
+    }
+    
+    func updateUserHensachi(user: User, index: Int) {
+        let oldHensachi = user.hensachi
+        let updateHensachi = getHensachi(with: index)
+        let newHensachi = (oldHensachi + updateHensachi) / 2
+        user.hensachi = newHensachi
+        let oldKaisu = user.kaisu
+        let newKaisu = oldKaisu + 1
+        user.kaisu = newKaisu
+        user.update { (error) in
+            if let error = error {
+                print("hensachi update error! : ",error)
+            } else {
+                print("oldHensachi : ", oldHensachi)
+                print("updateHensachi : ", updateHensachi)
+                print("newHensachi : ", newHensachi)
+                print("更新後 currentUser.hensachi : ", user.hensachi)
+                
+            }
+        }
+    }
+    
+    func createNotification(result: Result) {
+        for (index, user) in currentKaoUserArray.enumerated() {
+            print("index: ", index)
+            print("result: ", result)
+            let notificationItem = NotificationItem()
+            notificationItem.from.set(AccountManager.shared.currentUser!)
+            notificationItem.to.set(user)
+            notificationItem.num = String(numArray[index])
+            notificationItem.result.set(result)
+            user.results.insert(result)
+            user.notificationItems.insert(notificationItem)
+            user.update { (error) in
+                if let error = error {
+                    print(error)
+                } else {
+                    print("user update succses")
                 }
             }
         }

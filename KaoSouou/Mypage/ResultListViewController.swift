@@ -26,12 +26,27 @@ class ResultListViewController: UIViewController, Storyboardable {
         tableView.register(ResultTableViewCell.self)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        fetchResults()
+    }
+    
     func fetchResults() {
         guard let notificationItem = notificationItem else { return }
         notificationItem.result.get { (result, error) in
             if let result = result {
                 self.currentResult = result
+                self.fetchVoter(result: result)
                 self.tableView.reloadData()
+            }
+        }
+    }
+    
+    func fetchVoter(result: Result) {
+        result.voter.get { (user, error) in
+            if let user = user {
+                let name = user.displayName
+                self.navigationItem.title = name + "のチェック"
             }
         }
     }

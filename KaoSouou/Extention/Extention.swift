@@ -26,3 +26,54 @@ extension Double {
         return output
     }
 }
+
+extension UIColor {
+    
+    class func twitterColor() -> UIColor{
+        return UIColor.rgbColor(rgbValue: 0x00ACED)
+    }
+    
+    class func facebookColor() -> UIColor{
+        return UIColor.rgbColor(rgbValue: 0x305097)
+    }
+    
+    class func lineColor() -> UIColor{
+        return UIColor.rgbColor(rgbValue: 0x5AE628)
+    }
+    
+    class func imageBGColor() -> UIColor{
+        return UIColor.lightGray
+    }
+    
+    class func boyBrandColor() -> UIColor{
+        return UIColor.rgbColor(rgbValue: 0xF743BC)
+    }
+    
+    class func girlBrandColor() -> UIColor{
+        return UIColor.rgbColor(rgbValue: 0xF743BC)
+    }
+    
+    class func rgbColor(rgbValue: UInt) -> UIColor{
+        return UIColor(
+            red:   CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
+            green: CGFloat((rgbValue & 0x00FF00) >>  8) / 255.0,
+            blue:  CGFloat( rgbValue & 0x0000FF)        / 255.0,
+            alpha: CGFloat(1.0)
+        )
+    }
+    
+//    class func hexStr (hexStr : NSString, alpha : CGFloat) -> UIColor {
+//        let hexStr = hexStr.replacingOccurrences(of: "#", with: "")
+//        let scanner = Scanner(string: hexStr as String)
+//        var color: UInt32 = 0
+//        if scanner.scanHexInt32(&color) {
+//            let r = CGFloat((color & 0xFF0000) >> 16) / 255.0
+//            let g = CGFloat((color & 0x00FF00) >> 8) / 255.0
+//            let b = CGFloat(color & 0x0000FF) / 255.0
+//            return UIColor(red:r,green:g,blue:b,alpha:alpha)
+//        } else {
+//            print("invalid hex string")
+//            return UIColor.white
+//        }
+//    }
+}
