@@ -342,6 +342,7 @@ extension ViewController {
             notificationItem.result.set(result)
             user.results.insert(result)
             user.notificationItems.insert(notificationItem)
+            user.badgeNum += 1
             user.update { (error) in
                 if let error = error {
                     print(error)

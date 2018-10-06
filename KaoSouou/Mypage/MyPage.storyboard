@@ -130,7 +130,7 @@
                                             <action selector="tapLovesButton:" destination="jE8-Ur-uAr" eventType="touchUpInside" id="8Mr-hB-8cy"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLe-Pz-QwP">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SLe-Pz-QwP" customClass="MIBadgeButton" customModule="MIBadgeButton_Swift">
                                         <rect key="frame" x="81" y="0.0" width="61" height="79"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="56"/>
                                         <state key="normal" title="⚔️"/>

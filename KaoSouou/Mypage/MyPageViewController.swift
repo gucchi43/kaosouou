@@ -192,6 +192,7 @@ class MyPageViewController: UIViewController {
     }
     
     @IBAction func tapBellButton(_ sender: Any) {
+        bellButton.badgeString = ""
         let notificationSB = UIStoryboard(name: "NotificationList", bundle: nil)
         let notificationVC = notificationSB.instantiateInitialViewController()
         present(notificationVC!, animated: true) {
