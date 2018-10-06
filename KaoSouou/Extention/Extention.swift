@@ -18,6 +18,30 @@ extension UITextField {
     }
 }
 
+extension UILabel {
+    func lblShadow(radius: CGFloat, opacity: Float){
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+}
+
+extension UIButton {
+    func btnShadow(radius: CGFloat, opacity: Float){
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        
+        self.layer.shadowOffset = CGSize(width: 1, height: 1)
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+}
+
 extension Double {
     mutating func shisyagonyu() -> Double{
         print("変更前 : ", self)

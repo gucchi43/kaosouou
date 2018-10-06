@@ -17,6 +17,8 @@ class PrintFacePowerViewController: UIViewController {
 //    @IBOutlet weak var firstUserImageView: UIImageView!
 //    @IBOutlet weak var SecondUserImageView: UIImageView!
 //    @IBOutlet weak var ThirdUserImageView: UIImageView!
+    
+    @IBOutlet weak var titileLabel: UILabel!
     @IBOutlet weak var powerLabel: UILabel!
     @IBOutlet weak var nextButton: UIButton!
     var faceImage: UIImage?
@@ -72,6 +74,10 @@ class PrintFacePowerViewController: UIViewController {
         nextButton.layer.borderWidth = 1
         nextButton.layer.borderColor = UIColor.white.cgColor
         nextButton.clipsToBounds = true
+        
+        titileLabel.lblShadow(radius: 0.5, opacity: 0.5)
+        powerLabel.lblShadow(radius: 0.5, opacity: 0.5)
+        nextButton.btnShadow(radius: 0.5, opacity: 0.5)
     }
     
 //    func setImageViews() {

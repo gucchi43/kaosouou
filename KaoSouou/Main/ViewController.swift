@@ -49,11 +49,14 @@ class ViewController: UIViewController {
         mypageButton.layer.borderWidth = 1
         mypageButton.layer.borderColor = UIColor.white.cgColor
         mypageButton.clipsToBounds = true
+        mypageButton.btnShadow(radius: 0.5, opacity: 0.5)
         
         resetButton.layer.cornerRadius = resetButton.bounds.height / 2
         resetButton.layer.borderWidth = 1
         resetButton.layer.borderColor = UIColor.white.cgColor
         resetButton.clipsToBounds = true
+        resetButton.btnShadow(radius: 0.5, opacity: 0.5)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

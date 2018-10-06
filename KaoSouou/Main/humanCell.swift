@@ -16,6 +16,8 @@ class humanCell: UICollectionViewCell, Nibable {
     override func awakeFromNib() {
         super.awakeFromNib()
         numLabel.isHidden = true
+        numLabel.lblShadow(radius: 3, opacity: 0.25)
+
     }
     
     func configure(with user: User, num: Int) {

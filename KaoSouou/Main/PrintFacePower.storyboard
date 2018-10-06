@@ -79,6 +79,7 @@
                         <outlet property="imageView" destination="8TA-sc-93Q" id="lQb-Pl-TLA"/>
                         <outlet property="nextButton" destination="0h9-7B-b4V" id="Tfc-AI-Hjj"/>
                         <outlet property="powerLabel" destination="Dua-cT-BTG" id="LVI-W0-C1K"/>
+                        <outlet property="titileLabel" destination="pdT-8V-7bR" id="STN-5D-Oux"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lVQ-Sq-BaF" userLabel="First Responder" sceneMemberID="firstResponder"/>

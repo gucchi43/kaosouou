@@ -48,6 +48,7 @@ class MyPageViewController: UIViewController {
         closeButton.layer.borderWidth = 1
         closeButton.layer.borderColor = UIColor.white.cgColor
         closeButton.clipsToBounds = true
+        closeButton.btnShadow(radius: 0.5, opacity: 0.5)
     }
     
     func getUserDataSource() {
