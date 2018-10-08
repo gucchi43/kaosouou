@@ -18,6 +18,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var mypageButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    @IBOutlet weak var coverView: UIView!
+    @IBOutlet weak var oneLabel: UILabel!
+    @IBOutlet weak var twoLabel: UILabel!
+    @IBOutlet weak var threeLabel: UILabel!
+    @IBOutlet weak var loadLabel: UILabel!
+    
     // TEST データがない時用の仮データ
     var humanArray = [UIImage]()
     var girlsArray =  [#imageLiteral(resourceName: "g2"),#imageLiteral(resourceName: "g3"),#imageLiteral(resourceName: "g8"),#imageLiteral(resourceName: "g0"),#imageLiteral(resourceName: "g5"),#imageLiteral(resourceName: "g4"),#imageLiteral(resourceName: "g6"),#imageLiteral(resourceName: "g7"),#imageLiteral(resourceName: "g1")]
@@ -33,6 +39,9 @@ class ViewController: UIViewController {
     var disEnabledCellArray = [humanCell]()
     var selectCell: humanCell?
     var oldSelectCell: humanCell?
+    var timer = Timer()
+    
+    var finishFlag = false
     
     var userDataSourse: DataSource<User>?
     
@@ -40,10 +49,10 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         setButton()
-        
         collectionView.dataSource = self
         collectionView.delegate = self
     }
+    
     func setButton() {
         mypageButton.layer.cornerRadius = mypageButton.bounds.height / 2
         mypageButton.layer.borderWidth = 1
@@ -56,22 +65,76 @@ class ViewController: UIViewController {
         resetButton.layer.borderColor = UIColor.white.cgColor
         resetButton.clipsToBounds = true
         resetButton.btnShadow(radius: 0.5, opacity: 0.5)
-        
+    }
+    
+    func startLoding() {
+        coverView.isHidden = false
+        oneLabel.isHidden = false
+        twoLabel.isHidden = false
+        threeLabel.isHidden = false
+        loadLabel.isHighlighted = false
+        loading()
+    }
+    
+    func stopLoading() {
+        coverView.isHidden = true
+        oneLabel.isHidden = true
+        twoLabel.isHidden = true
+        threeLabel.isHidden = true
+        loadLabel.isHighlighted = true
+        timer.invalidate()
+    }
+    
+    func loading() {
+        var count = 0
+        timer = Timer.scheduledTimer(withTimeInterval: 0.3, repeats: true, block: { (timer) in
+            count += 1
+            self.changeLoadView(count: count)
+        })
+    }
+    
+    func changeLoadView(count: Int) {
+        let key = count % 3
+        switch key {
+        case 0:
+            oneLabel.text = "🦄"
+            twoLabel.text = "🐴"
+            threeLabel.text = "🐴"
+        case 1:
+            oneLabel.text = "🐴"
+            twoLabel.text = "🦄"
+            threeLabel.text = "🐴"
+        case 2:
+            oneLabel.text = "🐴"
+            twoLabel.text = "🐴"
+            threeLabel.text = "🦄"
+        default:
+            oneLabel.text = "🐴"
+            twoLabel.text = "🐴"
+            threeLabel.text = "🦄"
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        finishFlag = false
+        collectionView.reloadData()
         // ローカルのUserのArray(kaoUserArray)がまだ9あればそのまま使う。なければまた取ってくる。
         // 本番は一日あたりに選択できる回数を制限する場合はここに何かしらの追記が必要
+        self.startLoding()
         guard let currentUser = AccountManager.shared.currentUser else { return } // TODO: elseの時のアラート出す
         if kaoUserArray.count >= 9 {
             createCurrentKaoUserArray()
-            collectionView.reloadData()
+            self.collectionView.reloadData {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                    self.stopLoading()
+                }
+            }
         } else {
             if currentUser.gender == 2 {
                 humanArray = mensArray
@@ -97,12 +160,15 @@ class ViewController: UIViewController {
                     self.kaoUserArray = userArray
                     self.shuffleArray()
                     self.createCurrentKaoUserArray()
-                    self.collectionView.reloadData()
                 } else {
                     self.kaoUserArray = userArray
                     self.shuffleArray()
                     self.createCurrentKaoUserArray()
-                    self.collectionView.reloadData()
+                }
+                self.collectionView.reloadData {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                        self.stopLoading()
+                    }
                 }
             })
         .listen()
@@ -116,8 +182,9 @@ class ViewController: UIViewController {
     }
     
     func createCurrentKaoUserArray() {
-        currentKaoUserArray = Array(kaoUserArray.prefix(9))
-        kaoUserArray = Array(kaoUserArray.suffix(kaoUserArray.count - currentKaoUserArray.count))
+        self.currentKaoUserArray = Array(self.kaoUserArray.prefix(9))
+        self.kaoUserArray = Array(self.kaoUserArray.suffix(self.kaoUserArray.count - self.currentKaoUserArray.count))
+        finishFlag = true
         
         print("currentKaoUserArray :", currentKaoUserArray)
         print("kaoUserArray :", kaoUserArray)
@@ -192,11 +259,16 @@ extension ViewController: UICollectionViewDataSource {
         
         // kaoUserArrayをローカルで使い回すパターン
         // currentKaoUserArrayに分けてそれを使う
+        
         let cell = collectionView.dequeueReusableCell(with: humanCell.self, for: indexPath)
-        if let user = currentKaoUserArray[safe: indexPath.row] {
-            cell.configure(with: user, num: self.numArray[indexPath.row])
+        if finishFlag {
+            if let user = currentKaoUserArray[safe: indexPath.row] {
+                cell.configure(with: user, num: self.numArray[indexPath.row])
+            } else {
+                cell.configure(with: humanArray[indexPath.row], num: numArray[indexPath.row])
+            }
         } else {
-            cell.configure(with: humanArray[indexPath.row], num: numArray[indexPath.row])
+            cell.emptyConfigure()
         }
         return cell
     }

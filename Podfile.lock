@@ -11,6 +11,7 @@ PODS:
   - BoringSSL/Implementation (10.0.3):
     - BoringSSL/Interface (= 10.0.3)
   - BoringSSL/Interface (10.0.3)
+  - BPBlockActivityIndicator (1.1)
   - Crashlytics (3.10.2):
     - Fabric (~> 1.7.7)
   - DZNEmptyDataSet (1.8.1)
@@ -130,6 +131,7 @@ PODS:
     - TwitterCore (>= 3.1.0)
 
 DEPENDENCIES:
+  - BPBlockActivityIndicator
   - Crashlytics
   - DZNEmptyDataSet
   - Fabric
@@ -154,6 +156,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Bolts
     - BoringSSL
+    - BPBlockActivityIndicator
     - Crashlytics
     - DZNEmptyDataSet
     - Fabric
@@ -203,6 +206,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: c46efb47593135382bc0934196f16d2f726f5f36
+  BPBlockActivityIndicator: f1ac1f24df373ffe9d1dae7308b7cea9a1c7f152
   Crashlytics: 0360624eea1c978a743feddb2fb1ef8b37fb7a0d
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: bda89e242bce1b7b8ab264248cf3407774ce0095
@@ -240,6 +244,6 @@ SPEC CHECKSUMS:
   TwitterCore: 644d59e75abccb26cf0a9050d2c4dea0e5412241
   TwitterKit: a2e60ddcedbf54091eac6f27685ca7a87681e1d7
 
-PODFILE CHECKSUM: f885d7a524892cf66bb3c0fff29fe7700b57aa3c
+PODFILE CHECKSUM: 7506962aaa4282f7cc7a303fb255d52d7fae077d
 
 COCOAPODS: 1.5.2

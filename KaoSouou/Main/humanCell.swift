@@ -39,7 +39,12 @@ class humanCell: UICollectionViewCell, Nibable {
             numLabel.isHidden = false
             numLabel.text = String(num)
         }
-        
+    }
+    
+    func emptyConfigure() {
+        numLabel.text = ""
+        imageView.image = nil
+        imageView.backgroundColor = UIColor.black
     }
     
     func check(with num: Int) {

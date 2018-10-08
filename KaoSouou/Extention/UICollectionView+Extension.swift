@@ -21,6 +21,14 @@ extension UICollectionView {
     func dequeueReusableCell<T: UICollectionViewCell>(with cellType: T.Type, for indexPath: IndexPath) -> T {
         return dequeueReusableCell(withReuseIdentifier: T.identifier, for: indexPath) as! T
     }
+    
+    public func reloadData(_ completion: @escaping () -> Void) {
+        UIView.animate(withDuration: 0, animations: {
+            self.reloadData()
+        }, completion: { _ in
+            completion()
+        })
+    }
 }
 
 extension UICollectionViewCell {

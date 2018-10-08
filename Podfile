@@ -23,7 +23,7 @@ target 'KaoSouou' do
   pod 'SwiftDate'
   pod "MIBadgeButton-Swift", :git => 'https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git', :branch => 'master'
   pod 'RSKImageCropper'
-
+  pod "BPBlockActivityIndicator"
 
   pod 'TwitterKit'
   pod 'Fabric'

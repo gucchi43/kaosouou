@@ -231,7 +231,7 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
-		038BCBD620AD48A400F5BFD6 /* Mondels */ = {
+		038BCBD620AD48A400F5BFD6 /* Models */ = {
 			isa = PBXGroup;
 			children = (
 				03F475AC205979D400EB31FA /* User.swift */,
@@ -239,7 +239,7 @@
 				030F88FC20DA6207009A0657 /* Result.swift */,
 				03F475AE20597BC700EB31FA /* AccountManager.swift */,
 			);
-			path = Mondels;
+			path = Models;
 			sourceTree = "<group>";
 		};
 		03F62A7B2039D79F004DBFB6 = {
@@ -271,7 +271,7 @@
 				03BBDCD520D7FFC3008A3E8C /* Assets.xcassets */,
 				0346872F20E2B21500F1B896 /* scrach.m4a */,
 				03F62A872039D79F004DBFB6 /* AppDelegate.swift */,
-				038BCBD620AD48A400F5BFD6 /* Mondels */,
+				038BCBD620AD48A400F5BFD6 /* Models */,
 				038BCBD420AD486900F5BFD6 /* Extention */,
 				038BCBD520AD488600F5BFD6 /* Main */,
 				038BCBD320AD484800F5BFD6 /* Mypage */,
@@ -541,6 +541,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KaoSouou/Pods-KaoSouou-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BPBlockActivityIndicator/BPBlockActivityIndicator.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
@@ -571,6 +572,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/BPBlockActivityIndicator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
