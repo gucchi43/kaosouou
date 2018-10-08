@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q1x-Wp-ZZY">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q1x-Wp-ZZY">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -17,25 +17,26 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kaosouou" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-Wu-fUX">
-                                <rect key="frame" x="122" y="218" width="130" height="39"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="32"/>
-                                <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="face is life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x91-hb-ZJi">
+                                <rect key="frame" x="126" y="344" width="123" height="29.5"/>
+                                <fontDescription key="fontDescription" name="EuphemiaUCAS-Bold" family="Euphemia UCAS" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="face is life" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="x91-hb-ZJi">
-                                <rect key="frame" x="159" y="273" width="56.5" height="15"/>
-                                <fontDescription key="fontDescription" type="system" weight="ultraLight" pointSize="12"/>
-                                <color key="textColor" white="1" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topLogo" translatesAutoresizingMaskIntoConstraints="NO" id="x14-LG-U3e">
+                                <rect key="frame" x="87.5" y="173.5" width="200" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="aiH-DE-5Zx"/>
+                                    <constraint firstAttribute="width" constant="200" id="oxw-Rf-UGs"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="x91-hb-ZJi" firstAttribute="top" secondItem="wsF-Wu-fUX" secondAttribute="bottom" constant="16" id="GFo-d9-D48"/>
-                            <constraint firstItem="wsF-Wu-fUX" firstAttribute="centerX" secondItem="hLb-eJ-BCI" secondAttribute="centerX" id="JNM-94-vex"/>
                             <constraint firstItem="x91-hb-ZJi" firstAttribute="centerX" secondItem="hLb-eJ-BCI" secondAttribute="centerX" id="euD-PJ-EFo"/>
-                            <constraint firstItem="wsF-Wu-fUX" firstAttribute="centerY" secondItem="hLb-eJ-BCI" secondAttribute="centerY" constant="-96" id="yKz-lh-yTt"/>
+                            <constraint firstItem="x91-hb-ZJi" firstAttribute="bottom" secondItem="x14-LG-U3e" secondAttribute="bottom" id="goD-iV-RAV"/>
+                            <constraint firstItem="x14-LG-U3e" firstAttribute="centerY" secondItem="hLb-eJ-BCI" secondAttribute="centerY" constant="-60" id="t4f-0e-LbO"/>
+                            <constraint firstItem="x14-LG-U3e" firstAttribute="centerX" secondItem="hLb-eJ-BCI" secondAttribute="centerX" id="yi4-Al-tPS"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v6N-wv-mkm"/>
                     </view>
@@ -45,4 +46,7 @@
             <point key="canvasLocation" x="-1583" y="-1961"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="topLogo" width="1536" height="1536"/>
+    </resources>
 </document>
