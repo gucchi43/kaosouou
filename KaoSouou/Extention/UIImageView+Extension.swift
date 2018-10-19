@@ -47,13 +47,13 @@ extension UIImageView {
 
     func setErrorImage() {
         let size = CGSize(width: self.frame.size.height / 3, height: self.frame.size.height / 3)
-        let errorImage = UIImage.fontAwesomeIcon(name: .photo, textColor: UIColor.white, size: size)
+        let errorImage = UIImage.fontAwesomeIcon(name: .image , style: .brands, textColor: UIColor.white, size: size)
         self.image = errorImage
     }
     
     func setEmptyUserImage() {
         let size = CGSize(width: self.frame.size.height / 3, height: self.frame.size.height / 3)
-        let errorImage = UIImage.fontAwesomeIcon(name: .user, textColor: UIColor.white, size: size)
+        let errorImage = UIImage.fontAwesomeIcon(name: .user , style: .brands, textColor: UIColor.white, size: size)
         self.image = errorImage
     }
 }

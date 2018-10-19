@@ -13,17 +13,20 @@ extension Date {
     func convertAgoText() -> String {
         var agoText: String!
         let agodate = self.timeIntervalSinceNow * -1
-        if agodate.in(.minute)! < 60 {
-            agoText = String(agodate.in(.minute)!) + "分前"
-        } else if agodate.in(.hour)! < 24 {
-            agoText = String(agodate.in(.hour)!) + "時間前"
-        } else if agodate.in(.day)! < 7 {
-            agoText = String(agodate.in(.day)!) + "日前"
-        } else if agodate.in(.month)! < 1 {
-            agoText = String(agodate.in(.day)! / 7) + "週間前"
+        
+        if agodate.toUnit(.minute)! < 60 {
+            agoText = String(agodate.toUnit(.minute)!) + "分前"
+        } else if agodate.toUnit(.hour)! < 24 {
+            agoText = String(agodate.toUnit(.hour)!) + "時間前"
+        } else if agodate.toUnit(.day)! < 7 {
+            agoText = String(agodate.toUnit(.day)!) + "日前"
+        } else if agodate.toUnit(.month)! < 1 {
+            agoText = String(agodate.toUnit(.day)! / 7) + "週間前"
         } else {
-            agoText = String(agodate.in(.month)!) + "ヶ月前"
+            agoText = String(agodate.toUnit(.month)!) + "ヶ月前"
         }
+        print("変換Date before", self)
+        print("変換Date after", agoText)
         return agoText
     }
 }

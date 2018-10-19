@@ -30,7 +30,7 @@ class NotificationListViewController: UIViewController, Storyboardable {
         
         let sortDescriptor: NSSortDescriptor = NSSortDescriptor(key: "updatedAt", ascending: false)
         let options: Options = Options()
-        options.sortDescirptors = [sortDescriptor]
+        options.sortDescriptors = [sortDescriptor]
         
         dataSource = currentUser.notificationItems
             .order(by: "updatedAt")
