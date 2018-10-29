@@ -22,6 +22,8 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var fbLoginButton: UIButton!
     @IBOutlet weak var twLoginButton: UIButton!
     
+    var backgroundTaskID : UIBackgroundTaskIdentifier = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -36,14 +38,18 @@ class LoginViewController: UIViewController {
     }
     
     func twLogin() {
-            TWTRTwitter.sharedInstance().logIn { (session, error) in
-                SVProgressHUD.show()
+        self.backgroundTaskID = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        
+        TWTRTwitter.sharedInstance().logIn { (session, error) in
+            
+            UIApplication.shared.endBackgroundTask(self.backgroundTaskID)
+            SVProgressHUD.show()
                 guard let session = session else {
                     print(error?.localizedDescription ?? "")
                     self.signUpErrorAlert()
                     return
                 }
-                
+            
                 let credential = TwitterAuthProvider.credential(withToken: session.authToken, secret: session.authTokenSecret)
                 Auth.auth().signIn(with: credential, completion: { (authUser, error) in
                     if let error = error {
@@ -97,46 +103,52 @@ class LoginViewController: UIViewController {
     func twSignUpNewUser(newUserId: String, session: TWTRSession, success: @escaping(URL?) -> Void, failure: @escaping() -> Void) {
         let client = TWTRAPIClient.withCurrentUser()
         client.loadUser(withID: session.userID, completion: { (user, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                SVProgressHUD.dismiss()
-                failure()
-            }
-            if let user = user {
-                let newUser = User(id: newUserId)
-                newUser.originId = user.userID
-                newUser.displayName = user.screenName
-                newUser.hensachi = 50
-                newUser.fcmToken = Messaging.messaging().fcmToken!
-                newUser.save { (reference, error) in
-                    if let error = error {
-                        print(error)
-                        failure()
-                    } else {
-                        print(reference)
-                        AccountManager.shared.currentUser = newUser
-                        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in
-                            if let error = error {
-                                print(error.localizedDescription)
-                            }
-                            if granted {
-                                print("プッシュ通知ダイアログ 許可")
-                                UIApplication.shared.registerForRemoteNotifications()
-                            } else {
-                                print("プッシュ通知ダイアログ 拒否")
-                            }
-                            success(URL(string: user.profileImageLargeURL))
-                        })
+                if let error = error {
+                    print(error.localizedDescription)
+                    SVProgressHUD.dismiss()
+                    failure()
+                }
+                if let user = user {
+                    let newUser = User(id: newUserId)
+                    newUser.originId = user.userID
+                    newUser.displayName = user.screenName
+                    newUser.hensachi = 50
+                    newUser.fcmToken = Messaging.messaging().fcmToken!
+                    newUser.save { (reference, error) in
+                        if let error = error {
+                            print(error)
+                            failure()
+                        } else {
+                            print(reference)
+                            AccountManager.shared.currentUser = newUser
+                            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in
+                                if let error = error {
+                                    print(error.localizedDescription)
+                                }
+                                if granted {
+                                    print("プッシュ通知ダイアログ 許可")
+                                    UIApplication.shared.registerForRemoteNotifications()
+                                } else {
+                                    print("プッシュ通知ダイアログ 拒否")
+                                }
+                                success(URL(string: user.profileImageLargeURL))
+                            })
+                        }
                     }
                 }
-            }
         })
     }
     
     
     func fbLogin() {
+        
+        self.backgroundTaskID = UIApplication.shared.beginBackgroundTask(expirationHandler: nil)
+        
         let loginManeger = LoginManager()
         loginManeger.logIn(readPermissions: [.email, .publicProfile, .userFriends], viewController: self) { (result) in
+            
+            UIApplication.shared.endBackgroundTask(self.backgroundTaskID)
+            
             SVProgressHUD.show()
             switch result {
             case .success(let permission, let declinePemisson, let token):
