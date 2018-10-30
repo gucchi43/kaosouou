@@ -19,11 +19,12 @@ class ResultListViewController: UIViewController, Storyboardable {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.rowHeight = 68
         tableView.register(ResultTableViewCell.self)
+        tableView.isScrollEnabled = false
+        tableView.separatorStyle = .none
+        tableView.allowsSelection = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,6 +61,25 @@ extension ResultListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 9
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let navigationController: UINavigationController = UINavigationController()
+        let navigationBarHeight = navigationController.navigationBar.frame.size.height
+        let statusbarHeight = UIApplication.shared.statusBarFrame.size.height
+        let contentHeight = UIScreen.main.bounds.size.height - (navigationBarHeight + statusbarHeight)
+        let headerHeight = (contentHeight / 7) * 3
+        let bottomHeight = (contentHeight / 7) * 4
+        
+        if indexPath.row < 3 {
+            let height = headerHeight / 3
+            print("height : ", indexPath.row, "→", height)
+            return height
+        } else {
+            let height = bottomHeight / 6
+            print("height : ", indexPath.row, "→", height)
+            return height
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -112,7 +132,8 @@ extension ResultListViewController: UITableViewDataSource {
 
 extension ResultListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        // 他のユーザー表示する
+//        tableView.deselectRow(at: indexPath, animated: true)
         //        let viewController = OtherUserProfileViewController.instantiate()
         //        viewController.user = cell.user
         //        present(viewController, animated: true, completion: nil)

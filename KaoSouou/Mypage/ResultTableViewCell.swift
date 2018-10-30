@@ -17,22 +17,43 @@ class ResultTableViewCell: UITableViewCell, Nibable {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         profileImageView.setEmptyUserImage()
-        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
-        profileImageView.clipsToBounds = true
     }
     
     func configure(with num: Int, user: User?) {
-        numlabel.text = String(num)
+        profileImageView.layer.cornerRadius = profileImageView.bounds.width / 2
+        profileImageView.clipsToBounds = true
+        switch num {
+        case 1:
+            numlabel.text = "🥇"
+        case 2:
+            numlabel.text = "🥈"
+        case 3:
+            numlabel.text = "🥉"
+        default:
+            numlabel.text = String(num)
+        }
         if let user = user {
             profileImageView.loadUserImageView(with: user)
             nameLabel.text = user.displayName
             hensachiLabel.text = String(user.hensachi.shisyagonyu())
         } else {
             profileImageView.setEmptyUserImage()
-            nameLabel.text = "?????"
-            hensachiLabel.text = "?????"
+            nameLabel.text = "???"
+            hensachiLabel.text = "???"
+        }
+        
+        guard let currentUser = AccountManager.shared.currentUser else { return }
+        guard let user = user else { return }
+        
+        
+        
+        if currentUser.id == user.id {
+            if currentUser.gender == 2 {
+                self.contentView.backgroundColor = UIColor.girlBrandColor()
+            } else {
+                self.contentView.backgroundColor = UIColor.boyBrandColor()
+            }
         }
     }
 }
