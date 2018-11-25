@@ -18,6 +18,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var mypageButton: UIButton!
     @IBOutlet weak var resetButton: UIButton!
     
+    //ローディングで使う要素
     @IBOutlet weak var coverView: UIView!
     @IBOutlet weak var oneLabel: UILabel!
     @IBOutlet weak var twoLabel: UILabel!
@@ -171,7 +172,7 @@ class ViewController: UIViewController {
                     }
                 }
             })
-        .listen()
+        .get()
     }
     
     func shuffleArray() {
@@ -292,8 +293,21 @@ extension ViewController: UICollectionViewDelegate {
         } else {
             // 選択されてる
             cell.uncheck()
+            let uncheckNum = numArray[indexPath.row]
             numArray[indexPath.row] = 0
             selectNum = currentNum - 1
+            
+            // く解除された数字より上の数字を繰り下げる
+            print("before numArray : ", numArray)
+            for (index, num) in numArray.enumerated() {
+                print("index, num : ", index, num)
+                if num > uncheckNum {
+                    let newValue = num - 1
+                    numArray[index] = newValue
+                }
+            }
+            print("after numArray : ", numArray)
+                    
         }
         if selectNum == 1 {
             if let user = currentKaoUserArray[safe: indexPath.row] {

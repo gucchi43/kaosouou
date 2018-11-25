@@ -17,6 +17,7 @@ class humanCell: UICollectionViewCell, Nibable {
         super.awakeFromNib()
         numLabel.isHidden = true
         numLabel.lblShadow(radius: 3, opacity: 0.25)
+        numLabel.textColor = UIColor.white
 
     }
     
