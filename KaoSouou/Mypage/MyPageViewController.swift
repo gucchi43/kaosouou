@@ -27,7 +27,7 @@ class MyPageViewController: UIViewController {
     @IBOutlet weak var secondNumImageView: UIImageView!
     @IBOutlet weak var thirdNumImageView: UIImageView!
     @IBOutlet weak var dotImageView: UIImageView!
-    
+        
     var userDataSourse: DataSource<User>?
     
     override func viewDidLoad() {
@@ -193,9 +193,9 @@ class MyPageViewController: UIViewController {
     
     @IBAction func tapBellButton(_ sender: Any) {
         bellButton.badgeString = ""
-        let notificationSB = UIStoryboard(name: "NotificationList", bundle: nil)
-        let notificationVC = notificationSB.instantiateInitialViewController()
-        present(notificationVC!, animated: true) {
+        let sb = UIStoryboard(name: "NotificationList", bundle: nil)
+        let nc = sb.instantiateInitialViewController() as! UINavigationController
+        present(nc, animated: true) {
             print("go to notification")
         }
     }

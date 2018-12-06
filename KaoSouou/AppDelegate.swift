@@ -85,27 +85,26 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-        
         let content = notification.request.content
         // Push Notifications のmessageを取得
         let badge = content.badge
         let body = notification.request.content.body
-        print("userNotificationCenterのwillPresentから: \(body), \(badge)")
+        let toOriginId = content.userInfo["toUserOriginId"] as! String
         print("content : ", content)
+        print("userNotificationCenterのwillPresentから: \(body), \(badge)")
         
-        //　iphone7 haptic feedback
-        let feedbackGenerator = UINotificationFeedbackGenerator()
-        feedbackGenerator.notificationOccurred(.success)
-        
-        // audio & vibrater
-        AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate), nil)
-        
+        // ログインしてるユーザーのみ通す
+        if let currentUser = AccountManager.shared.currentUser {
+            if currentUser.originId == toOriginId {
+                //　iphone7 haptic feedback
+                let feedbackGenerator = UINotificationFeedbackGenerator()
+                feedbackGenerator.notificationOccurred(.success)
+                // audio & vibrater
+                AudioServicesPlayAlertSoundWithCompletion(SystemSoundID(kSystemSoundID_Vibrate), nil)
+                showNotificationAlert()
+            }
+        }
         completionHandler([])
-                // ViewController上にAlertを表示させる
-//                let appDel = UIApplication.shared.delegate as! AppDelegate
-//                if let vc:ViewController = appDel.window?.rootViewController as? ViewController {
-//                    vc.alertPushNotifications(bodyMessage: body)
-//                }
     }
     
     // background で受信してアプリを起動
@@ -116,14 +115,16 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
         let content = response.notification.request.content
         let badge = content.badge
         let body = response.notification.request.content.body
+        let toOriginId = content.userInfo["toUserOriginId"] as! String
         print("userNotificationCenterのdidReceiveから: \(body), \(badge)")
         print("content : ", content)
+        // ログインしてるユーザーのみ通す
+        if let currentUser = AccountManager.shared.currentUser {
+            if currentUser.originId == toOriginId {
+                showNotificationAlert()
+            }
+        }
         completionHandler()
-        //        // ViewController上にAlertを表示させる
-        //        let appDel = UIApplication.shared.delegate as! AppDelegate
-        //        if let vc:ViewController = appDel.window?.rootViewController as? ViewController {
-        //            vc.alertPushNotifications(bodyMessage: message)
-        //        }
     }
 }
 
@@ -140,5 +141,29 @@ extension AppDelegate {
     
     var rootViewController: RootViewController {
         return window!.rootViewController as! RootViewController
+    }
+}
+
+extension AppDelegate {
+    func showNotificationAlert() {
+        let alert = UIAlertController(title: "新しくチョイスされたよ！", message: "何位だったか確認してみよう！", preferredStyle: .alert)
+        let defaultAction: UIAlertAction = UIAlertAction(title: "チェケラ！", style: .default) { (action) in
+            print("画面遷移")
+            let notificationSB = UIStoryboard(name: "NotificationList", bundle: nil)
+            let notificationVC = notificationSB.instantiateInitialViewController() as! UINavigationController
+            if let topController = UIApplication.topViewController() {
+                topController.show(notificationVC, sender: nil)
+            }
+        }
+        
+        let cancelAction: UIAlertAction = UIAlertAction(title: "やめとく", style: .destructive) { (action) in
+            print("Cancel")
+        }
+        alert.addAction(defaultAction)
+        alert.addAction(cancelAction)
+        
+        if let topController = UIApplication.topViewController() {
+            topController.present(alert, animated: true, completion: nil)            
+        }
     }
 }

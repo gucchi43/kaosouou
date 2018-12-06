@@ -22,6 +22,11 @@ class NotificationListViewController: UIViewController, Storyboardable {
         tableView.rowHeight = 68
         tableView.register(NotificationTableViewCell.self)
         fetchNotifications()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
         resetBadgeNum()
     }
     
@@ -54,15 +59,17 @@ class NotificationListViewController: UIViewController, Storyboardable {
     
     func resetBadgeNum() {
         guard let currentUser = AccountManager.shared.currentUser else { return }
-        currentUser.badgeNum = 0
-        currentUser.update { (error) in
-            if let error = error {
-                print(error.localizedDescription)
-            } else {
-                print("succes reset badgeNum")
+        if currentUser.badgeNum > 0 {
+            currentUser.badgeNum = 0
+            currentUser.update { (error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                } else {
+                    print("succes reset badgeNum")
+                }
             }
+            UIApplication.shared.applicationIconBadgeNumber = 0
         }
-        UIApplication.shared.applicationIconBadgeNumber = 0
     }
     
     @IBAction func tapCloseButton(_ sender: Any) {

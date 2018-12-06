@@ -18,6 +18,7 @@ exports.sendFollowerNotification = functions.firestore.document(`version/1/user/
   let toUser;
   let toGender;
   let toBadgeNum;
+  let toUserOriginId;
   let currentBadgeNum;
   let fromUser;
   let num;
@@ -30,8 +31,11 @@ exports.sendFollowerNotification = functions.firestore.document(`version/1/user/
     toUser = results[1];
     console.log("getNotificationItemPromise notificationItem :", notificationItem)
     console.log("getToUserPromise toUser :", toUser)
+    console.log("getToUserPromise toUser その２:", toUser.data())
     num = notificationItem.data().num;
     toGender = toUser.data().gender;
+    toUserOriginId = toUser.data().originId;
+    console.log("toUserOriginId:", toUserOriginId)
     currentBadgeNum = toUser.data().badgeNum;
     token = toUser.data().fcmToken;
     const getFromUserPromise = notificationItem.data().from.get();
@@ -43,19 +47,29 @@ exports.sendFollowerNotification = functions.firestore.document(`version/1/user/
       if (toGender === 1) {
         payload = {
           notification: {
-            title: fromUserName,
-            body: 'あなたは' + num + '番目にイケメンだわ！',
+            title: '@' + fromUserName + '「あなたは?番目にイケメンだわ！」',
+            body: '今すぐ順位をチェック！',
             badge: String(currentBadgeNum + 1),
-            sound: 'scrach.m4a'
+            sound: 'scrach.m4a',
+          },
+          data: {
+            fromName: fromUserName,
+            toUserOriginId: toUserOriginId,
+            num: num,
           }
         };
       } else {
         payload = {
           notification: {
-            title: fromUserName,
-            body: '君は' + num + '番目にカワイイよ！',
+            title:  '@' + fromUserName + '「君は?番目にカワイイよ！」',
+            body: '今すぐ順位をチェック！',
             badge: String(currentBadgeNum + 1),
             sound: 'scrach.m4a'
+          },
+          data: {
+            fromName: fromUserName,
+            toUserOriginId: toUserOriginId,
+            num: num,
           }
         };
       }
