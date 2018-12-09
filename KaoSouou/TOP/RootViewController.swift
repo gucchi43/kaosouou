@@ -60,7 +60,19 @@ final class RootViewController: UIViewController {
         current = new
     }
     
-    
+    func showOnboardScreen() {
+        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+        let new = storyboard.instantiateInitialViewController() as! OnboardViewController
+        addChildViewController(new)
+        view.addSubview(new.view)
+        new.didMove(toParentViewController: self)
+        
+        current.willMove(toParentViewController: nil)
+        current.view.removeFromSuperview()
+        current.removeFromParentViewController()
+        
+        current = new
+    }
     
     func switchToLogin() {
         let storyboard = UIStoryboard(name: "Login", bundle: nil)
@@ -87,6 +99,12 @@ final class RootViewController: UIViewController {
     func switchToMainScreen() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! ViewController
+        animateFadeTransition(to: viewController)
+    }
+    
+    func switchToOnboardScreen() {
+        let storyboard = UIStoryboard(name: "Onboard", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController() as! OnboardViewController
         animateFadeTransition(to: viewController)
     }
     

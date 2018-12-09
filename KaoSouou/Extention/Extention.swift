@@ -42,6 +42,18 @@ extension UIButton {
     }
 }
 
+extension UIView {
+    func viewShadow(radius: CGFloat, opacity: Float, color: UIColor){
+        self.layer.masksToBounds = false
+        self.layer.shadowRadius = radius
+        self.layer.shadowOpacity = opacity
+        self.layer.shadowColor = color.cgColor
+        self.layer.shadowOffset = CGSize(width: 6, height: 6)
+        self.layer.shouldRasterize = true
+        self.layer.rasterizationScale = UIScreen.main.scale
+    }
+}
+
 extension Double {
     mutating func shisyagonyu() -> Double{
         print("変更前 : ", self)
