@@ -34,7 +34,7 @@
 		031A956720D16CD8008F88D5 /* Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956620D16CD8008F88D5 /* Extention.swift */; };
 		031A956920D538E5008F88D5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956820D538E5008F88D5 /* UIImageView+Extension.swift */; };
 		031BAE5521BD06AB00F508F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031BAE5421BD06AB00F508F2 /* Assets.xcassets */; };
-		0346873020E2B21500F1B896 /* scrach.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 0346872F20E2B21500F1B896 /* scrach.m4a */; };
+		031BAE5721BD27F600F508F2 /* scrach.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 031BAE5621BD27F500F508F2 /* scrach.m4a */; };
 		0366D9542152EF0900441C5F /* LoveUserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0366D9532152EF0900441C5F /* LoveUserList.storyboard */; };
 		0366D9562152EF2800441C5F /* LoveUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366D9552152EF2800441C5F /* LoveUserListViewController.swift */; };
 		03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03782C4F20B0D641006D68EB /* GoogleService-Info.plist */; };
@@ -110,7 +110,7 @@
 		031A956620D16CD8008F88D5 /* Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extention.swift; sourceTree = "<group>"; };
 		031A956820D538E5008F88D5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		031BAE5421BD06AB00F508F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		0346872F20E2B21500F1B896 /* scrach.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; name = scrach.m4a; path = ../../../../Downloads/scrach.m4a; sourceTree = "<group>"; };
+		031BAE5621BD27F500F508F2 /* scrach.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = scrach.m4a; sourceTree = "<group>"; };
 		0366D9532152EF0900441C5F /* LoveUserList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoveUserList.storyboard; sourceTree = "<group>"; };
 		0366D9552152EF2800441C5F /* LoveUserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveUserListViewController.swift; sourceTree = "<group>"; };
 		03782C4F20B0D641006D68EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -294,7 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				030F891220DD127F009A0657 /* KaoSouou.entitlements */,
-				0346872F20E2B21500F1B896 /* scrach.m4a */,
+				031BAE5621BD27F500F508F2 /* scrach.m4a */,
 				03F62A872039D79F004DBFB6 /* AppDelegate.swift */,
 				031BAE5421BD06AB00F508F2 /* Assets.xcassets */,
 				0311D80E21BAEBD10082FFEC /* Onboard */,
@@ -472,6 +472,7 @@
 				03F62A922039D79F004DBFB6 /* LaunchScreen.storyboard in Resources */,
 				030F891120DB8192009A0657 /* ResultTableViewCell.xib in Resources */,
 				03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */,
+				031BAE5721BD27F600F508F2 /* scrach.m4a in Resources */,
 				031BAE5521BD06AB00F508F2 /* Assets.xcassets in Resources */,
 				0311D81721BAF27D0082FFEC /* Onboard.storyboard in Resources */,
 				03F475A92059718800EB31FA /* Login.storyboard in Resources */,
@@ -479,7 +480,6 @@
 				030F88FF20DA7BC5009A0657 /* NotificationList.storyboard in Resources */,
 				030F890B20DB814D009A0657 /* ResultList.storyboard in Resources */,
 				031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */,
-				0346873020E2B21500F1B896 /* scrach.m4a in Resources */,
 				0311D81A21BAF27D0082FFEC /* CustomOverlay.xib in Resources */,
 				037999C521542926007FA359 /* LovedUserCell.xib in Resources */,
 				030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */,
