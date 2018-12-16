@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		030179C820A09A65002800F8 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030179C720A09A65002800F8 /* MyPageViewController.swift */; };
+		0305A7A521C6A581009CB041 /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305A7A021C6A580009CB041 /* OnboardViewController.swift */; };
+		0305A7A621C6A581009CB041 /* CustomOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305A7A121C6A580009CB041 /* CustomOverlay.xib */; };
+		0305A7A721C6A581009CB041 /* CustomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305A7A221C6A580009CB041 /* CustomPage.swift */; };
+		0305A7A821C6A581009CB041 /* CustomPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0305A7A321C6A580009CB041 /* CustomPage.xib */; };
+		0305A7A921C6A581009CB041 /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0305A7A421C6A581009CB041 /* CustomOverlay.swift */; };
+		0305A7AB21C6A64A009CB041 /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0305A7AA21C6A649009CB041 /* Onboard.storyboard */; };
 		030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030A56AA20B30D8D0021A693 /* GenderSelect.storyboard */; };
 		030A56AD20B30D990021A693 /* GenderSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A56AC20B30D990021A693 /* GenderSelectViewController.swift */; };
 		030F88FB20DA5A9B009A0657 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F88FA20DA5A9B009A0657 /* NotificationItem.swift */; };
@@ -22,12 +28,6 @@
 		030F890D20DB816C009A0657 /* ResultListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890C20DB816C009A0657 /* ResultListViewController.swift */; };
 		030F891020DB8192009A0657 /* ResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F890E20DB8192009A0657 /* ResultTableViewCell.swift */; };
 		030F891120DB8192009A0657 /* ResultTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030F890F20DB8192009A0657 /* ResultTableViewCell.xib */; };
-		0311D81621BAF27D0082FFEC /* CustomPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311D80F21BAF27B0082FFEC /* CustomPage.swift */; };
-		0311D81721BAF27D0082FFEC /* Onboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0311D81021BAF27B0082FFEC /* Onboard.storyboard */; };
-		0311D81821BAF27D0082FFEC /* CustomPage.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0311D81221BAF27C0082FFEC /* CustomPage.xib */; };
-		0311D81921BAF27D0082FFEC /* CustomOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311D81321BAF27D0082FFEC /* CustomOverlay.swift */; };
-		0311D81A21BAF27D0082FFEC /* CustomOverlay.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0311D81421BAF27D0082FFEC /* CustomOverlay.xib */; };
-		0311D81B21BAF27D0082FFEC /* OnboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0311D81521BAF27D0082FFEC /* OnboardViewController.swift */; };
 		031A956120D1562B008F88D5 /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956020D1562B008F88D5 /* RootViewController.swift */; };
 		031A956320D16519008F88D5 /* SetProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956220D16519008F88D5 /* SetProfileViewController.swift */; };
 		031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031A956420D16537008F88D5 /* SetProfile.storyboard */; };
@@ -85,6 +85,12 @@
 
 /* Begin PBXFileReference section */
 		030179C720A09A65002800F8 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		0305A7A021C6A580009CB041 /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardViewController.swift; path = KaoSouou/Onboard/OnboardViewController.swift; sourceTree = SOURCE_ROOT; };
+		0305A7A121C6A580009CB041 /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomOverlay.xib; path = KaoSouou/Onboard/CustomOverlay.xib; sourceTree = SOURCE_ROOT; };
+		0305A7A221C6A580009CB041 /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPage.swift; path = KaoSouou/Onboard/CustomPage.swift; sourceTree = SOURCE_ROOT; };
+		0305A7A321C6A580009CB041 /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomPage.xib; path = KaoSouou/Onboard/CustomPage.xib; sourceTree = SOURCE_ROOT; };
+		0305A7A421C6A581009CB041 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlay.swift; path = KaoSouou/Onboard/CustomOverlay.swift; sourceTree = SOURCE_ROOT; };
+		0305A7AA21C6A649009CB041 /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboard.storyboard; path = KaoSouou/Onboard/Onboard.storyboard; sourceTree = SOURCE_ROOT; };
 		030A56AA20B30D8D0021A693 /* GenderSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenderSelect.storyboard; sourceTree = "<group>"; };
 		030A56AC20B30D990021A693 /* GenderSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectViewController.swift; sourceTree = "<group>"; };
 		030F88FA20DA5A9B009A0657 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
@@ -100,12 +106,6 @@
 		030F890E20DB8192009A0657 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		030F890F20DB8192009A0657 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		030F891220DD127F009A0657 /* KaoSouou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KaoSouou.entitlements; sourceTree = "<group>"; };
-		0311D80F21BAF27B0082FFEC /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPage.swift; path = ../../../../sampleApp/SwiftyOnboard/Example/SwiftyOnboardExample/CustomPage.swift; sourceTree = "<group>"; };
-		0311D81121BAF27B0082FFEC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = ../../../OnboradSet/OnboradSet/Base.lproj/Onboard.storyboard; sourceTree = "<group>"; };
-		0311D81221BAF27C0082FFEC /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomPage.xib; path = ../../../../sampleApp/SwiftyOnboard/Example/SwiftyOnboardExample/CustomPage.xib; sourceTree = "<group>"; };
-		0311D81321BAF27D0082FFEC /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlay.swift; path = ../../../../sampleApp/SwiftyOnboard/Example/SwiftyOnboardExample/CustomOverlay.swift; sourceTree = "<group>"; };
-		0311D81421BAF27D0082FFEC /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomOverlay.xib; path = ../../../../sampleApp/SwiftyOnboard/Example/SwiftyOnboardExample/CustomOverlay.xib; sourceTree = "<group>"; };
-		0311D81521BAF27D0082FFEC /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardViewController.swift; path = ../../../OnboradSet/OnboradSet/OnboardViewController.swift; sourceTree = "<group>"; };
 		031A956020D1562B008F88D5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		031A956220D16519008F88D5 /* SetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileViewController.swift; sourceTree = "<group>"; };
 		031A956420D16537008F88D5 /* SetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfile.storyboard; sourceTree = "<group>"; };
@@ -187,12 +187,12 @@
 		0311D80E21BAEBD10082FFEC /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
-				0311D81321BAF27D0082FFEC /* CustomOverlay.swift */,
-				0311D81421BAF27D0082FFEC /* CustomOverlay.xib */,
-				0311D80F21BAF27B0082FFEC /* CustomPage.swift */,
-				0311D81221BAF27C0082FFEC /* CustomPage.xib */,
-				0311D81521BAF27D0082FFEC /* OnboardViewController.swift */,
-				0311D81021BAF27B0082FFEC /* Onboard.storyboard */,
+				0305A7A421C6A581009CB041 /* CustomOverlay.swift */,
+				0305A7A121C6A580009CB041 /* CustomOverlay.xib */,
+				0305A7A221C6A580009CB041 /* CustomPage.swift */,
+				0305A7A321C6A580009CB041 /* CustomPage.xib */,
+				0305A7AA21C6A649009CB041 /* Onboard.storyboard */,
+				0305A7A021C6A580009CB041 /* OnboardViewController.swift */,
 			);
 			name = Onboard;
 			path = "New Group";
@@ -481,18 +481,18 @@
 				03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */,
 				031BAE5721BD27F600F508F2 /* scrach.m4a in Resources */,
 				031BAE5521BD06AB00F508F2 /* Assets.xcassets in Resources */,
-				0311D81721BAF27D0082FFEC /* Onboard.storyboard in Resources */,
 				03F475A92059718800EB31FA /* Login.storyboard in Resources */,
 				03B47102214FCD8300F9B5CA /* PrintFacePower.storyboard in Resources */,
+				0305A7A821C6A581009CB041 /* CustomPage.xib in Resources */,
 				030F88FF20DA7BC5009A0657 /* NotificationList.storyboard in Resources */,
 				030F890B20DB814D009A0657 /* ResultList.storyboard in Resources */,
 				031A956520D16537008F88D5 /* SetProfile.storyboard in Resources */,
-				0311D81A21BAF27D0082FFEC /* CustomOverlay.xib in Resources */,
 				037999C521542926007FA359 /* LovedUserCell.xib in Resources */,
+				0305A7A621C6A581009CB041 /* CustomOverlay.xib in Resources */,
+				0305A7AB21C6A64A009CB041 /* Onboard.storyboard in Resources */,
 				030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */,
 				03B47104214FD25D00F9B5CA /* Main.storyboard in Resources */,
 				03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */,
-				0311D81821BAF27D0082FFEC /* CustomPage.xib in Resources */,
 				03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */,
 				0366D9542152EF0900441C5F /* LoveUserList.storyboard in Resources */,
 			);
@@ -674,6 +674,7 @@
 			files = (
 				030F890420DA80F6009A0657 /* NotificationTableViewCell.swift in Sources */,
 				030A56AD20B30D990021A693 /* GenderSelectViewController.swift in Sources */,
+				0305A7A721C6A581009CB041 /* CustomPage.swift in Sources */,
 				031A956320D16519008F88D5 /* SetProfileViewController.swift in Sources */,
 				030F890D20DB816C009A0657 /* ResultListViewController.swift in Sources */,
 				030F88FD20DA6207009A0657 /* Result.swift in Sources */,
@@ -687,22 +688,21 @@
 				03F62A8A2039D79F004DBFB6 /* ViewController.swift in Sources */,
 				03F475AD205979D400EB31FA /* User.swift in Sources */,
 				030F890720DA8160009A0657 /* UITableView+Extension.swift in Sources */,
-				0311D81921BAF27D0082FFEC /* CustomOverlay.swift in Sources */,
 				031A956720D16CD8008F88D5 /* Extention.swift in Sources */,
 				038BCBD820AD4E2700F5BFD6 /* Array+Extention.swift in Sources */,
 				030179C820A09A65002800F8 /* MyPageViewController.swift in Sources */,
 				03F475AF20597BC700EB31FA /* AccountManager.swift in Sources */,
 				0366D9562152EF2800441C5F /* LoveUserListViewController.swift in Sources */,
-				0311D81B21BAF27D0082FFEC /* OnboardViewController.swift in Sources */,
 				031A956120D1562B008F88D5 /* RootViewController.swift in Sources */,
 				03F62ABA2039DB34004DBFB6 /* NSObjectProtocol+Extension.swift in Sources */,
+				0305A7A921C6A581009CB041 /* CustomOverlay.swift in Sources */,
 				03F62A882039D79F004DBFB6 /* AppDelegate.swift in Sources */,
 				037999C421542926007FA359 /* LovedUserCell.swift in Sources */,
+				0305A7A521C6A581009CB041 /* OnboardViewController.swift in Sources */,
 				031A956920D538E5008F88D5 /* UIImageView+Extension.swift in Sources */,
 				03F62AB62039DAC5004DBFB6 /* humanCell.swift in Sources */,
 				030F891020DB8192009A0657 /* ResultTableViewCell.swift in Sources */,
 				030F88FB20DA5A9B009A0657 /* NotificationItem.swift in Sources */,
-				0311D81621BAF27D0082FFEC /* CustomPage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -738,14 +738,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		0311D81021BAF27B0082FFEC /* Onboard.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				0311D81121BAF27B0082FFEC /* Base */,
-			);
-			name = Onboard.storyboard;
-			sourceTree = "<group>";
-		};
 		03F62A902039D79F004DBFB6 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
