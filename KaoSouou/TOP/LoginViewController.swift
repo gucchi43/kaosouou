@@ -17,16 +17,19 @@ import SwiftyJSON
 import SVProgressHUD
 import TwitterKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
     @IBOutlet weak var fbLoginButton: UIButton!
     @IBOutlet weak var twLoginButton: UIButton!
+    
+    @IBOutlet weak var textView: UITextView!
     
     var backgroundTaskID : UIBackgroundTaskIdentifier = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
+        setTextView()
     }
 
     @IBAction func tapFBLoginButton(_ sender: Any) {
@@ -290,5 +293,31 @@ class LoginViewController: UIViewController {
         let ok = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func setTextView() {
+        let baseString = "利用規約とプライバシーポリシーに同意の上お進みください。"
+        let attributedString = NSMutableAttributedString(string: baseString)
+        attributedString.addAttribute(.link,
+                                      value: "https://faceislife.studio.design/support/terms",
+                                      range: NSString(string: baseString).range(of: "利用規約"))
+        attributedString.addAttribute(.link,
+                                      value: "https://faceislife.studio.design/support/privacy",
+                                      range: NSString(string: baseString).range(of: "プライバシーポリシー"))
+        textView.attributedText = attributedString
+        textView.textColor = .white
+        textView.isSelectable = true
+        textView.isEditable = false
+        textView.delegate = self
+    }
+    
+    
+    override func textView(_ textView: UITextView,
+                  shouldInteractWith URL: URL,
+                  in characterRange: NSRange,
+                  interaction: UITextItemInteraction) -> Bool {
+        
+        UIApplication.shared.open(URL)
+        return false
     }
 }

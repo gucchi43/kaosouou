@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3JQ-F2-NNx">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="3JQ-F2-NNx">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,7 +31,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="zZc-VT-S0P">
-                                <rect key="frame" x="108.5" y="513" width="157" height="74"/>
+                                <rect key="frame" x="109" y="513" width="157" height="74"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DFc-iM-j9b">
                                         <rect key="frame" x="0.0" y="0.0" width="157" height="35"/>
@@ -55,26 +56,41 @@
                                 </subviews>
                             </stackView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="topLogo" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-oA-s7b">
-                                <rect key="frame" x="87" y="173.5" width="200" height="200"/>
+                                <rect key="frame" x="87.5" y="173.5" width="200" height="200"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="200" id="BWz-H8-Hel"/>
                                     <constraint firstAttribute="height" constant="200" id="dCY-s4-siq"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="利用規約とプライバシーにポリシーに同意の上お進みください" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="5jD-7P-DyT">
+                                <rect key="frame" x="24" y="607" width="327" height="44"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="8zr-p9-VHG"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="rJL-Ps-dO3" firstAttribute="trailing" secondItem="5jD-7P-DyT" secondAttribute="trailing" constant="24" id="4jX-zh-4EB"/>
                             <constraint firstItem="h2I-oA-s7b" firstAttribute="centerX" secondItem="WsV-Mw-Sws" secondAttribute="centerX" id="Avv-dK-Gct"/>
                             <constraint firstItem="h2I-oA-s7b" firstAttribute="centerY" secondItem="WsV-Mw-Sws" secondAttribute="centerY" constant="-60" id="En2-Bn-DIq"/>
+                            <constraint firstItem="5jD-7P-DyT" firstAttribute="leading" secondItem="rJL-Ps-dO3" secondAttribute="leading" constant="24" id="JHV-aX-oHE"/>
                             <constraint firstItem="rJL-Ps-dO3" firstAttribute="bottom" secondItem="zZc-VT-S0P" secondAttribute="bottom" constant="80" id="REG-s3-FCz"/>
                             <constraint firstItem="ohR-P3-5j2" firstAttribute="centerX" secondItem="WsV-Mw-Sws" secondAttribute="centerX" id="Swg-1b-c8s"/>
+                            <constraint firstItem="rJL-Ps-dO3" firstAttribute="bottom" secondItem="5jD-7P-DyT" secondAttribute="bottom" constant="16" id="UXI-cN-6lH"/>
                             <constraint firstItem="ohR-P3-5j2" firstAttribute="bottom" secondItem="h2I-oA-s7b" secondAttribute="bottom" constant="-4" id="lJl-Lz-Gct"/>
                             <constraint firstItem="zZc-VT-S0P" firstAttribute="centerX" secondItem="WsV-Mw-Sws" secondAttribute="centerX" id="yMI-Mo-Yvx"/>
+                            <constraint firstItem="5jD-7P-DyT" firstAttribute="centerX" secondItem="WsV-Mw-Sws" secondAttribute="centerX" id="zFW-jb-3I8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="rJL-Ps-dO3"/>
                     </view>
                     <connections>
                         <outlet property="fbLoginButton" destination="DFc-iM-j9b" id="nPp-NV-ZLS"/>
+                        <outlet property="textView" destination="5jD-7P-DyT" id="Jru-Ke-Y7s"/>
                         <outlet property="twLoginButton" destination="duz-21-84X" id="MFA-rg-3Yf"/>
                     </connections>
                 </viewController>

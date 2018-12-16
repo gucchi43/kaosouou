@@ -122,6 +122,26 @@ extension UIColor {
     }
 }
 
+extension UIViewController: UITextViewDelegate {
+    public func textView(_ textView: UITextView, shouldInteractWith URL: URL, in characterRange: NSRange, interaction: UITextItemInteraction) -> Bool {
+        
+        let urlString = URL.absoluteString
+        if urlString == "TermOfUseLink" {
+            print("利用規約のリンクがタップされました")
+            // ログ送信処理
+            // 利用規約画面を開く処理
+        }
+        
+        if urlString == "PrivacyPolicyLink" {
+            print("プライバシーポリシーのリンクがタップされました")
+            // ログ送信処理
+            // プライバシーポリシー画面を開く処理
+        }
+        
+        return false
+    }
+}
+
 extension UIApplication {
     // 表示中の一番上のViewControllerを取得
     class func topViewController(controller: UIViewController? = UIApplication.shared.keyWindow?.rootViewController) -> UIViewController? {
