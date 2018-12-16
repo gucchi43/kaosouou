@@ -35,6 +35,8 @@
 		031A956920D538E5008F88D5 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031A956820D538E5008F88D5 /* UIImageView+Extension.swift */; };
 		031BAE5521BD06AB00F508F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 031BAE5421BD06AB00F508F2 /* Assets.xcassets */; };
 		031BAE5721BD27F600F508F2 /* scrach.m4a in Resources */ = {isa = PBXBuildFile; fileRef = 031BAE5621BD27F500F508F2 /* scrach.m4a */; };
+		031BAE5921C0D68400F508F2 /* BirthdaySelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 031BAE5821C0D68400F508F2 /* BirthdaySelect.storyboard */; };
+		031BAE5B21C0D69400F508F2 /* BirthdaySelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 031BAE5A21C0D69400F508F2 /* BirthdaySelectViewController.swift */; };
 		0366D9542152EF0900441C5F /* LoveUserList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0366D9532152EF0900441C5F /* LoveUserList.storyboard */; };
 		0366D9562152EF2800441C5F /* LoveUserListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0366D9552152EF2800441C5F /* LoveUserListViewController.swift */; };
 		03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 03782C4F20B0D641006D68EB /* GoogleService-Info.plist */; };
@@ -111,6 +113,8 @@
 		031A956820D538E5008F88D5 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		031BAE5421BD06AB00F508F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		031BAE5621BD27F500F508F2 /* scrach.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = scrach.m4a; sourceTree = "<group>"; };
+		031BAE5821C0D68400F508F2 /* BirthdaySelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BirthdaySelect.storyboard; sourceTree = "<group>"; };
+		031BAE5A21C0D69400F508F2 /* BirthdaySelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BirthdaySelectViewController.swift; sourceTree = "<group>"; };
 		0366D9532152EF0900441C5F /* LoveUserList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoveUserList.storyboard; sourceTree = "<group>"; };
 		0366D9552152EF2800441C5F /* LoveUserListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoveUserListViewController.swift; sourceTree = "<group>"; };
 		03782C4F20B0D641006D68EB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -201,6 +205,8 @@
 				03F475AA205971EE00EB31FA /* LoginViewController.swift */,
 				030A56AA20B30D8D0021A693 /* GenderSelect.storyboard */,
 				030A56AC20B30D990021A693 /* GenderSelectViewController.swift */,
+				031BAE5821C0D68400F508F2 /* BirthdaySelect.storyboard */,
+				031BAE5A21C0D69400F508F2 /* BirthdaySelectViewController.swift */,
 				031A956420D16537008F88D5 /* SetProfile.storyboard */,
 				031A956220D16519008F88D5 /* SetProfileViewController.swift */,
 				03782C5120B1A7D1006D68EB /* Splash.storyboard */,
@@ -470,6 +476,7 @@
 			files = (
 				030F890520DA80F6009A0657 /* NotificationTableViewCell.xib in Resources */,
 				03F62A922039D79F004DBFB6 /* LaunchScreen.storyboard in Resources */,
+				031BAE5921C0D68400F508F2 /* BirthdaySelect.storyboard in Resources */,
 				030F891120DB8192009A0657 /* ResultTableViewCell.xib in Resources */,
 				03782C5020B0D641006D68EB /* GoogleService-Info.plist in Resources */,
 				031BAE5721BD27F600F508F2 /* scrach.m4a in Resources */,
@@ -569,6 +576,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-KaoSouou/Pods-KaoSouou-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ADDatePicker/ADDatePicker.framework",
 				"${BUILT_PRODUCTS_DIR}/Bolts/Bolts.framework",
 				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
 				"${BUILT_PRODUCTS_DIR}/DZNEmptyDataSet/DZNEmptyDataSet.framework",
@@ -602,6 +610,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ADDatePicker.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Bolts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DZNEmptyDataSet.framework",
@@ -672,6 +681,7 @@
 				03F62AB82039DAF9004DBFB6 /* UICollectionView+Extension.swift in Sources */,
 				030F890920DAC676009A0657 /* Date+Extension.swift in Sources */,
 				030F890120DA7BD3009A0657 /* NotificationListViewController.swift in Sources */,
+				031BAE5B21C0D69400F508F2 /* BirthdaySelectViewController.swift in Sources */,
 				03F62ABC203A046A004DBFB6 /* PrintFacePowerViewController.swift in Sources */,
 				03782C5420B1A80A006D68EB /* SplashViewController.swift in Sources */,
 				03F62A8A2039D79F004DBFB6 /* ViewController.swift in Sources */,

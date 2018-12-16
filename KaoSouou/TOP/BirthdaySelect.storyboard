@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="yJF-2c-jbU">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Birthday Select View Controller-->
+        <scene sceneID="Ei0-3t-ba7">
+            <objects>
+                <viewController id="yJF-2c-jbU" customClass="BirthdaySelectViewController" customModule="KaoSouou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="S1k-86-jr8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6Da-sI-5WD" customClass="ADDatePicker" customModule="ADDatePicker">
+                                <rect key="frame" x="0.0" y="233.5" width="375" height="200"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Ql2-Sk-qcI"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="誕生日を選択してください" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjX-gt-BRF">
+                                <rect key="frame" x="83.5" y="120" width="208" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W6T-tC-M9m">
+                                <rect key="frame" x="139" y="555" width="97" height="32"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <state key="normal" title="     Next ＞     ">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapNextButton:" destination="yJF-2c-jbU" eventType="touchUpInside" id="8DW-Xr-W6a"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="W6T-tC-M9m" firstAttribute="centerX" secondItem="S1k-86-jr8" secondAttribute="centerX" id="2Sz-0Q-4BT"/>
+                            <constraint firstItem="6Da-sI-5WD" firstAttribute="leading" secondItem="tU6-c9-oS2" secondAttribute="leading" id="2yb-fb-4b1"/>
+                            <constraint firstItem="xjX-gt-BRF" firstAttribute="centerX" secondItem="S1k-86-jr8" secondAttribute="centerX" id="3KN-hz-pkb"/>
+                            <constraint firstItem="xjX-gt-BRF" firstAttribute="top" secondItem="S1k-86-jr8" secondAttribute="top" constant="120" id="Gxb-ei-Gxw"/>
+                            <constraint firstAttribute="bottom" secondItem="W6T-tC-M9m" secondAttribute="bottom" constant="80" id="KYg-lJ-3Bp"/>
+                            <constraint firstItem="6Da-sI-5WD" firstAttribute="centerY" secondItem="S1k-86-jr8" secondAttribute="centerY" id="g3T-RV-yYi"/>
+                            <constraint firstItem="tU6-c9-oS2" firstAttribute="trailing" secondItem="6Da-sI-5WD" secondAttribute="trailing" id="jwv-t6-GQf"/>
+                            <constraint firstItem="6Da-sI-5WD" firstAttribute="centerX" secondItem="S1k-86-jr8" secondAttribute="centerX" id="oMQ-KW-SeP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="tU6-c9-oS2"/>
+                    </view>
+                    <connections>
+                        <outlet property="datePicker" destination="6Da-sI-5WD" id="yLh-2X-mYD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6fP-qv-SMC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1697" y="-243"/>
+        </scene>
+    </scenes>
+</document>

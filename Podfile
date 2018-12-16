@@ -25,6 +25,7 @@ target 'KaoSouou' do
   pod 'RSKImageCropper'
   pod 'TTTAttributedLabel'
   pod 'SwiftyOnboard'
+  pod 'ADDatePicker'
 
   pod 'TwitterKit'
   pod 'Fabric'

@@ -28,8 +28,9 @@ class SplashViewController: UIViewController {
                     AccountManager.shared.currentUser = user
                     DispatchQueue.main.async {
                         DispatchQueue.main.async {
-//                            AppDelegate.shared.rootViewController.switchToMainScreen()
-                            AppDelegate.shared.rootViewController.showOnboardScreen()
+                            AppDelegate.shared.rootViewController.switchToMainScreen()
+                            //検証用
+//                            AppDelegate.shared.rootViewController.switchToBirthdaySelectScreen()
                         }
                     }
                 } else {
@@ -37,16 +38,14 @@ class SplashViewController: UIViewController {
                         // ユーザーがなかったらログアウトしてトップへ。
                         try? Auth.auth().signOut()
                         DispatchQueue.main.async {
-//                            AppDelegate.shared.rootViewController.showLoginScreen()
-                            AppDelegate.shared.rootViewController.showOnboardScreen()
+                            AppDelegate.shared.rootViewController.showLoginScreen()
                         }
                     }
                 }
             })
         } else {
             DispatchQueue.main.async {
-//                AppDelegate.shared.rootViewController.showLoginScreen()
-                AppDelegate.shared.rootViewController.showOnboardScreen()
+                AppDelegate.shared.rootViewController.showLoginScreen()
             }
         }
     }

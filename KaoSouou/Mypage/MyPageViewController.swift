@@ -90,7 +90,7 @@ class MyPageViewController: UIViewController {
     
     @IBAction func tapSettingButton(_ sender: Any) {
         let alert = UIAlertController(title: "設定", message: nil, preferredStyle: .actionSheet)
-        let logOut = UIAlertAction(title: "ログアウト", style: .default) { (action) in
+        let logOut = UIAlertAction(title: "ログアウト", style: .destructive) { (action) in
             print("ログアウト")
             self.logout {
                 print("ログアウト成功")
@@ -113,18 +113,16 @@ class MyPageViewController: UIViewController {
         
         let tutorial = UIAlertAction(title: "使い方", style: .default) { (action) in
             print("使い方")
-//            let sb = UIStoryboard(name: "SetProfile", bundle: nil)
-//            let vc = sb.instantiateInitialViewController() as! SetProfileViewController
-//            vc.currentType = .edit
-//            self.show(vc, sender: nil)
+            let sb = UIStoryboard(name: "Onboard", bundle: nil)
+            let vc = sb.instantiateInitialViewController() as! OnboardViewController
+            vc.fromAppHelp = true
+            self.present(vc, animated: true) {
+                print("go to loveUserList")
+            }
         }
         
         let otherMenu = UIAlertAction(title: "その他", style: .default) { (action) in
             print("その他")
-//            let sb = UIStoryboard(name: "SetProfile", bundle: nil)
-//            let vc = sb.instantiateInitialViewController() as! SetProfileViewController
-//            vc.currentType = .edit
-//            self.show(vc, sender: nil)
         }
         
         let cancel = UIAlertAction(title: "キャンセル", style: .cancel) { (actiona) in
@@ -164,7 +162,6 @@ class MyPageViewController: UIViewController {
         if user.gender == 2 {
             //女子
             key = "j"
-//            key = "d"
         } else {
             //男子
             key = "d"

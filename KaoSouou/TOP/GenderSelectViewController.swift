@@ -67,7 +67,7 @@ class GenderSelectViewController: UIViewController {
                     print(error.localizedDescription)
                 } else {                    
                     print("gender設定成功")
-                    AppDelegate.shared.rootViewController.showMainScreen()
+                    AppDelegate.shared.rootViewController.showBirthdaySelectScreen()
                 }
             })
         } else {

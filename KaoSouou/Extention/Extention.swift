@@ -63,6 +63,21 @@ extension Double {
     }
 }
 
+extension String {
+    // ex) 1995/12/09 -> 23
+    func getAge() -> String {
+        let arr:[String] = self.components(separatedBy: "/")
+        let year = Int(arr[0])
+        let month = Int(arr[1])
+        let day = Int(arr[2])
+        let calendar = Calendar(identifier: .gregorian)
+        let birthDate = DateComponents(calendar: calendar, year: year, month: month, day: day).date!
+        let age = String(calendar.dateComponents([.year], from: birthDate, to: Date()).year!)
+        print("age :", age)
+        return age
+    }
+}
+
 extension UIColor {
     
     class func twitterColor() -> UIColor{
