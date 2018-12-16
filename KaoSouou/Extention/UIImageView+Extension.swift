@@ -14,6 +14,8 @@ import FontAwesome_swift
 
 extension UIImageView {
     func loadUserImageView(with user: User) {
+        self.contentMode = .scaleAspectFill
+        self.clipsToBounds = true
         self.kf.indicatorType = .activity
         var loadUrl: URL?
         if let photoFile = user.photoFile {
@@ -33,6 +35,8 @@ extension UIImageView {
     }
     
     func loadUrlImageView(url: URL) {
+        self.contentMode = .scaleAspectFill
+        self.clipsToBounds = true
         self.kf.indicatorType = .activity
         self.kf.setImage(with: url, placeholder: nil, options: [.transition(ImageTransition.fade(1))], progressBlock: { (receivedSize, totalSize) in
             print("\(receivedSize)/\(totalSize)")

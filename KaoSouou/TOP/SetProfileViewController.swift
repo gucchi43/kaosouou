@@ -43,6 +43,10 @@ class SetProfileViewController: UIViewController {
     }
     
     func configure() {
+        profileImageView.contentMode = .scaleAspectFill
+        profileImageView.clipsToBounds = true
+        profileBaseImageView.contentMode = .scaleAspectFill
+        profileBaseImageView.clipsToBounds = true
         profileImageHeight.constant = UIScreen.main.bounds.size.height / 3
         profileImageWidth.constant = UIScreen.main.bounds.size.width / 3
         nameTextField.addUnderline(width: 1.0, color: UIColor.white)
@@ -50,7 +54,6 @@ class SetProfileViewController: UIViewController {
         nextButton.layer.borderWidth = 1
         nextButton.layer.borderColor = UIColor.white.cgColor
         nextButton.clipsToBounds = true
-        
     }
     
     func setData() {

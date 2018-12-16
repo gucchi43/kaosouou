@@ -13,10 +13,11 @@ import Kingfisher
 import MIBadgeButton_Swift
 import FontAwesome_swift
 
-class MyPageViewController: UIViewController {
+class MyPageViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBOutlet weak var userNameLabel: UILabel!
     @IBOutlet weak var faceImageView: UIImageView!
+    @IBOutlet weak var effectView: UIVisualEffectView!
     @IBOutlet weak var hensachiLabel: UILabel!
     @IBOutlet weak var kaisuLabel: UILabel!
     @IBOutlet weak var closeButton: UIButton!
@@ -32,6 +33,9 @@ class MyPageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        faceImageView.clipsToBounds = true
+        faceImageView.contentMode = .scaleAspectFill
+        setLongPress()
         getUserDataSource()
     }
     
@@ -197,4 +201,22 @@ class MyPageViewController: UIViewController {
         }
     }
     
+    func setLongPress() {
+        let longPressGesture =
+            UILongPressGestureRecognizer(target: self,
+                                         action: #selector(MyPageViewController.longPress(_:)))
+        longPressGesture.delegate = self
+        effectView.addGestureRecognizer(longPressGesture)
+    }
+    
+    // Long Press イベント
+    @objc func longPress(_ sender: UILongPressGestureRecognizer){
+        if sender.state == .began {
+            print("LongPress began")
+            effectView.isHidden = true
+        }
+        else if sender.state == .ended {
+            effectView.isHidden = false
+        }
+    }
 }
