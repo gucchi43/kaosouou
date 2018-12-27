@@ -9,6 +9,7 @@
 import UIKit
 import Kingfisher
 import Pring
+import UserNotifications
 import Firebase
 import SVProgressHUD
 
@@ -52,6 +53,21 @@ class ViewController: UIViewController {
         setButton()
         collectionView.dataSource = self
         collectionView.delegate = self
+        requestPush()
+    }
+    
+    func requestPush() {
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge], completionHandler: { (granted, error) in
+            if let error = error {
+                print(error.localizedDescription)
+            }
+            if granted {
+                print("プッシュ通知ダイアログ 許可")
+                UIApplication.shared.registerForRemoteNotifications()
+            } else {
+                print("プッシュ通知ダイアログ 拒否")
+            }
+        })
     }
     
     func setButton() {

@@ -219,8 +219,8 @@
 		038BCBD320AD484800F5BFD6 /* Mypage */ = {
 			isa = PBXGroup;
 			children = (
-				030179C720A09A65002800F8 /* MyPageViewController.swift */,
 				03B470FF214FCD3F00F9B5CA /* MyPage.storyboard */,
+				030179C720A09A65002800F8 /* MyPageViewController.swift */,
 				030F88FE20DA7BC5009A0657 /* NotificationList.storyboard */,
 				030F890020DA7BD3009A0657 /* NotificationListViewController.swift */,
 				030F890320DA80F6009A0657 /* NotificationTableViewCell.xib */,

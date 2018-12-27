@@ -94,6 +94,37 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate {
     
     @IBAction func tapSettingButton(_ sender: Any) {
         let alert = UIAlertController(title: "設定", message: nil, preferredStyle: .actionSheet)
+        let terms = UIAlertAction(title: "利用規約", style: .default) { (action) in
+            print("利用規約")
+            let postUrl = URL(string:"https://faceislife.studio.design/support/terms")
+            UIApplication.shared.open(postUrl!)
+        }
+        let privacy = UIAlertAction(title: "プライバシーポリシー", style: .default) { (action) in
+            print("プライバシーポリシー")
+            let postUrl = URL(string:"https://faceislife.studio.design/support/privacy")
+            UIApplication.shared.open(postUrl!)
+        }
+        let questoin = UIAlertAction(title: "Twitterで問い合わせ", style: .default) { (action) in
+            print("問い合わせ")
+            
+            let postUrl = URL(string: "http://twitter.com/faceislife")
+            UIApplication.shared.open(postUrl!, options: [:], completionHandler: nil)
+            
+//            if UIApplication.shared.canOpenURL(URL(string: "twitter://")!) {
+//
+//
+//
+////                let postUrl = URL(string: "http://twitter.com/faceislife")
+////                UIApplication.shared.open(postUrl!, options: [:], completionHandler: nil)
+//
+////                let postUrl = URL(string: "twitter:@faceislife")
+////                print("Twitter インストール済み")
+////                UIApplication.shared.open(postUrl!, options: [:], completionHandler: nil)
+//            } else {
+////                let postUrl = URL(string: "http://twitter.com/%@faceislife")
+////                UIApplication.shared.open(postUrl!, options: [:], completionHandler: nil)
+//            }
+        }
         let logOut = UIAlertAction(title: "ログアウト", style: .destructive) { (action) in
             print("ログアウト")
             self.logout {
@@ -134,8 +165,10 @@ class MyPageViewController: UIViewController, UIGestureRecognizerDelegate {
         }
         
         alert.addAction(profileEdit)
+        alert.addAction(questoin)
         alert.addAction(tutorial)
-        alert.addAction(otherMenu)
+        alert.addAction(terms)
+        alert.addAction(privacy)
         alert.addAction(logOut)
         alert.addAction(cancel)
         
