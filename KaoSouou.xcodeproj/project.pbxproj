@@ -100,12 +100,12 @@
 		030F890E20DB8192009A0657 /* ResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultTableViewCell.swift; sourceTree = "<group>"; };
 		030F890F20DB8192009A0657 /* ResultTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ResultTableViewCell.xib; sourceTree = "<group>"; };
 		030F891220DD127F009A0657 /* KaoSouou.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = KaoSouou.entitlements; sourceTree = "<group>"; };
-		03128C0821CBD0AB00D6E225 /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomPage.xib; path = KaoSouou/Onboard/CustomPage.xib; sourceTree = SOURCE_ROOT; };
-		03128C0921CBD0AB00D6E225 /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboard.storyboard; path = KaoSouou/Onboard/Onboard.storyboard; sourceTree = SOURCE_ROOT; };
-		03128C0A21CBD0AB00D6E225 /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPage.swift; path = KaoSouou/Onboard/CustomPage.swift; sourceTree = SOURCE_ROOT; };
-		03128C0B21CBD0AB00D6E225 /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomOverlay.xib; path = KaoSouou/Onboard/CustomOverlay.xib; sourceTree = SOURCE_ROOT; };
-		03128C0C21CBD0AB00D6E225 /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardViewController.swift; path = KaoSouou/Onboard/OnboardViewController.swift; sourceTree = SOURCE_ROOT; };
-		03128C0D21CBD0AB00D6E225 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlay.swift; path = KaoSouou/Onboard/CustomOverlay.swift; sourceTree = SOURCE_ROOT; };
+		03128C0821CBD0AB00D6E225 /* CustomPage.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomPage.xib; path = KaoSouou/On/CustomPage.xib; sourceTree = SOURCE_ROOT; };
+		03128C0921CBD0AB00D6E225 /* Onboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Onboard.storyboard; path = KaoSouou/On/Onboard.storyboard; sourceTree = SOURCE_ROOT; };
+		03128C0A21CBD0AB00D6E225 /* CustomPage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomPage.swift; path = KaoSouou/On/CustomPage.swift; sourceTree = SOURCE_ROOT; };
+		03128C0B21CBD0AB00D6E225 /* CustomOverlay.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = CustomOverlay.xib; path = KaoSouou/On/CustomOverlay.xib; sourceTree = SOURCE_ROOT; };
+		03128C0C21CBD0AB00D6E225 /* OnboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardViewController.swift; path = KaoSouou/On/OnboardViewController.swift; sourceTree = SOURCE_ROOT; };
+		03128C0D21CBD0AB00D6E225 /* CustomOverlay.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomOverlay.swift; path = KaoSouou/On/CustomOverlay.swift; sourceTree = SOURCE_ROOT; };
 		031A956020D1562B008F88D5 /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		031A956220D16519008F88D5 /* SetProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetProfileViewController.swift; sourceTree = "<group>"; };
 		031A956420D16537008F88D5 /* SetProfile.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = SetProfile.storyboard; sourceTree = "<group>"; };
@@ -184,7 +184,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03128C0721CBCF1100D6E225 /* Onboard */ = {
+		0360257A21D6B3E100D493F2 /* Onboard */ = {
 			isa = PBXGroup;
 			children = (
 				03128C0D21CBD0AB00D6E225 /* CustomOverlay.swift */,
@@ -195,7 +195,7 @@
 				03128C0C21CBD0AB00D6E225 /* OnboardViewController.swift */,
 			);
 			name = Onboard;
-			path = "New Group";
+			path = On;
 			sourceTree = "<group>";
 		};
 		038BCBD220AD483700F5BFD6 /* TOP */ = {
@@ -299,11 +299,11 @@
 		03F62A862039D79F004DBFB6 /* KaoSouou */ = {
 			isa = PBXGroup;
 			children = (
+				031BAE5421BD06AB00F508F2 /* Assets.xcassets */,
 				030F891220DD127F009A0657 /* KaoSouou.entitlements */,
 				031BAE5621BD27F500F508F2 /* scrach.m4a */,
 				03F62A872039D79F004DBFB6 /* AppDelegate.swift */,
-				031BAE5421BD06AB00F508F2 /* Assets.xcassets */,
-				03128C0721CBCF1100D6E225 /* Onboard */,
+				0360257A21D6B3E100D493F2 /* Onboard */,
 				038BCBD620AD48A400F5BFD6 /* Models */,
 				038BCBD420AD486900F5BFD6 /* Extention */,
 				038BCBD520AD488600F5BFD6 /* Main */,
@@ -872,7 +872,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -892,7 +892,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
