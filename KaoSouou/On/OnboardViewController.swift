@@ -35,12 +35,12 @@ class OnboardViewController: UIViewController {
     }
     
     @objc func handleSkip() {
-        swiftyOnboard?.goToPage(index: 3, animated: true)
+        swiftyOnboard?.goToPage(index: 4, animated: true)
     }
     
     @objc func handleContinue(sender: UIButton) {
         let index = sender.tag
-        if index == 3 {
+        if index == 4 {
             if fromAppHelp {
                 self.dismiss(animated: true, completion: nil)
             } else {
@@ -59,39 +59,45 @@ class OnboardViewController: UIViewController {
 extension OnboardViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource {
     
     func swiftyOnboardNumberOfPages(_ swiftyOnboard: SwiftyOnboard) -> Int {
-        return 4
+        return 5
     }
     
     func swiftyOnboardPageForIndex(_ swiftyOnboard: SwiftyOnboard, index: Int) -> SwiftyOnboardPage? {
-        let view = CustomPage.instanceFromNib() as? CustomPage
-        var selectColor: UIColor!
-        var selectTextArray: [String]!
-        var imageKey: String!
-        if let currentUser = AccountManager.shared.currentUser {
-            if currentUser.gender == 2{
+        
+        if index == 0 {
+            let view = CustomFirstView.instanceFromNib() as? CustomFirstView
+            return view
+        } else {
+            let view = CustomPage.instanceFromNib() as? CustomPage
+            var selectColor: UIColor!
+            var selectTextArray: [String]!
+            var imageKey: String!
+            if let currentUser = AccountManager.shared.currentUser {
+                if currentUser.gender == 2{
+                    selectColor = UIColor.girlBrandColor()
+                    selectTextArray = girlTextArray
+                    imageKey = "tg"
+                } else {
+                    selectColor = UIColor.boyBrandColor()
+                    selectTextArray = boyTextArray
+                    imageKey = "tm"
+                }
+            } else {
                 selectColor = UIColor.girlBrandColor()
                 selectTextArray = girlTextArray
                 imageKey = "tg"
-            } else {
-                selectColor = UIColor.boyBrandColor()
-                selectTextArray = boyTextArray
-                imageKey = "tm"
             }
-        } else {
-            selectColor = UIColor.girlBrandColor()
-            selectTextArray = girlTextArray
-            imageKey = "tg"
+            view?.titleLabel.adjustsFontSizeToFitWidth = true
+            view?.neonBarView.layer.borderWidth = 1
+            view?.neonBarView.backgroundColor = selectColor
+            view?.neonBarView.layer.borderColor = selectColor.cgColor
+            view?.neonBarView.viewShadow(radius: 0.5, opacity: 0.5, color: selectColor)
+            
+            view?.image.image = UIImage(named: imageKey + String(index - 1))
+            view?.titleLabel.text = titleArray[index - 1]
+            view?.subTitleLabel.text = selectTextArray[index - 1]
+            return view
         }
-        view?.titleLabel.adjustsFontSizeToFitWidth = true
-        view?.neonBarView.layer.borderWidth = 1
-        view?.neonBarView.backgroundColor = selectColor
-        view?.neonBarView.layer.borderColor = selectColor.cgColor
-        view?.neonBarView.viewShadow(radius: 0.5, opacity: 0.5, color: selectColor)
-        
-        view?.image.image = UIImage(named: imageKey + String(index))
-        view?.titleLabel.text = titleArray[index]
-        view?.subTitleLabel.text = selectTextArray[index]
-        return view
     }
     
     func swiftyOnboardViewForOverlay(_ swiftyOnboard: SwiftyOnboard) -> SwiftyOnboardOverlay? {
@@ -106,7 +112,11 @@ extension OnboardViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource 
         let currentPage = round(position)
         overlay.contentControl.currentPage = Int(currentPage)
         overlay.buttonContinue.tag = Int(position)
-        if currentPage == 0.0 || currentPage == 1.0 || currentPage == 2.0 {
+        if currentPage == 0.0 {
+            overlay.buttonContinue.setTitle("使い方へ", for: .normal)
+            overlay.skip.setTitle("Skip", for: .normal)
+            overlay.skip.isHidden = false
+        } else if currentPage == 1.0 || currentPage == 2.0 || currentPage == 3.0{
             overlay.buttonContinue.setTitle("次へ", for: .normal)
             overlay.skip.setTitle("Skip", for: .normal)
             overlay.skip.isHidden = false

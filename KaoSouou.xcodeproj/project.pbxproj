@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		030179C820A09A65002800F8 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030179C720A09A65002800F8 /* MyPageViewController.swift */; };
+		030526C521E8AC9E00B57167 /* CustomFirstView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030526C421E8AC9E00B57167 /* CustomFirstView.swift */; };
+		030526C721E8ACF100B57167 /* CustomFirstView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 030526C621E8ACF100B57167 /* CustomFirstView.xib */; };
 		030A56AB20B30D8D0021A693 /* GenderSelect.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 030A56AA20B30D8D0021A693 /* GenderSelect.storyboard */; };
 		030A56AD20B30D990021A693 /* GenderSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030A56AC20B30D990021A693 /* GenderSelectViewController.swift */; };
 		030F88FB20DA5A9B009A0657 /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 030F88FA20DA5A9B009A0657 /* NotificationItem.swift */; };
@@ -85,6 +87,8 @@
 
 /* Begin PBXFileReference section */
 		030179C720A09A65002800F8 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		030526C421E8AC9E00B57167 /* CustomFirstView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomFirstView.swift; sourceTree = "<group>"; };
+		030526C621E8ACF100B57167 /* CustomFirstView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomFirstView.xib; sourceTree = "<group>"; };
 		030A56AA20B30D8D0021A693 /* GenderSelect.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = GenderSelect.storyboard; sourceTree = "<group>"; };
 		030A56AC20B30D990021A693 /* GenderSelectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderSelectViewController.swift; sourceTree = "<group>"; };
 		030F88FA20DA5A9B009A0657 /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
@@ -191,8 +195,10 @@
 				03128C0B21CBD0AB00D6E225 /* CustomOverlay.xib */,
 				03128C0A21CBD0AB00D6E225 /* CustomPage.swift */,
 				03128C0821CBD0AB00D6E225 /* CustomPage.xib */,
-				03128C0921CBD0AB00D6E225 /* Onboard.storyboard */,
+				030526C421E8AC9E00B57167 /* CustomFirstView.swift */,
+				030526C621E8ACF100B57167 /* CustomFirstView.xib */,
 				03128C0C21CBD0AB00D6E225 /* OnboardViewController.swift */,
+				03128C0921CBD0AB00D6E225 /* Onboard.storyboard */,
 			);
 			name = Onboard;
 			path = On;
@@ -494,6 +500,7 @@
 				03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */,
 				03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */,
 				03128C0F21CBD0AB00D6E225 /* Onboard.storyboard in Resources */,
+				030526C721E8ACF100B57167 /* CustomFirstView.xib in Resources */,
 				0366D9542152EF0900441C5F /* LoveUserList.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -686,6 +693,7 @@
 				03782C5420B1A80A006D68EB /* SplashViewController.swift in Sources */,
 				03F62A8A2039D79F004DBFB6 /* ViewController.swift in Sources */,
 				03F475AD205979D400EB31FA /* User.swift in Sources */,
+				030526C521E8AC9E00B57167 /* CustomFirstView.swift in Sources */,
 				030F890720DA8160009A0657 /* UITableView+Extension.swift in Sources */,
 				031A956720D16CD8008F88D5 /* Extention.swift in Sources */,
 				038BCBD820AD4E2700F5BFD6 /* Array+Extention.swift in Sources */,
