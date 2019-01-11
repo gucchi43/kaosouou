@@ -17,11 +17,13 @@ enum stateType {
 }
 
 class SetProfileViewController: UIViewController {
-
+    
+    
     @IBOutlet weak var profileImageView: UIImageView!
     @IBOutlet weak var profileBaseImageView: UIImageView!
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var nextButton: UIButton!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     var photoUrl: URL?
     var currentType = stateType.initial
@@ -30,15 +32,20 @@ class SetProfileViewController: UIViewController {
     @IBOutlet weak var profileImageWidth: NSLayoutConstraint!
     @IBOutlet weak var profileImageHeight: NSLayoutConstraint!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         nameTextField.delegate = self
+        scrollView.delegate = self
         configure()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        
+        let notificationCenter = NotificationCenter.default
+        notificationCenter.addObserver(self, selector: #selector(SetProfileViewController.handleKeyboardWillShowNotification(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        notificationCenter.addObserver(self, selector: #selector(SetProfileViewController.handleKeyboardWillHideNotification(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
         setData()
     }
     
@@ -54,6 +61,7 @@ class SetProfileViewController: UIViewController {
         nextButton.layer.borderWidth = 1
         nextButton.layer.borderColor = UIColor.white.cgColor
         nextButton.clipsToBounds = true
+        scrollView.isScrollEnabled = false
     }
     
     func setData() {
@@ -76,6 +84,27 @@ class SetProfileViewController: UIViewController {
     
     @IBAction func tapUserProfileImageView(_ sender: Any) {
         showImagePickerController()
+    }
+    
+    
+    @objc func handleKeyboardWillShowNotification(_ notification: Notification) {
+        
+        let userInfo = notification.userInfo!
+        let keyboardScreenEndFrame = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
+        let myBoundSize: CGSize = UIScreen.main.bounds.size
+        var txtLimit = nameTextField.frame.origin.y + nameTextField.frame.height + 12.0
+        let kbdLimit = myBoundSize.height - keyboardScreenEndFrame.size.height
+        
+        print("テキストフィールドの下辺：(\(txtLimit))")
+        print("キーボードの上辺：(\(kbdLimit))")
+        
+        if txtLimit >= kbdLimit {
+            scrollView.contentOffset.y = txtLimit - kbdLimit
+        }
+    }
+    
+    @objc func handleKeyboardWillHideNotification(_ notification: Notification) {
+        scrollView.contentOffset.y = 0
     }
     
     func showImagePickerController() {
