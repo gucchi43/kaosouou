@@ -19,8 +19,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wyg-xx-Bbf">
-                    <rect key="frame" x="40" y="280" width="295" height="712"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="40" y="374" width="295" height="618"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>
                 <view alpha="0.29999999999999999" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="deA-og-Nea">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -81,7 +81,7 @@
                 <constraint firstAttribute="trailing" secondItem="Wyg-xx-Bbf" secondAttribute="trailing" constant="40" id="Wr7-1H-NTw"/>
                 <constraint firstItem="n61-aF-Mca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a02-BH-McD"/>
                 <constraint firstItem="deA-og-Nea" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iEM-Xc-hEn"/>
-                <constraint firstItem="Wyg-xx-Bbf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="280" id="jPw-lt-XAB"/>
+                <constraint firstItem="Wyg-xx-Bbf" firstAttribute="top" secondItem="QSM-8Y-Kj1" secondAttribute="bottom" constant="20" id="jPw-lt-XAB"/>
                 <constraint firstItem="Kzf-nG-8W4" firstAttribute="top" secondItem="j3e-DW-9vK" secondAttribute="bottom" constant="4" id="jdf-WJ-OoW"/>
                 <constraint firstItem="QSM-8Y-Kj1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="44" id="jfx-jN-pNj"/>
                 <constraint firstItem="j3e-DW-9vK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="oeC-dt-0kV"/>

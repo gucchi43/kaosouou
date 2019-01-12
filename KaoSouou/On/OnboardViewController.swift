@@ -17,9 +17,9 @@ class OnboardViewController: UIViewController {
 
     @IBOutlet weak var swiftyOnboard: SwiftyOnboard!
     let titleArray = ["ワクワク", "プルルンッ", "ドクン、ドクン", "ズキュウゥゥン"]
-    let boyTextArray = ["表示される異性を\n好きな顔の順にタップしよう",
+    let boyTextArray = ["表示される異性を\n好きな顔の順に\nタップしよう",
                         "お、誰かが君を\nタップしたようだね\n今すぐ結果をチェックしよう",
-                        "バトル結果がわかるよ\nメンタルブレイクに気をつけてね",
+                        "バトル結果がわかるよ\nメンタルブレイクに\n気をつけてね",
                         "バトルを繰り返すことで\n点数がどんどん正確になっていくよ\n君の顔は何点かな？"]
     let girlTextArray = ["表示される異性を\n好きな顔の順にタップしよう",
                          "お、誰かが君を\nタップしたようだね\n今すぐ結果をチェックしよう",
