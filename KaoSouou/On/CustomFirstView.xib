@@ -19,7 +19,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgmizutama" translatesAutoresizingMaskIntoConstraints="NO" id="idd-hr-fZq">
                     <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prologue_copy" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-51-2f1">
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="prologue_copywrite" translatesAutoresizingMaskIntoConstraints="NO" id="wg8-51-2f1">
                     <rect key="frame" x="4" y="272.5" width="334" height="271"/>
                 </imageView>
             </subviews>
@@ -39,6 +39,6 @@
     </objects>
     <resources>
         <image name="bgmizutama" width="375" height="667"/>
-        <image name="prologue_copy" width="334" height="271"/>
+        <image name="prologue_copywrite" width="334" height="271"/>
     </resources>
 </document>

@@ -67,10 +67,16 @@ class SetProfileViewController: UIViewController {
     func setData() {
         guard let user = AccountManager.shared.currentUser else { return }
         nameTextField.text = user.displayName
+        
         if let photoUrl = photoUrl {
             // 最初のユーザー登録時
-            self.profileImageView.loadUrlImageView(url: photoUrl)
-            self.profileBaseImageView.loadUrlImageView(url: photoUrl)
+            if let newImage = newImage {
+                self.profileImageView.image = newImage
+                self.profileBaseImageView.image = newImage
+            } else {
+                self.profileImageView.loadUrlImageView(url: photoUrl)
+                self.profileBaseImageView.loadUrlImageView(url: photoUrl)
+            }
         } else {
             if let newImage = newImage {
                 self.profileImageView.image = newImage

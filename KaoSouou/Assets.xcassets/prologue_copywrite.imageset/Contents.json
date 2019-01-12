@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "prologue_copy.png",
+      "filename" : "prologue_copywrite.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "prologue_copy@2x.png",
+      "filename" : "prologue_copywrite@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "prologue_copy@3x.png",
+      "filename" : "prologue_copywrite@3x.png",
       "scale" : "3x"
     }
   ],

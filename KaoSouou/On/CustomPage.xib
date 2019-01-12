@@ -15,6 +15,9 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgmizutama" translatesAutoresizingMaskIntoConstraints="NO" id="n61-aF-Mca">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wyg-xx-Bbf">
                     <rect key="frame" x="40" y="280" width="295" height="712"/>
                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -71,16 +74,20 @@
                 <constraint firstAttribute="trailing" secondItem="deA-og-Nea" secondAttribute="trailing" id="Gqm-jy-5nL"/>
                 <constraint firstItem="Kzf-nG-8W4" firstAttribute="width" secondItem="j3e-DW-9vK" secondAttribute="width" multiplier="0.8" id="IPe-bw-45I"/>
                 <constraint firstAttribute="bottom" secondItem="deA-og-Nea" secondAttribute="bottom" id="OJa-i5-iNR"/>
+                <constraint firstAttribute="trailing" secondItem="n61-aF-Mca" secondAttribute="trailing" id="PZR-wi-ZmI"/>
                 <constraint firstItem="QSM-8Y-Kj1" firstAttribute="top" secondItem="Kzf-nG-8W4" secondAttribute="bottom" constant="20" id="SlV-rk-99y"/>
                 <constraint firstAttribute="trailing" secondItem="QSM-8Y-Kj1" secondAttribute="trailing" constant="44" id="VJ7-iq-6DD"/>
                 <constraint firstItem="Wyg-xx-Bbf" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="WRt-nA-88y"/>
                 <constraint firstAttribute="trailing" secondItem="Wyg-xx-Bbf" secondAttribute="trailing" constant="40" id="Wr7-1H-NTw"/>
+                <constraint firstItem="n61-aF-Mca" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="a02-BH-McD"/>
                 <constraint firstItem="deA-og-Nea" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="iEM-Xc-hEn"/>
                 <constraint firstItem="Wyg-xx-Bbf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="280" id="jPw-lt-XAB"/>
                 <constraint firstItem="Kzf-nG-8W4" firstAttribute="top" secondItem="j3e-DW-9vK" secondAttribute="bottom" constant="4" id="jdf-WJ-OoW"/>
                 <constraint firstItem="QSM-8Y-Kj1" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="44" id="jfx-jN-pNj"/>
                 <constraint firstItem="j3e-DW-9vK" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="64" id="oeC-dt-0kV"/>
                 <constraint firstItem="j3e-DW-9vK" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="rkE-2e-pce"/>
+                <constraint firstItem="n61-aF-Mca" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="xYC-F7-8GS"/>
+                <constraint firstAttribute="bottom" secondItem="n61-aF-Mca" secondAttribute="bottom" id="ya7-FB-1Fv"/>
             </constraints>
             <connections>
                 <outlet property="image" destination="Wyg-xx-Bbf" id="ZeP-xd-P1s"/>
@@ -91,4 +98,7 @@
             <point key="canvasLocation" x="32.799999999999997" y="53.201970443349758"/>
         </view>
     </objects>
+    <resources>
+        <image name="bgmizutama" width="375" height="667"/>
+    </resources>
 </document>
