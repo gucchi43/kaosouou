@@ -19,8 +19,11 @@ class NotificationListViewController: UIViewController, Storyboardable {
         
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.emptyDataSetSource = self
+        tableView.emptyDataSetDelegate = self
         tableView.rowHeight = 68
         tableView.register(NotificationTableViewCell.self)
+        tableView.tableFooterView = UIView()
         fetchNotifications()
     }
     
@@ -101,3 +104,29 @@ extension NotificationListViewController: UITableViewDelegate {
         self.present(resultNC, animated: true, completion: nil)
     }
 }
+
+extension NotificationListViewController: DZNEmptyDataSetDelegate, DZNEmptyDataSetSource {
+    
+//    func image(forEmptyDataSet scrollView: UIScrollView!) -> UIImage! {
+//        return #imageLiteral(resourceName: "empty_main_2")
+//    }
+    
+    func title(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let titleText = "まだ評価されてません"
+        let titleAttributes = [.font: UIFont.boldSystemFont(ofSize: 16),
+                               .foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)] as [NSAttributedStringKey : Any]
+        return NSMutableAttributedString(string: titleText, attributes: titleAttributes)
+    }
+    
+    func description(forEmptyDataSet scrollView: UIScrollView!) -> NSAttributedString! {
+        let descText = "他の人を評価することで自分も評価されやすくなるよ！"
+        let descAttributes = [.font: UIFont.systemFont(ofSize: 14),
+                              .foregroundColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)] as [NSAttributedStringKey : Any]
+        return NSAttributedString(string: descText, attributes: descAttributes)
+    }
+    
+    func emptyDataSetShouldAllowScroll(_ scrollView: UIScrollView!) -> Bool {
+        return true
+    }
+}
+
