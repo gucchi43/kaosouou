@@ -402,11 +402,11 @@ extension ViewController {
             case 7:
                 result.seventh.set(user)
             case 8:
-                result.seventh.set(user)
+                result.eighth.set(user)
             case 9:
-                result.seventh.set(user)
+                result.ninth.set(user)
             default:
-                result.seventh.set(user)
+                result.ninth.set(user)
             }
         }
         createNotification(result: result)
