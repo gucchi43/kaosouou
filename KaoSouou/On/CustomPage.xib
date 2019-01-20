@@ -18,7 +18,7 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="bgmizutama" translatesAutoresizingMaskIntoConstraints="NO" id="n61-aF-Mca">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                 </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wyg-xx-Bbf">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Wyg-xx-Bbf">
                     <rect key="frame" x="40" y="374" width="295" height="618"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                 </imageView>

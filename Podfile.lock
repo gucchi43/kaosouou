@@ -14,6 +14,7 @@ PODS:
   - BoringSSL/Interface (10.0.6)
   - Crashlytics (3.11.0):
     - Fabric (~> 1.8.0)
+  - Device (3.1.2)
   - DZNEmptyDataSet (1.8.1)
   - Fabric (1.8.0)
   - FacebookCore (0.5.0):
@@ -185,6 +186,7 @@ PODS:
 DEPENDENCIES:
   - ADDatePicker
   - Crashlytics
+  - Device (~> 3.1.2)
   - DZNEmptyDataSet
   - Fabric
   - FacebookCore
@@ -212,6 +214,7 @@ SPEC REPOS:
     - Bolts
     - BoringSSL
     - Crashlytics
+    - Device
     - DZNEmptyDataSet
     - Fabric
     - FacebookCore
@@ -268,6 +271,7 @@ SPEC CHECKSUMS:
   Bolts: ac6567323eac61e203f6a9763667d0f711be34c8
   BoringSSL: e10f92a27043805c01071fe815a5cd98ae8212e7
   Crashlytics: 1448070c1d2731ab71ea7c3faf84ac0f69657287
+  Device: 62242076214c30fb5760174b3601cefafa70a481
   DZNEmptyDataSet: 9525833b9e68ac21c30253e1d3d7076cc828eaa7
   Fabric: 4ac1cdfef3004ccd83ce0959b91eda8a6e37df72
   FacebookCore: 74288d0add931d361b1596beae787ab72c438249
@@ -310,6 +314,6 @@ SPEC CHECKSUMS:
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 054005edf5350aa9074af74b41456e5a61e3f322
 
-PODFILE CHECKSUM: b36cecc624329e60b3858d9c8bbbf40fe92bf817
+PODFILE CHECKSUM: db8c562ff710874ed90f4a51da9365f0da710321
 
 COCOAPODS: 1.5.2

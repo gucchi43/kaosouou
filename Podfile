@@ -26,6 +26,7 @@ target 'KaoSouou' do
   pod 'TTTAttributedLabel'
   pod 'SwiftyOnboard'
   pod 'ADDatePicker'
+  pod "Device", '~> 3.1.2'
 
   pod 'TwitterKit'
   pod 'Fabric'

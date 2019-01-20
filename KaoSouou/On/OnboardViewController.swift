@@ -9,11 +9,12 @@
 import UIKit
 import SwiftyOnboard
 import TTTAttributedLabel
-
+import Device
 
 class OnboardViewController: UIViewController {
     
     var fromAppHelp = false
+    var xDvieceFlag = true
 
     @IBOutlet weak var swiftyOnboard: SwiftyOnboard!
     let titleArray = ["ワクワク", "プルルンッ", "ドクン、ドクン", "ズキュウゥゥン"]
@@ -21,9 +22,9 @@ class OnboardViewController: UIViewController {
                         "お、誰かが君を\nタップしたようだね\n今すぐ結果をチェックしよう",
                         "バトル結果がわかるよ\nメンタルブレイクに\n気をつけてね",
                         "バトルを繰り返すことで\n点数がどんどん正確になっていくよ\n君の顔は何点かな？"]
-    let girlTextArray = ["表示される異性を\n好きな顔の順にタップしよう",
+    let girlTextArray = ["表示される異性を\n好きな顔の順に\nタップしよう",
                          "お、誰かが君を\nタップしたようだね\n今すぐ結果をチェックしよう",
-                         "バトル結果がわかるよ\nメンタルブレイクに気をつけてね",
+                         "バトル結果がわかるよ\nメンタルブレイクに\n気をつけてね",
                          "バトルを繰り返すことで\n点数がどんどん正確になっていくよ\n君の顔は何点かな？"]
     
     override func viewDidLoad() {
@@ -32,6 +33,16 @@ class OnboardViewController: UIViewController {
         swiftyOnboard.delegate = self
         swiftyOnboard.dataSource = self
         swiftyOnboard.backgroundColor = UIColor.black
+        checkDeviceType()
+    }
+    
+    func checkDeviceType() {
+        
+        if Device.version() == .iPhoneX || Device.version() == .iPhoneXR || Device.version() == .iPhoneXS || Device.version() == .iPhoneXS_Max {
+            self.xDvieceFlag = true
+        } else {
+            self.xDvieceFlag = false
+        }
     }
     
     @objc func handleSkip() {
@@ -76,16 +87,28 @@ extension OnboardViewController: SwiftyOnboardDelegate, SwiftyOnboardDataSource 
                 if currentUser.gender == 2{
                     selectColor = UIColor.girlBrandColor()
                     selectTextArray = girlTextArray
-                    imageKey = "tg"
+                    if xDvieceFlag {
+                        imageKey = "tg"
+                    } else {
+                        imageKey = "tgo"
+                    }
                 } else {
                     selectColor = UIColor.boyBrandColor()
                     selectTextArray = boyTextArray
-                    imageKey = "tm"
+                    if xDvieceFlag {
+                        imageKey = "tm"
+                    } else {
+                        imageKey = "tmo"
+                    }
                 }
             } else {
                 selectColor = UIColor.girlBrandColor()
                 selectTextArray = girlTextArray
-                imageKey = "tg"
+                if xDvieceFlag {
+                    imageKey = "tg"
+                } else {
+                    imageKey = "tgo"
+                }
             }
             view?.titleLabel.adjustsFontSizeToFitWidth = true
             view?.neonBarView.layer.borderWidth = 1
