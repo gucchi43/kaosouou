@@ -12,6 +12,7 @@ import Pring
 
 @objcMembers
 class User : Object{
+    dynamic var allowedFlag: Bool = false
     dynamic var originId: String = ""
     dynamic var displayName: String = ""
     dynamic var email: String = ""

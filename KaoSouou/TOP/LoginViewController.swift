@@ -80,7 +80,11 @@ class LoginViewController: UIViewController{
                                 } else {
                                     SVProgressHUD.dismiss()
                                     DispatchQueue.main.async {
-                                        AppDelegate.shared.rootViewController.switchToMainScreen()
+                                        if user.allowedFlag {
+                                            AppDelegate.shared.rootViewController.switchToMainScreen()
+                                        } else {
+                                            AppDelegate.shared.rootViewController.switchToFinalCheckScreen()
+                                        }
                                     }
                                 }
                             })
@@ -182,7 +186,11 @@ class LoginViewController: UIViewController{
                                     } else {
                                         SVProgressHUD.dismiss()
                                         DispatchQueue.main.async {
-                                            AppDelegate.shared.rootViewController.switchToMainScreen()
+                                            if user.allowedFlag {
+                                                AppDelegate.shared.rootViewController.switchToMainScreen()
+                                            } else {
+                                                AppDelegate.shared.rootViewController.switchToFinalCheckScreen()
+                                            }
                                         }
                                     }
                                 })

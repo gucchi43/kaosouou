@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Bp-kB-Ecv">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Final Check View Controller-->
+        <scene sceneID="nXj-g9-LLZ">
+            <objects>
+                <viewController id="8Bp-kB-Ecv" customClass="FinalCheckViewController" customModule="KaoSouou" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Hn9-3Q-Z1O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.59999999999999998" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dangerbg" translatesAutoresizingMaskIntoConstraints="NO" id="fgX-vh-K7I">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uRf-2s-lKg">
+                                <rect key="frame" x="0.0" y="16" width="375" height="265"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="kc9-Iw-8B6">
+                                        <rect key="frame" x="40" y="63" width="295" height="139"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="⚠️ガチなんで⚠️" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hgD-Ar-893">
+                                                <rect key="frame" x="31" y="0.0" width="233.5" height="38.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="FiLは異性のユーザーから自分の顔を評価されることでガチの「顔面偏差値」が測定されます。以下の点を確認してからFiLをお楽しみください。" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P1U-oj-HeO">
+                                                <rect key="frame" x="0.5" y="62.5" width="294" height="76.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="kc9-Iw-8B6" firstAttribute="centerY" secondItem="uRf-2s-lKg" secondAttribute="centerY" id="G05-0q-FdC"/>
+                                    <constraint firstAttribute="trailing" secondItem="kc9-Iw-8B6" secondAttribute="trailing" constant="40" id="Ih1-w6-gDp"/>
+                                    <constraint firstItem="kc9-Iw-8B6" firstAttribute="leading" secondItem="uRf-2s-lKg" secondAttribute="leading" constant="40" id="i2l-uf-wJq"/>
+                                    <constraint firstItem="kc9-Iw-8B6" firstAttribute="centerX" secondItem="uRf-2s-lKg" secondAttribute="centerX" id="umK-5D-Bwd"/>
+                                </constraints>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="32" translatesAutoresizingMaskIntoConstraints="NO" id="WdW-da-IOZ">
+                                <rect key="frame" x="44" y="313" width="287" height="41"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="wsF-xG-q18">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="41"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAO-55-XrF" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                <rect key="frame" x="0.0" y="0.5" width="40" height="40"/>
+                                                <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="But-H0-75u"/>
+                                                    <constraint firstAttribute="height" constant="40" id="sI7-7M-JAv"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryTintColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="boxLineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="changeValued1Box:" destination="8Bp-kB-Ecv" eventType="valueChanged" id="bIz-zY-GYU"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="異性のユーザーから自分の顔をガチで評価されます。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gap-Gp-Lwy">
+                                                <rect key="frame" x="48" y="0.0" width="239" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView hidden="YES" opaque="NO" contentMode="scaleToFill" alignment="bottom" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cbM-vh-fJg">
+                                        <rect key="frame" x="0.0" y="0.0" width="287" height="40"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aoz-71-szI" customClass="M13Checkbox" customModule="M13Checkbox">
+                                                <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                                <color key="tintColor" red="0.0" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="9pu-OW-OUD"/>
+                                                    <constraint firstAttribute="width" constant="40" id="FfK-HF-ie4"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="secondaryTintColor">
+                                                        <color key="value" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="20"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="checkmarkLineWidth">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="boxLineWidth">
+                                                        <real key="value" value="2"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="chengeValued2Box:" destination="8Bp-kB-Ecv" eventType="valueChanged" id="jqo-5G-Gq0"/>
+                                                </connections>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="異性のユーザーから自分の顔をガチで評価されます。" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58D-qg-mzF">
+                                                <rect key="frame" x="48" y="0.0" width="239" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="cbM-vh-fJg" firstAttribute="leading" secondItem="WdW-da-IOZ" secondAttribute="leading" id="31D-Wa-WEU"/>
+                                    <constraint firstAttribute="trailing" secondItem="cbM-vh-fJg" secondAttribute="trailing" id="OrH-Ly-Jf5"/>
+                                    <constraint firstAttribute="trailing" secondItem="wsF-xG-q18" secondAttribute="trailing" id="mJD-h0-yVY"/>
+                                    <constraint firstItem="wsF-xG-q18" firstAttribute="leading" secondItem="WdW-da-IOZ" secondAttribute="leading" id="vcQ-vM-oBR"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-W1-9x2">
+                                <rect key="frame" x="0.0" y="386" width="375" height="281"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="odJ-Xz-Js6">
+                                <rect key="frame" x="137.5" y="508.5" width="100" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Jdi-Sz-Hcd"/>
+                                    <constraint firstAttribute="height" constant="36" id="wS3-I3-FUt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="レッツ FiL">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="tapNextButton:" destination="8Bp-kB-Ecv" eventType="touchUpInside" id="uDB-7k-3AV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="fgX-vh-K7I" firstAttribute="leading" secondItem="w86-mT-VZh" secondAttribute="leading" id="0li-1d-iea"/>
+                            <constraint firstItem="Ued-W1-9x2" firstAttribute="top" secondItem="WdW-da-IOZ" secondAttribute="bottom" constant="32" id="8nX-1a-NNC"/>
+                            <constraint firstItem="Ued-W1-9x2" firstAttribute="centerX" secondItem="odJ-Xz-Js6" secondAttribute="centerX" id="BBR-eQ-IBz"/>
+                            <constraint firstItem="Ued-W1-9x2" firstAttribute="trailing" secondItem="w86-mT-VZh" secondAttribute="trailing" id="C97-hf-Im4"/>
+                            <constraint firstItem="Ued-W1-9x2" firstAttribute="bottom" secondItem="fgX-vh-K7I" secondAttribute="bottom" id="FY9-Jp-hwo"/>
+                            <constraint firstItem="Ued-W1-9x2" firstAttribute="centerX" secondItem="Hn9-3Q-Z1O" secondAttribute="centerX" id="GXs-fF-Bmg"/>
+                            <constraint firstItem="WdW-da-IOZ" firstAttribute="centerY" secondItem="Hn9-3Q-Z1O" secondAttribute="centerY" id="KLF-0A-sSQ"/>
+                            <constraint firstItem="w86-mT-VZh" firstAttribute="trailing" secondItem="WdW-da-IOZ" secondAttribute="trailing" constant="44" id="MUT-iC-2jb"/>
+                            <constraint firstItem="uRf-2s-lKg" firstAttribute="trailing" secondItem="w86-mT-VZh" secondAttribute="trailing" id="RZJ-il-3rI"/>
+                            <constraint firstItem="Ued-W1-9x2" firstAttribute="leading" secondItem="w86-mT-VZh" secondAttribute="leading" id="Svm-eq-sdg"/>
+                            <constraint firstItem="WdW-da-IOZ" firstAttribute="leading" secondItem="w86-mT-VZh" secondAttribute="leading" constant="44" id="V64-Wh-V2Q"/>
+                            <constraint firstItem="uRf-2s-lKg" firstAttribute="top" secondItem="Hn9-3Q-Z1O" secondAttribute="top" constant="16" id="Xhs-wx-CC1"/>
+                            <constraint firstItem="WdW-da-IOZ" firstAttribute="top" secondItem="uRf-2s-lKg" secondAttribute="bottom" constant="32" id="Xyv-J2-T57"/>
+                            <constraint firstItem="uRf-2s-lKg" firstAttribute="leading" secondItem="w86-mT-VZh" secondAttribute="leading" id="apj-Ot-giS"/>
+                            <constraint firstItem="fgX-vh-K7I" firstAttribute="trailing" secondItem="w86-mT-VZh" secondAttribute="trailing" id="egd-nN-KLB"/>
+                            <constraint firstItem="fgX-vh-K7I" firstAttribute="top" secondItem="Hn9-3Q-Z1O" secondAttribute="top" id="ghq-sW-0qa"/>
+                            <constraint firstItem="fgX-vh-K7I" firstAttribute="bottom" secondItem="w86-mT-VZh" secondAttribute="bottom" id="iar-r3-YXu"/>
+                            <constraint firstItem="WdW-da-IOZ" firstAttribute="centerX" secondItem="Hn9-3Q-Z1O" secondAttribute="centerX" id="j3r-XB-ZDa"/>
+                            <constraint firstItem="odJ-Xz-Js6" firstAttribute="centerY" secondItem="Ued-W1-9x2" secondAttribute="centerY" id="mmq-aJ-q68"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="w86-mT-VZh"/>
+                    </view>
+                    <connections>
+                        <outlet property="buttonContinue" destination="odJ-Xz-Js6" id="MQa-xL-Bwe"/>
+                        <outlet property="check1Box" destination="pAO-55-XrF" id="gzg-Sb-tBw"/>
+                        <outlet property="check2Box" destination="Aoz-71-szI" id="QJd-HX-gcD"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fyo-Sr-kgs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="253.59999999999999" y="-687.7061469265368"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="dangerbg" width="618" height="1327"/>
+    </resources>
+</document>

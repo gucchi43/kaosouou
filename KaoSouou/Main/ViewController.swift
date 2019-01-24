@@ -169,6 +169,7 @@ class ViewController: UIViewController {
         kaoUserArray.removeAll()
         userDataSourse = User
             .where(\User.gender, isEqualTo: genderNum)
+            .where(\User.allowedFlag, isEqualTo: true)
             .order(by: \User.createdAt)
             .dataSource()
             .onCompleted({ (snapshot, userArray) in

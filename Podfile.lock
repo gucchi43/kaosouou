@@ -162,6 +162,7 @@ PODS:
   - GTMSessionFetcher/Core (1.2.0)
   - Kingfisher (4.10.0)
   - leveldb-library (1.20)
+  - M13Checkbox (3.2.2)
   - MIBadgeButton-Swift (0.5)
   - nanopb (0.3.901):
     - nanopb/decode (= 0.3.901)
@@ -198,6 +199,7 @@ DEPENDENCIES:
   - Firebase/Messaging
   - FontAwesome.swift
   - Kingfisher (~> 4.0)
+  - M13Checkbox
   - MIBadgeButton-Swift (from `https://github.com/mustafaibrahim989/MIBadgeButton-Swift.git`, branch `master`)
   - Pring
   - RSKImageCropper
@@ -244,6 +246,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - Kingfisher
     - leveldb-library
+    - M13Checkbox
     - nanopb
     - Pring
     - Protobuf
@@ -301,6 +304,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: 0c4baf0a73acd0041bf9f71ea018deedab5ea84e
   Kingfisher: 43c4b802d8b5256cf1f4379e9cd10b329be6d3e2
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
+  M13Checkbox: a8c2491cfbbca10797925fd0b9154a782bf40d89
   MIBadgeButton-Swift: 9e57309b00b168d75ca8fecb45bc75124a8ffddf
   nanopb: 2901f78ea1b7b4015c860c2fdd1ea2fee1a18d48
   Pring: 95723ccc7ca32384e4271ccc90e984d1672bce45
@@ -314,6 +318,6 @@ SPEC CHECKSUMS:
   TwitterCore: 8cbc9ad34d91c63a0035ea05bfbfc0d7ca72a28c
   TwitterKit: 054005edf5350aa9074af74b41456e5a61e3f322
 
-PODFILE CHECKSUM: db8c562ff710874ed90f4a51da9365f0da710321
+PODFILE CHECKSUM: 81aa5fe01e9ca2c893ef9d8c94cd9daae9413ac0
 
 COCOAPODS: 1.5.2

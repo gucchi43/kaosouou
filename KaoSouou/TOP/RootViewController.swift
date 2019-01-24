@@ -74,6 +74,20 @@ final class RootViewController: UIViewController {
         current = new
     }
     
+    func showFinalCheckScreen() {
+        let storyboard = UIStoryboard(name: "FinalCheck", bundle: nil)
+        let new = storyboard.instantiateInitialViewController() as! FinalCheckViewController
+        addChildViewController(new)
+        view.addSubview(new.view)
+        new.didMove(toParentViewController: self)
+        
+        current.willMove(toParentViewController: nil)
+        current.view.removeFromSuperview()
+        current.removeFromParentViewController()
+        
+        current = new
+    }
+    
     func showBirthdaySelectScreen() {
         let storyboard = UIStoryboard(name: "BirthdaySelect", bundle: nil)
         let new = storyboard.instantiateInitialViewController() as! BirthdaySelectViewController
@@ -125,6 +139,12 @@ final class RootViewController: UIViewController {
     func switchToBirthdaySelectScreen() {
         let storyboard = UIStoryboard(name: "BirthdaySelect", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! BirthdaySelectViewController
+        animateFadeTransition(to: viewController)
+    }
+    
+    func switchToFinalCheckScreen() {
+        let storyboard = UIStoryboard(name: "FinalCheck", bundle: nil)
+        let viewController = storyboard.instantiateInitialViewController() as! FinalCheckViewController
         animateFadeTransition(to: viewController)
     }
     

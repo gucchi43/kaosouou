@@ -63,6 +63,8 @@
 		03F62AB82039DAF9004DBFB6 /* UICollectionView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F62AB72039DAF9004DBFB6 /* UICollectionView+Extension.swift */; };
 		03F62ABA2039DB34004DBFB6 /* NSObjectProtocol+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F62AB92039DB34004DBFB6 /* NSObjectProtocol+Extension.swift */; };
 		03F62ABC203A046A004DBFB6 /* PrintFacePowerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F62ABB203A046A004DBFB6 /* PrintFacePowerViewController.swift */; };
+		03F697F121F63B7600C262F5 /* FinalCheck.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03F697F021F63B7600C262F5 /* FinalCheck.storyboard */; };
+		03F697F321F63B9B00C262F5 /* FinalCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03F697F221F63B9B00C262F5 /* FinalCheckViewController.swift */; };
 		19B0643DD7D1190F45FFB037 /* Pods_KaoSououUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0732268A3DA0AC913C8FF949 /* Pods_KaoSououUITests.framework */; };
 		25F55499384C645E3A3DA10F /* Pods_KaoSououTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAE4E3FA6F72DA14C5437229 /* Pods_KaoSououTests.framework */; };
 		E71FC49DCBE9E269199442B5 /* Pods_KaoSouou.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3502EABC7AAF83490A8B7BF1 /* Pods_KaoSouou.framework */; };
@@ -150,6 +152,8 @@
 		03F62AB72039DAF9004DBFB6 /* UICollectionView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extension.swift"; sourceTree = "<group>"; };
 		03F62AB92039DB34004DBFB6 /* NSObjectProtocol+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObjectProtocol+Extension.swift"; sourceTree = "<group>"; };
 		03F62ABB203A046A004DBFB6 /* PrintFacePowerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrintFacePowerViewController.swift; sourceTree = "<group>"; };
+		03F697F021F63B7600C262F5 /* FinalCheck.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FinalCheck.storyboard; sourceTree = "<group>"; };
+		03F697F221F63B9B00C262F5 /* FinalCheckViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinalCheckViewController.swift; sourceTree = "<group>"; };
 		0732268A3DA0AC913C8FF949 /* Pods_KaoSououUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaoSououUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3502EABC7AAF83490A8B7BF1 /* Pods_KaoSouou.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_KaoSouou.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4BF5E933EF9994F381348326 /* Pods-KaoSououUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-KaoSououUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-KaoSououUITests/Pods-KaoSououUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -309,6 +313,8 @@
 				030F891220DD127F009A0657 /* KaoSouou.entitlements */,
 				031BAE5621BD27F500F508F2 /* scrach.m4a */,
 				03F62A872039D79F004DBFB6 /* AppDelegate.swift */,
+				03F697F021F63B7600C262F5 /* FinalCheck.storyboard */,
+				03F697F221F63B9B00C262F5 /* FinalCheckViewController.swift */,
 				0360257A21D6B3E100D493F2 /* Onboard */,
 				038BCBD620AD48A400F5BFD6 /* Models */,
 				038BCBD420AD486900F5BFD6 /* Extention */,
@@ -499,6 +505,7 @@
 				03128C0E21CBD0AB00D6E225 /* CustomPage.xib in Resources */,
 				03B47100214FCD3F00F9B5CA /* MyPage.storyboard in Resources */,
 				03782C5220B1A7D1006D68EB /* Splash.storyboard in Resources */,
+				03F697F121F63B7600C262F5 /* FinalCheck.storyboard in Resources */,
 				03128C0F21CBD0AB00D6E225 /* Onboard.storyboard in Resources */,
 				030526C721E8ACF100B57167 /* CustomFirstView.xib in Resources */,
 				0366D9542152EF0900441C5F /* LoveUserList.storyboard in Resources */,
@@ -598,6 +605,7 @@
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/M13Checkbox/M13Checkbox.framework",
 				"${BUILT_PRODUCTS_DIR}/MIBadgeButton-Swift/MIBadgeButton_Swift.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/RSKImageCropper/RSKImageCropper.framework",
@@ -633,6 +641,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/M13Checkbox.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MIBadgeButton_Swift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RSKImageCropper.framework",
@@ -693,6 +702,7 @@
 				031BAE5B21C0D69400F508F2 /* BirthdaySelectViewController.swift in Sources */,
 				03F62ABC203A046A004DBFB6 /* PrintFacePowerViewController.swift in Sources */,
 				03782C5420B1A80A006D68EB /* SplashViewController.swift in Sources */,
+				03F697F321F63B9B00C262F5 /* FinalCheckViewController.swift in Sources */,
 				03F62A8A2039D79F004DBFB6 /* ViewController.swift in Sources */,
 				03F475AD205979D400EB31FA /* User.swift in Sources */,
 				030526C521E8AC9E00B57167 /* CustomFirstView.swift in Sources */,

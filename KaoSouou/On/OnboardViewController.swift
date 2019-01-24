@@ -56,7 +56,12 @@ class OnboardViewController: UIViewController {
                 self.dismiss(animated: true, completion: nil)
             } else {
                 // 本番はこっちへ
-                AppDelegate.shared.rootViewController.showMainScreen()
+                let currentUser = AccountManager.shared.currentUser!
+                if currentUser.allowedFlag == true {
+                    AppDelegate.shared.rootViewController.showMainScreen()
+                } else {
+                    AppDelegate.shared.rootViewController.showFinalCheckScreen()
+                }
                 // テスト用
                 //            AppDelegate.shared.rootViewController.showLoginScreen()
             }

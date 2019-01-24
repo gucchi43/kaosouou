@@ -28,9 +28,11 @@ class SplashViewController: UIViewController {
                     AccountManager.shared.currentUser = user
                     DispatchQueue.main.async {
                         DispatchQueue.main.async {
-                            AppDelegate.shared.rootViewController.switchToMainScreen()
-                            //検証用
-//                            AppDelegate.shared.rootViewController.switchToBirthdaySelectScreen()
+                            if user.allowedFlag == true {
+                                AppDelegate.shared.rootViewController.switchToMainScreen()
+                            } else {
+                                AppDelegate.shared.rootViewController.switchToFinalCheckScreen()
+                            }
                         }
                     }
                 } else {

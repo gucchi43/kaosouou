@@ -27,6 +27,7 @@ target 'KaoSouou' do
   pod 'SwiftyOnboard'
   pod 'ADDatePicker'
   pod "Device", '~> 3.1.2'
+  pod 'M13Checkbox'
 
   pod 'TwitterKit'
   pod 'Fabric'
