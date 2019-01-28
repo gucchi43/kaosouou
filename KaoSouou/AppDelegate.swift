@@ -49,11 +49,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+//        if TWTRTwitter.sharedInstance().application(app, open: url, options: options) {
+//            return true
+//        }  else {
+//            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
+//        }
+//        
         if TWTRTwitter.sharedInstance().application(app, open: url, options: options) {
             return true
-        }  else {
-            return SDKApplicationDelegate.shared.application(app, open: url, options: options)
         }
+        if SDKApplicationDelegate.shared.application(app, open: url, options: options) {
+            return true
+        }
+        return false
+        
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable: Any]) {
